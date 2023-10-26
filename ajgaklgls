@@ -1,0 +1,62 @@
+[33mcommit ad1f475e0ce48eb8ae0b516b68fae163b4e0f0ef[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: b4895e9 0934e91
+Author: Miquel <miquel.barbara@students.salle.url.edu>
+Date:   Thu Oct 26 18:24:43 2023 +0200
+
+    Merge branch 'main' of https://github.com/OleguerAlmuni/P1_ProjectesWeb1
+
+[33mcommit b4895e915a1de022be39a510038f2fbe045ff0c0[m
+Author: Miquel <miquel.barbara@students.salle.url.edu>
+Date:   Thu Oct 26 18:24:35 2023 +0200
+
+    chore: add .vs folder to gitignore
+
+[33mcommit 0934e9112444fb5099422921f19fa01f86b48296[m
+Author: Oleguer <oleguer.almuni@students.salle.url.edu>
+Date:   Thu Oct 26 18:10:34 2023 +0200
+
+    Creat el component Header
+
+[33mcommit 9c86c2a1cd046141ba541cbd884822123c5ff2c8[m
+Merge: b483119 35867a5
+Author: Oleguer <oleguer.almuni@students.salle.url.edu>
+Date:   Thu Oct 19 19:59:20 2023 +0200
+
+    Merge branch 'main' of https://github.com/OleguerAlmuni/P1_ProjectesWeb1
+
+[33mcommit b4831190fb21965150530fd98e260f8037ab9428[m
+Merge: 8d314f4 8b0d015
+Author: Oleguer <oleguer.almuni@students.salle.url.edu>
+Date:   Thu Oct 19 19:58:34 2023 +0200
+
+    merge assets
+
+[33mcommit 35867a5648702627d9de6cc3caf377fa061e8eb1[m
+Author: OleguerAlmuni <148482901+OleguerAlmuni@users.noreply.github.com>
+Date:   Thu Oct 19 19:56:31 2023 +0200
+
+    Update vite.config.js
+
+[33mcommit 8d314f4d1b3cc78c153e2cf8419a97c71b1ddb9c[m
+Author: Oleguer <oleguer.almuni@students.salle.url.edu>
+Date:   Thu Oct 19 19:54:11 2023 +0200
+
+    add assets
+
+[33mcommit 8b0d015a118f183dad7750cd1b49a97080095b20[m
+Author: OleguerAlmuni <148482901+OleguerAlmuni@users.noreply.github.com>
+Date:   Thu Oct 19 19:49:46 2023 +0200
+
+    Update vite.config.js
+
+[33mcommit 6d78df82bdc03648c173a16ecfdb12d8ea76f6d3[m
+Author: Oleguer <oleguer.almuni@students.salle.url.edu>
+Date:   Thu Oct 19 19:42:23 2023 +0200
+
+    add deploy workflow
+
+[33mcommit a0602dde93bea6b0e06983e4361274a52bcccec9[m
+Author: Oleguer <oleguer.almuni@students.salle.url.edu>
+Date:   Thu Oct 19 19:25:39 2023 +0200
+
+    init vite project
