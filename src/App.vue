@@ -1,9 +1,11 @@
 <script setup>
 import Header from './components/Header.vue'
+import Log from './components/Log.vue'
 </script>
 
 <template>
-  <Header />
+    <Header />
+    <Log />
 </template>
 
 <style scoped>
