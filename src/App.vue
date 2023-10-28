@@ -7,8 +7,7 @@ import Log from './components/Log.vue'
 <template>
     <Header />
     <Log />
-
-  <Footer />
+    <Footer />
 </template>
 
 
