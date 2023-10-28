@@ -6,10 +6,6 @@
 
 <template>
     <Header />
-
-    <router-link to="/LogIn">LogIn</router-link>
-
+    <Log />
     <Footer />
 </template>
-
-
