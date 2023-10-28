@@ -1,13 +1,17 @@
 <script setup>
     import Header from './components/Header.vue'
     import Footer from './components/Footer.vue'
+
 </script>
 
 <template>
     <Header />
 
-    <router-link to="/LogIn">LogIn</router-link>
-    <router-link to "/CreateAccount">Create Account</router-link>
+    <nav>
+        <button><router-link to="/login">Log</router-link></button>
+    </nav>
+
+    <router-view> </router-view>
 
     <Footer />
 </template>

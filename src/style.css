@@ -14,6 +14,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
+
 .Header {
     display: flex;
     flex-direction: row;
@@ -31,40 +32,9 @@
     height: 80px;
     background-color: darkgrey;
 }
-.login {
-    width: 382px;
-    overflow: hidden;
-    margin: auto;
-    margin: 20 0 0 450px;
-    padding: 80px;
-    background: #23463f;
-    border-radius: 15px;
-}
 
-.center_text {
-    text-align: center;
-}
 
-.left_text {
-    text-align: left;
-}
 
-.my-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-    .my-button:hover {
-        background-color: #45a049;
-    }
-
-    .my-button:active {
-        background-color: #3e8e41;
-    }
 
 @media (prefers-color-scheme: light) {
     :root {
