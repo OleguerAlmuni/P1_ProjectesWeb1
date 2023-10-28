@@ -14,7 +14,7 @@
             <input type="text" id="Name" name="Name" placeholder="Password">
             <br><br>
             <div class="flex-component">
-                <button onclick="goToMain()" type="button" class="click-button">Login</button>
+                <button onclick="goLogIn()"type="button" class="click-button">LogIn</button>
             </div>
         </div>
         <br>

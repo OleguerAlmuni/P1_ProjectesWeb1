@@ -1,15 +1,16 @@
 <script setup>
-    import Header from './components/Header.vue'
-    import Log from './components/Log.vue'
-    import Footer from './components/Footer.vue'
+    import Log from '../pages/Log.vue'
 </script>
 
 <template>
     <Header />
 
-    <router-link to="/LogIn">LogIn</router-link>
+    <nav>
+        <router-link to="/LogIn">LogIn</router-link>
+    </nav>
 
     <Footer />
+    <router-view> </router-view>
 </template>
 
 
