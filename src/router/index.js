@@ -1,12 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../pages/LogIn.vue'
+import Log from '../components/Log.vue'
 
 const routes = [
-    {
-        path: '/LogIn',
-        name: 'LogIn',
-        page: Login
-    }
+    { path: '/login', component: Log },
 ]
 
 const router = createRouter({
@@ -14,3 +10,4 @@ const router = createRouter({
     routes
 })
 export default router
+
