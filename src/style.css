@@ -22,6 +22,7 @@
     height: 80px;
     background-color: darkgrey;
 }
+
 .login {
     width: 382px;
     overflow: hidden;
@@ -58,7 +59,7 @@
     }
 
 @media (prefers-color-scheme: light) {
-    : root {
+    :root {
     color: #213547;
     background-color: #ffffff;
   }
