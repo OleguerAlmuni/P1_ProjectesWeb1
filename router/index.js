@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LogIn from '../pages/LogIn.vue'
+import Login from '../pages/LogIn.vue'
 
 const routes = [
     {
         path: '/LogIn',
         name: 'LogIn',
-        page: LogIn
+        page: Login
+    },
+    {
+        path: '/CreateAccount',
+        name: 'Create an account',
+        page: Creation, /*Aquesta última coma es posa a final de l'array*/
     }
 ]
 

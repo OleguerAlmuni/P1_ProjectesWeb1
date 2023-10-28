@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\components"
   ],
-  "SelectedNode": "\\C:\\Users\\INVICTUS\\Source\\Repos\\OleguerAlmuni\\P1_ProjectesWeb1",
+  "SelectedNode": "\\src\\style.css",
   "PreviewInSolutionExplorer": false
 }

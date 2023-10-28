@@ -1,16 +1,18 @@
 <script setup>
-    import Log from '../pages/Log.vue'
+    import Header from './components/Header.vue'
+    import Log from './components/Log.vue'
+    import CreateAccount from './components/CreateAccount.vue'
+    import Footer from './components/Footer.vue'
 </script>
 
 <template>
     <Header />
 
-    <nav>
-        <router-link to="/LogIn">LogIn</router-link>
-    </nav>
+    <title>GAME TITLE</title>
+    <router-link to="/LogIn">LogIn</router-link>
+    <router-link to "/CreateAccount">Create Account</router-link>
 
     <Footer />
-    <router-view> </router-view>
 </template>
 
 
