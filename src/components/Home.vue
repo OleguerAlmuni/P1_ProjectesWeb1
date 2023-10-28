@@ -13,6 +13,9 @@
                 <li>Player 66</li>
                 <li>Player 96</li>
             </ol>
+            <nav>
+                <router-link to="/LeaderBoard">See more...</router-link>
+            </nav>
         </div>
     </body>
 </template>

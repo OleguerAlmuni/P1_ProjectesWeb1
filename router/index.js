@@ -8,6 +8,10 @@ const routes = [
         page: Login
     },
     {
+        path: '/LeaderBoard',
+        name: ''
+    }
+    {
         path: '/CreateAccount',
         name: 'Create an account',
         page: Creation, /*Aquesta última coma es posa a final de l'array*/
