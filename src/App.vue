@@ -10,6 +10,9 @@
     <nav>
         <button><router-link to="/login">Log</router-link></button>
     </nav>
+    <nav>
+        <button><router-link to="/createAccount">Create Account</router-link></button>
+    </nav>
 
     <router-view> </router-view>
 
