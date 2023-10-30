@@ -1,8 +1,5 @@
 <script setup>
     import { ref } from 'vue'
-    import { VueTable } from "@harv46/vue-table"
-    import "@harv46/vue-table/dist/style.css"
-
     const header = ["Rank", "Name", "Level", "XP"]
     const keys = ["rank", "name", "level", "xp"]
 
