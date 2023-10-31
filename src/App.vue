@@ -8,7 +8,8 @@
     <Header />
 
     <nav>
-        <button><router-link to="/login">Log</router-link></button>
+        <button><router-link to="/store">Store</router-link></button>
+        <button><router-link to="/store/createAttack">CreateAttack</router-link></button>
     </nav>
 
     <router-view> </router-view>

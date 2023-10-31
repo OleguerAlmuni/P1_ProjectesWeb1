@@ -3,7 +3,6 @@
 </script>
 
 <template>
-    <body>
         <div class="login">
 
             <h2>Login in account</h2>
@@ -19,7 +18,6 @@
         </div>
         <br>
         <button type="button" class="click-button ">Create account</button>
-    </body>
 </template>
 
 <style scoped>
