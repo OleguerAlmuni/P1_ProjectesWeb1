@@ -3,10 +3,8 @@
 </script>
 
 <template>
-    <body>
         <div class="createAccount">
-            <button type="button" class="my-button left_text">BackButton</button>
-            <h2 class="center_text">Login in account</h2>
+            <h2 class="center_text">Create an account</h2>
             <label for="Name"></label>
             <input type="text" id="Name" name="Name" placeholder="Email">
             <br><br>
@@ -15,8 +13,6 @@
             <br><br>
             <button type="button" class="my-button center_text">Create account</button>
         </div>
-        <button type="button" class="my-button center_text">Login</button>
-    </body>
 </template>
 
 <style scoped>
