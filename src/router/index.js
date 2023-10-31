@@ -4,6 +4,7 @@ import CreateAccount from '../components/CreateAccount.vue'
 import Store from '../components/Store.vue'
 import CreateAttack from '../components/CreateAttack.vue'
 import Leaderboard from '../components/Leaderboard.vue'
+import WatchGames from '../components/WatchGames.vue'
 
 
 const routes = [
@@ -13,6 +14,7 @@ const routes = [
     { path: '/store/createAttack', component: CreateAttack },
     { path: '/createAccount', component: CreateAccount },
     { path: '/leaderBoard', component: Leaderboard },
+    { path: '/watchGames', component: WatchGames },
 ]
 
 const router = createRouter({
