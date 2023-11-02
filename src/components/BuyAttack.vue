@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from 'vue'
-    import Backpack from './Backpack.vue'
+    import Attacks from './Attacks.vue'
 </script>
 
 <template>

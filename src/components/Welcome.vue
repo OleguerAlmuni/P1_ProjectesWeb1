@@ -6,12 +6,12 @@
     <h1> Game Title </h1>
 
     <nav>
-        <button>
-            <router-link to="/login"> Log In </router-link>
-        </button>
+        <router-link to="/login">
+            <button> login </button>
+        </router-link>
     </nav>
 
-    <router-view></router-view>
+    
 </template>
 
 <style scoped>
