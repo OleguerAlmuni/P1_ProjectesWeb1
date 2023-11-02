@@ -4,11 +4,9 @@
 
 <template>
     <header>
-        <nav>
-            <router-link to="/profile">
-                <button> Profile </button>
-            </router-link>
-        </nav>
+        <router-link to="/profile">
+            <button> Profile </button>
+        </router-link>
 
         <div>
             <h2>
@@ -24,30 +22,28 @@
         
     </header>
 
-    <nav>
-        <div class="first_row">
-            <router-link to="/play">
-                <button>Play</button>
+    <div class="first_row">
+        <router-link to="/play">
+            <button>Play</button>
+        </router-link>
+        <div class="small_buttons">
+            <router-link to="/leaderboard">
+                <button>List Players</button>
             </router-link>
-            <div class="small_buttons">
-                <router-link to="/leaderboard">
-                    <button>List Players</button>
-                </router-link>
-                <router-link to="/gameHistory">
-                    <button>Game History</button>
-                </router-link>
-            </div>
+            <router-link to="/gameHistory">
+                <button>Game History</button>
+            </router-link>
         </div>
+    </div>
 
-        <div class="second_row">
-            <router-link to="/store">
-                <button>Store</button>
-            </router-link>
-            <router-link to="/attacks">
-                <button>Attacks</button>
-            </router-link>
-        </div>
-    </nav>
+    <div class="second_row">
+        <router-link to="/store">
+            <button>Store</button>
+        </router-link>
+        <router-link to="/attacks">
+            <button>Attacks</button>
+        </router-link>
+    </div>
 </template>
 
 <style scoped>

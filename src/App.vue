@@ -3,9 +3,7 @@
 </script>
 
 <template>
-    <nav>
-        <Home />
-    </nav>
+    
     <router-view></router-view>
 
 </template>
