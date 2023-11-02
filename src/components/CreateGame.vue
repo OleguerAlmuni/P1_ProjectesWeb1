@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <Header></Header>
+    <Header title="Create Game"></Header>
     <br />
     <div class="center">
         <div class="panel">

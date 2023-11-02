@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <Header></Header>
+    <Header title="CreateAttack"></Header>
     <br/>
     <div class="container">
         <div class="left-container center">
