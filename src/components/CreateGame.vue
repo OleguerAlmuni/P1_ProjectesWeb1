@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <Header2></Header2>
+    <Header></Header>
     <br />
     <div class="center">
         <div class="panel">

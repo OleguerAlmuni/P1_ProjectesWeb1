@@ -4,42 +4,154 @@
 
 
 <template>
-    <div id="table-container"></div>
+    <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+    </table>
 </template>
 
+<style scoped>
 
-<script>
-    export default {
-        mounted() {
-            const tableExists = document.querySelector('#table-container table.custom-table');
-            if (!tableExists) {
-                this.createTable(10, 10); // Call createTable method with desired parameters only if the table is not created
-            }
+    table, td, th {
+        border: 1px solid #595959;
+        border-collapse: collapse;
+    }
 
-        },
-        methods: {
-            createTable(n, m) {
-                const tableContainer = document.getElementById('table-container');
-                const table = document.createElement('table');
-                table.classList.add('custom-table');
+    td, th {
+        padding: 3px;
+        width: 30px;
+        height: 25px;
+    }
 
-                for (let i = 0; i < n; i++) {
-                    const row = document.createElement('tr');
+    th {
+        background: #f0e6cc;
+    }
 
-                    for (let j = 0; j < m; j++) {
-                        const cell = document.createElement('td');
-                        cell.textContent = "";
-                        cell.style.border = '1px solid black'; // Border for each cell
-                        cell.width = '40px'; /* Set a fixed width for the cells */
-                        cell.height =  '40px'; /* Set a fixed height for the cells */
-                        row.appendChild(cell);
-                    }
+    .even {
+        background: #fbf8f0;
+    }
 
-                    table.appendChild(row);
-                }
+    .odd {
+        background: #fefcf9;
+    }
 
-                tableContainer.appendChild(table);
-            }
-        }
-    };
-</script>
+
+</style>
