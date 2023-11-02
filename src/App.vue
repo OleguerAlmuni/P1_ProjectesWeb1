@@ -3,8 +3,9 @@
 </script>
 
 <template>
-    <Home />
-    
+    <nav>
+        <Home />
+    </nav>
     <router-view></router-view>
 
 </template>
