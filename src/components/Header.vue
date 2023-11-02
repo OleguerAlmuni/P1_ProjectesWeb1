@@ -1,12 +1,16 @@
-<script setup>
-    import { ref } from 'vue'
+<script>
+    export default {
+        props: {
+            title: String,
+        }
+    }
 </script>
 
 <template>
     <div class="head">
         <div class="start">
-            <button class="click-button">Back</button>
-            <h2>Lore Ipsum</h2>
+            <button @click="$router.back()" class="click-button">Back</button>
+            <h2>{{title}}m</h2>
         </div>
         <div class="end">
             <div class="space-between">

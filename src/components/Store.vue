@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <Header></Header>
+    <Header title="Store"></Header>
     <br />
     <div class="body-store">
         <router-link to="/store/createAttack">
