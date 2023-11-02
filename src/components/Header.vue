@@ -27,6 +27,7 @@
             </router-link>
         </div>
     </div>
+    <br />
 </template>
 
 <style scoped>

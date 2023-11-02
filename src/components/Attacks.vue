@@ -204,7 +204,9 @@
 
     .horizontal-scroll {
         width: 100%; /* Ancho del contenedor */
-        overflow-x: scroll; /* Permite el scroll horizontal cuando el contenido es más ancho que el contenedor */
+        display:flex;
+        flex-wrap:wrap;
+        overflow-x: auto; /* Permite el scroll horizontal cuando el contenido es más ancho que el contenedor */
     }
 
 </style>
