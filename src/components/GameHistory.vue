@@ -5,6 +5,7 @@
 
 <template>
     <Header title="Game History"></Header>
+    <br />
     <div class="components">
         <div class="left-components">
             <div class="profile">

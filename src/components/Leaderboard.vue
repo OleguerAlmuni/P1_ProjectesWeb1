@@ -5,7 +5,9 @@
 
 
 <template>
-    <header></header>
+    <Header title="Leaderboard"></Header>
+    <br />
+    <input type="Search" id="Search" name="Search" value="Search">
     <div>
         <table>
             <tr>
@@ -90,6 +92,11 @@
     }
 
     div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .Search {
         display: flex;
         justify-content: center;
     }
