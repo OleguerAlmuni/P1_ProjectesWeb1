@@ -12,6 +12,7 @@ import PlayGame from '../components/PlayGame.vue'
 import CreateGame from '../components/createGame.vue'
 import GameHistory from '../components/GameHistory.vue'
 import Profile from '../components/Profile.vue'
+import Play from '../components/Play.vue'
 
 
 const routes = [
@@ -29,6 +30,7 @@ const routes = [
     { path: '/watchGames', component: WatchGames },
     { path: '/gameHistory', component: GameHistory },
     { path: '/profile', component: Profile },
+    { path: '/play', component: Play },
 ]
 
 const router = createRouter({

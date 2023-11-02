@@ -1,8 +1,10 @@
 <script setup>
     import { ref } from 'vue'
+    import Header from '../components/Header.vue'
 </script>
 
 <template>
+    <Header title="Game History"></Header>
     <div class="components">
         <div class="left-components">
             <div class="profile">
@@ -10,7 +12,7 @@
                     <router-link to="/profile"><button class="circle">Profile</button></router-link>
                 </nav>
             </div>
-             <br />
+            <br />
             <div class="personalInfo">
                 <p>Rank: #000</p>
                 <p>Name: Lorem Ipsum</p>
@@ -21,8 +23,8 @@
             <div class="statistics">
                 <p>Total Played: #000</p>
                 <p>Total Wins: #000</p>
-             <p>Wins%: 000%</p>
-             </div>
+                <p>Wins%: 000%</p>
+            </div>
         </div>
         <div class="right-components">
             <div class="resultTable">
@@ -82,10 +84,10 @@
                         <td>#LoremIpsum</td>
                         <td>#Lorem</td>
                     </tr>
-                    </table>
-                </div>
+                </table>
             </div>
         </div>
+    </div>
 </template>
 
 <style scoped>
