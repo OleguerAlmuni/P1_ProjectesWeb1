@@ -10,6 +10,8 @@
     <Header />
     <Welcome />
     <WatchGames />
+    <router-view> </router-view>
+
     <Footer />
 </template>
 
