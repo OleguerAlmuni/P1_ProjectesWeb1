@@ -9,6 +9,8 @@ import BuyAttack from '../components/BuyAttack.vue'
 import BackPack from '../components/BackPack.vue'
 import PlayGame from '../components/PlayGame.vue'
 import CreateGame from '../components/createGame.vue'
+import GameHistory from '../components/GameHistory.vue'
+import Profile from '../components/Profile.vue'
 
 
 const routes = [
@@ -23,6 +25,8 @@ const routes = [
     { path: '/playGame', component: PlayGame },
     { path: '/createGame', component: CreateGame },
     { path: '/watchGames', component: WatchGames },
+    { path: '/gameHistory', component: GameHistory },
+    { path: '/profile', component: Profile },
 ]
 
 const router = createRouter({

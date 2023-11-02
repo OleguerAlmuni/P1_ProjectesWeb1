@@ -42,15 +42,24 @@
     .create-game-button {
         width: 400px;
         height: 620px;
+        font-family: Inter;
+        font-size: 64px;
+        font-style: normal;
     }
 
     .available-games-button {
         width: 400px;
         height: 300px;
+        font-family: Inter;
+        font-size: 64px;
+        font-style: normal;
     }
 
     .game-finder-button {
         width: 400px;
         height: 300px;
+        font-family: Inter;
+        font-size: 64px;
+        font-style: normal;
     }
 </style>

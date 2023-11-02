@@ -7,7 +7,7 @@
         <div class="left-components">
             <div class="profile">
                 <nav>
-                     <button type="button" class="circle">Profile<router-link to="/profile"></router-link></button>
+                     <button class="circle">Profile<router-link to="/profile"></router-link></button>
                 </nav>
                 <router-view> </router-view>
             </div>
@@ -114,7 +114,7 @@
         padding-right: 30%;
     }
 
-    .profile {
+    .circle {
         display: block;
         background: lightblue;
         border-radius: 50%;

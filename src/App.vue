@@ -1,7 +1,7 @@
 <script setup>
     import Header from './components/Header.vue'
     import Footer from './components/Footer.vue'
-    import Play from './components/Play.vue'
+    import Profile from './components/Profile.vue'
 
 </script>
 
@@ -14,7 +14,7 @@
         <button><router-link to="/leaderBoard">Leaderboard</router-link></button>
     </nav>
 
-    <Play />
+    <Profile />
 
     <router-view> </router-view>
 
