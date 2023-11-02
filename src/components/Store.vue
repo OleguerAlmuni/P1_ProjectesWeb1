@@ -1,107 +1,48 @@
 <script setup>
     import { ref } from 'vue'
+    import Header from '../components/Header.vue'
 </script>
 
 <template>
-    <div class="store">
-        <button type="button" class="click-button">Create</button>
-        <button type="button" class="click-button">Buy</button>
-        <button type="button" class="click-button">Sell</button>
-    </div>
+    <Header></Header>
     <br />
-    <div class="backpack">
-        <div class="spacing">
-            <button type="button" class="circle">1</button>
-            <h2>My attacks</h2>
-            <button type="button" class="circle">1</button>
-        </div>
-        <div class="spacing">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-        <br />
-        <div class="spacing">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-        <br />
-        <div class="spacing">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-    </div>
+    <div class="body-store">
+        <router-link to="/store/createAttack">
+            <button class="click-big-button"><h1>Create</h1></button>
+        </router-link>
+        <router-link to="/playGame">
+            <button class="click-big-button"><h1>Buy</h1></button>
+        </router-link>
+            <button class="click-big-button"><h1>Sell</h1></button>
+</div>
 </template>
 
 <style scoped>
 
-    .circle {
-        background: lightblue;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-    }
 
-    .backpack {
-        width: 382px;
-        overflow: hidden;
-        margin: auto;
-        margin: 20 0 0 450px;
-        padding: 80px;
-        background: #23463f;
-        border-radius: 15px;
-    }
-
-    .spacing {
+    .body-store {
         display: flex;
-        justify-content:space-between;
-        flex-direction: row;
+        justify-content: space-evenly;
     }
 
-
-    .backpack h2 {
-        display:flex;
-        justify-content:center;
-    }
-    .store {
-        display:flex;
-        justify-content: space-around;
-    }
-
-    .flex-component {
-        display: flex;
-        justify-content: center;
-    }
-
-        .flex-component.left {
-            justify-content: left;
+        .body-store h1 {
+            text-align: center;
+            font-family: Inter;
+            font-size: 64px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
         }
 
-        .flex-component.right {
-            justify-content: right;
-        }
-
-    .click-button {
-        padding: 10px 20px;
+    .click-big-button {
+        width: 260px;
+        height: 580px;
         background-color: #4CAF50;
+        flex-shrink: 0;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
     }
 
-        .click-button:hover {
-            background-color: #45a049;
-        }
-
-        .click-button:active {
-            background-color: #3e8e41;
-        }
-
-        .circle {
-
-        }
-    
 </style> 

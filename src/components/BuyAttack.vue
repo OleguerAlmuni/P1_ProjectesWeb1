@@ -1,19 +1,17 @@
 <script setup>
     import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-    import Table from '../components/Table.vue'
+    import Backpack from './Backpack.vue'
 </script>
 
 <template>
-    <Header></Header>
-    <br/>
     <div class="container">
         <div class="left-container center">
             <h2>Create</h2>
+            <Backpack></Backpack>
             <button type="button" class="click-button">Create for: 000,000</button>
         </div>
         <div class="right-container">
-            <Table></Table>
+         
         </div>
     </div>
 </template>

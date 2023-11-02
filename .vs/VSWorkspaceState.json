@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\assets",
     "\\src\\components",
     "\\src\\router"
   ],
-  "SelectedNode": "\\src\\components\\Leaderboard.vue",
+  "SelectedNode": "\\src\\components\\CreateAccount.vue",
   "PreviewInSolutionExplorer": false
 }
