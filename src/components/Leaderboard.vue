@@ -1,83 +1,94 @@
 <script setup>
     import { ref } from 'vue'
-    const header = ["Rank", "Name", "Level", "XP"]
-    const keys = ["rank", "name", "level", "xp"]
-
-    const data = [{
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000',
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000',
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000',
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000'
-    }, {
-        rank: "#000",
-        name: "#Lorem",
-        level: "#Ipsum",
-        xp: '#000,000',
-    }]
 </script>
+
 
 <template>
     <div>
-        <VueTable :headers="header" :data="data" :keys="keys" />
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>XP</th>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+            <tr>
+                <td>#000</td>
+                <td>#LoremIpsum</td>
+                <td>#00</td>
+                <td>#000</td>
+            </tr>
+        </table>
     </div>
 </template>
+
+<style scoped>
+    table, th, td {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 15px;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+</style>

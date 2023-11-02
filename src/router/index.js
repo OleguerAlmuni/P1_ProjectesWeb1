@@ -4,6 +4,7 @@ import CreateAccount from '../components/CreateAccount.vue'
 import Store from '../components/Store.vue'
 import CreateAttack from '../components/CreateAttack.vue'
 import Leaderboard from '../components/Leaderboard.vue'
+import WatchGames from '../components/WatchGames.vue'
 import BuyAttack from '../components/BuyAttack.vue'
 import BackPack from '../components/BackPack.vue'
 import PlayGame from '../components/PlayGame.vue'
@@ -21,6 +22,7 @@ const routes = [
     { path: '/backpack', component: BackPack },
     { path: '/playGame', component: PlayGame },
     { path: '/createGame', component: CreateGame },
+    { path: '/watchGames', component: WatchGames },
 ]
 
 const router = createRouter({
