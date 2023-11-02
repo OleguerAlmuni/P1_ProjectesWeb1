@@ -1,9 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Log from '../components/Log.vue'
 import CreateAccount from '../components/CreateAccount.vue'
-import Store from '../components/Store.vue'
-import CreateAttack from '../components/CreateAttack.vue'
-import Leaderboard from '../components/Leaderboard.vue'
 
 
 const routes = [
