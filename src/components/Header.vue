@@ -3,23 +3,73 @@
 </script>
 
 <template>
-    <header>
-        <div class="Header">
-            <h1>
-                Game Title
-            </h1>
-            <h2>
-                Game Administration
-            </h2>
-            <h2>
-                Play Game
-            </h2>
-            <h2>
-                Store
-            </h2>
-            <h2>
-                Leaderboard
-            </h2>
+    <div class="head">
+        <div class="start">
+            <button class="click-button">Back</button>
+            <h2>Lore Ipsum</h2>
         </div>
-    </header>
+        <div class="end">
+            <div class="space-between">
+                <div class="click-button">CoinIcon</div>
+            </div>
+            <div class="space-between">
+                <h2>000,000</h2>
+            </div>
+            <div class="space-between">
+                <div class="click-button">BackpackIcon</div>
+            </div>
+            <button class="click-button">Home</button>
+        </div>
+    </div>
 </template>
+
+<style scoped>
+
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .space-between {
+        display:flex;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .start {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 30px;
+    }
+
+        .start h2 {
+            padding-left: 50px;
+        }
+
+    .end {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-right: 30px;
+
+    }
+    .click-button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .click-button:hover {
+            background-color: #45a049;
+        }
+
+        .click-button:active {
+            background-color: #3e8e41;
+        }
+
+</style> 

@@ -5,6 +5,10 @@ import Store from '../components/Store.vue'
 import CreateAttack from '../components/CreateAttack.vue'
 import Leaderboard from '../components/Leaderboard.vue'
 import WatchGames from '../components/WatchGames.vue'
+import BuyAttack from '../components/BuyAttack.vue'
+import BackPack from '../components/BackPack.vue'
+import PlayGame from '../components/PlayGame.vue'
+import CreateGame from '../components/createGame.vue'
 
 
 const routes = [
@@ -14,6 +18,10 @@ const routes = [
     { path: '/store/createAttack', component: CreateAttack },
     { path: '/createAccount', component: CreateAccount },
     { path: '/leaderBoard', component: Leaderboard },
+    { path: '/store/buyAttack', component: BuyAttack },
+    { path: '/backpack', component: BackPack },
+    { path: '/playGame', component: PlayGame },
+    { path: '/createGame', component: CreateGame },
     { path: '/watchGames', component: WatchGames },
 ]
 
