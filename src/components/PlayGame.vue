@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <Header2></Header2>
+    <Header title="Play Game"></Header>
     <br />
     <div class="players">
         <div class="row">
