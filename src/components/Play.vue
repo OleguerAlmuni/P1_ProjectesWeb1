@@ -5,6 +5,7 @@
 
 <template>
     <Header title=""></Header>
+    <br />
     <div class="components">
         <div class="left-components">
             <nav>
