@@ -8,18 +8,15 @@
             <nav>
                 <router-link to="/createGame"><button class="create-game-button">Create Game</button></router-link>
             </nav>
-            <router-view> </router-view>
         </div>
         <div class="right-components">
             <nav>
                 <router-link to="/"><button class="available-games-button">Available Games</button></router-link>
             </nav>
-            <router-view> </router-view>
             <br />
             <nav>
                 <router-link to="/"><button class="game-finder-button">Game Finder</button></router-link>
             </nav>
-            <router-view> </router-view>
         </div>
     </div>
 </template>

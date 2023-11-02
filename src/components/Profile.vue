@@ -19,7 +19,6 @@
             <nav>
                 <router-link to="/gameHistory"><button class="game-history">Game History</button></router-link>
             </nav>
-            <router-view> </router-view>
         </div>
     </div>
 </template>

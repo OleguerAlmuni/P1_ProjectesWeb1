@@ -9,7 +9,6 @@
                 <nav>
                     <router-link to="/profile"><button class="circle">Profile</button></router-link>
                 </nav>
-                <router-view> </router-view>
             </div>
              <br />
             <div class="personalInfo">
