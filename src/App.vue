@@ -1,18 +1,12 @@
 <script setup>
-    import Header from './components/Header.vue'
-    import Welcome from './components/Welcome.vue'
-    import WatchGames from './components/WatchGames.vue'
-    import Footer from './components/Footer.vue'
-
+    import Home from './components/Home.vue'
 </script>
 
 <template>
-    <Header />
-    <Welcome />
+    <Home />
     
     <router-view></router-view>
 
-    <Footer />
 </template>
 
 
