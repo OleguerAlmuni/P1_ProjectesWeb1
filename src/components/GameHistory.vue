@@ -7,7 +7,7 @@
         <div class="left-components">
             <div class="profile">
                 <nav>
-                     <button class="circle">Profile<router-link to="/profile"></router-link></button>
+                    <router-link to="/profile"><button class="circle">Profile</button></router-link>
                 </nav>
                 <router-view> </router-view>
             </div>

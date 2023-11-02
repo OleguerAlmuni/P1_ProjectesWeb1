@@ -17,7 +17,7 @@
             <h2>XP: #000</h2>
             <br />
             <nav>
-                <button class="game-history">Game History<router-link to="/gameHistory"></router-link></button>
+                <router-link to="/gameHistory"><button class="game-history">Game History</button></router-link>
             </nav>
             <router-view> </router-view>
         </div>
