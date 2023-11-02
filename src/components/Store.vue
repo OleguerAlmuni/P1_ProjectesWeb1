@@ -10,10 +10,12 @@
         <router-link to="/store/createAttack">
             <button class="click-big-button"><h1>Create</h1></button>
         </router-link>
-        <router-link to="/playGame">
+        <router-link to="/store/buyAttack">
             <button class="click-big-button"><h1>Buy</h1></button>
         </router-link>
+        <router-link to ="/store/sellAttack">
             <button class="click-big-button"><h1>Sell</h1></button>
+        </router-link>
 </div>
 </template>
 
