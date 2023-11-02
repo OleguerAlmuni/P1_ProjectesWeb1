@@ -84,8 +84,8 @@
 
         .first_row button {
             background-color: darkcyan;
-            height: 250px;
-            width: 990px;
+            height: 100%;
+            width: 3000%;
         }
 
     .small_buttons {

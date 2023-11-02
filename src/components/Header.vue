@@ -10,7 +10,7 @@
     <div class="head">
         <div class="start">
             <button @click="$router.back()" class="click-button">Back</button>
-            <h2>{{title}}m</h2>
+            <h2>{{title}}</h2>
         </div>
         <div class="end">
             <div class="space-between">
@@ -22,7 +22,9 @@
             <div class="space-between">
                 <div class="click-button">BackpackIcon</div>
             </div>
-            <button class="click-button">Home</button>
+            <router-link to="/">
+                <button class="click-button">Home</button>
+            </router-link>
         </div>
     </div>
 </template>
