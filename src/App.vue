@@ -1,23 +1,11 @@
 <script setup>
-    import Header from './components/Header.vue'
-    import Profile from './components/Profile.vue'
-
+    import Home from './components/Home.vue'
 </script>
 
 <template>
-    <Header />
+    
+    <router-view></router-view>
 
-    <nav>
-        <button><router-link to="/store">Store</router-link></button>
-        <button><router-link to="/store/createAttack">CreateAttack</router-link></button>
-        <button><router-link to="/leaderBoard">Leaderboard</router-link></button>
-    </nav>
-
-    <Profile />
-
-    <router-view> </router-view>
-
-    <Footer />
 </template>
 
 
