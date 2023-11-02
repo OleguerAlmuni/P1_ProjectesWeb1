@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <Header2></Header2>
+    <Header></Header>
     <br />
     <div class="column">
         <div class="container">
