@@ -26,7 +26,11 @@
                     <td>Lorem</td>
                     <td>Ipsum</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>
+                        <nav>
+                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
+                        </nav>
+                    </td>
                 </tr>
                 <tr>
                     <td>Lorem</td>
@@ -34,7 +38,11 @@
                     <td>Lorem</td>
                     <td>Ipsum</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>
+                        <nav>
+                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
+                        </nav>
+                    </td>
                 </tr>
                 <tr>
                     <td>Lorem</td>
@@ -42,7 +50,11 @@
                     <td>Lorem</td>
                     <td>Ipsum</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>
+                        <nav>
+                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
+                        </nav>
+                    </td>
                 </tr>
                 <tr>
                     <td>Lorem</td>
@@ -50,7 +62,11 @@
                     <td>Lorem</td>
                     <td>Ipsum</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>
+                        <nav>
+                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
+                        </nav>
+                    </td>
                 </tr>
                 <tr>
                     <td>Lorem</td>
@@ -58,7 +74,11 @@
                     <td>Lorem</td>
                     <td>Ipsum</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>
+                        <nav>
+                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
+                        </nav>
+                    </td>
                 </tr>
                 <tr>
                     <td>Lorem</td>
@@ -66,7 +86,11 @@
                     <td>Lorem</td>
                     <td>Ipsum</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>
+                        <nav>
+                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
+                        </nav>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -98,6 +122,7 @@
     }
 
     table, th, td {
+        font-family: Inter;
         border: 1px solid;
         border-collapse: collapse;
     }
@@ -107,5 +132,19 @@
         padding: 15px;
 
     }
+
+    .play-game {
+        background-color: #4CAF50;
+        color: white;
+        font-family: Inter;
+    }
+
+        .play-game:hover {
+            background-color: #45a049;
+        }
+
+        .play-game:active {
+            background-color: #3e8e41;
+        }
 
 </style>

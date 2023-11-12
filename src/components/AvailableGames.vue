@@ -136,6 +136,11 @@
 </template>
 
 <style scoped>
+    @media only screen and (min-width: 768px) {
+
+        .Games {
+            width: 99%;
+        }
     .components {
         display: flex;
         justify-content: center;
@@ -143,6 +148,7 @@
     }
 
     .left-components {
+    .Games {
         display: flex;
         justify-content: center;
         align-content: center;
