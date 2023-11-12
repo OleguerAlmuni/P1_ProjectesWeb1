@@ -22,6 +22,7 @@
 <style scoped>
 
     .container {
+        font-family: Inter;
         display: flex;
         justify-content: space-around;
     }
@@ -57,6 +58,7 @@
     }
 
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;

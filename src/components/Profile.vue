@@ -40,17 +40,31 @@
     }
 
     .right-components {
+        font-family: Inter;
         padding-left: 5%;
     }
     .profile {
+        font-family: Inter;
         border-radius: 50%;
         width: 500px;
         height: 500px;
+        background-color: #4CAF50;
+        color: white;
     }
 
     .game-history {
+        font-family: Inter;
         width: 300px;
         height: 150px;
         font-size: 46px;
+        background-color: #4CAF50;
+        color: white;
+    }
+    .game-history:hover {
+        background-color: #45a049;
+    }
+
+    .game-history:active {
+        background-color: #3e8e41;
     }
 </style>

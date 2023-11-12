@@ -73,8 +73,9 @@
     }
 
     .column {
-        display:flex;
-        flex-direction:column;
+        font-family: Inter;
+        display: flex;
+        flex-direction: column;
     }
 
     .icon {
@@ -116,7 +117,8 @@
     }
 
     .circle {
-        background: lightblue;
+        background-color: #4CAF50;
+        color: white;
         border-radius: 50%;
         width: 70px;
         height: 70px;
@@ -128,10 +130,10 @@
         color: white;
         border: none;
         cursor: pointer;
-        background: lightblue;
         border-radius: 50%;
         width: 120px;
         height: 120px;
+        font-family: Inter;
     }
 
         .click-button:hover {

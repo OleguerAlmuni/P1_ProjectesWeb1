@@ -45,6 +45,7 @@
     }
 
     .start {
+        font-family: Inter;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -63,6 +64,7 @@
 
     }
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
