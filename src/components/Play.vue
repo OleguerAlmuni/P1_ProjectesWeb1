@@ -18,7 +18,7 @@
             </nav>
             <br />
             <nav>
-                <router-link to="/"><button class="game-finder-button">Game Finder</button></router-link>
+                <router-link to="/gameFinder"><button class="game-finder-button">Game Finder</button></router-link>
             </nav>
         </div>
     </div>

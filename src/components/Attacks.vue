@@ -124,6 +124,10 @@
 
 <style scoped>
 
+    @media only screen and (min-width: 768px) {
+
+    }
+
     .column {
         display: flex;
         flex-direction: row;
