@@ -24,7 +24,7 @@
                 </select>
                 <label for="HP2">HP</label>
                 <input type="number" id="HP" name="HP2" placeholder="10-100">
-                <button class="click-button">Create Game!</button>
+                <router-link to="/playGame"><button class="click-button">Create Game!</button></router-link>
             </div>
             <Table></Table>
         </div>
@@ -35,6 +35,7 @@
 <style scoped>
 
     .center {
+        font-family: Inter;
         display: flex;
         justify-content: center;
     }
@@ -93,6 +94,7 @@
     }
 
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
