@@ -22,8 +22,10 @@
 
     div {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
+        flex-direction:column;
+        align-items:center;
+        
     }
 
     button {
@@ -35,5 +37,7 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        margin: 10px 10px 10px 10px;
     }
+
 </style>
