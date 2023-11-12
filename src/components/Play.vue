@@ -14,7 +14,7 @@
         </div>
         <div class="right-components">
             <nav>
-                <router-link to="/"><button class="available-games-button">Available Games</button></router-link>
+                <router-link to="/AvailableGames"><button class="available-games-button">Available Games</button></router-link>
             </nav>
             <br />
             <nav>
