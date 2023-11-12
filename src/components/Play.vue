@@ -14,11 +14,11 @@
         </div>
         <div class="right-components">
             <nav>
-                <router-link to="/"><button class="available-games-button">Available Games</button></router-link>
+                <router-link to="/AvailableGames"><button class="available-games-button">Available Games</button></router-link>
             </nav>
             <br />
             <nav>
-                <router-link to="/"><button class="game-finder-button">Game Finder</button></router-link>
+                <router-link to="/gameFinder"><button class="game-finder-button">Game Finder</button></router-link>
             </nav>
         </div>
     </div>
