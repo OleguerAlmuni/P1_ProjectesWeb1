@@ -6,7 +6,7 @@
 <template>
     <Header></Header>
     <h1>Game Title</h1>
-    <div class="login">
+    <div class="createAccount">
         <h2>Create Account</h2>
         <label for="Name"></label>
         <input type="text" id="Name" name="Name" placeholder="Email">
@@ -34,7 +34,7 @@
         color: #888;
     }
 
-    .login {
+    .createAccount {
         width: 382px;
         overflow: hidden;
         margin: auto;

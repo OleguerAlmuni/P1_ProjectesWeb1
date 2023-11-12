@@ -41,12 +41,19 @@
         width: 260px;
         height: 580px;
         background-color: #4CAF50;
-        flex-shrink: 0;
         color: white;
+        flex-shrink: 0;
         border: none;
         border-radius: 5px;
         cursor: pointer;
     }
+        .click-big-button:hover {
+            background-color: #45a049;
+        }
+
+        .click-big-button:active {
+            background-color: #3e8e41;
+        }
 
     @media only screen and (min-width: 768px) {
 

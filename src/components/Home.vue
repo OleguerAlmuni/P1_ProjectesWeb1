@@ -65,6 +65,7 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 10px;
+        font-family: Inter;
     }
 
         header button {
@@ -73,14 +74,22 @@
             color: white;
             border: none;
             cursor: pointer;
-            background: darkcyan;
             border-radius: 50%;
             width: 100px;
             height: 100px;
+            font-family: Inter;
         }
+            .header button:hover {
+                background-color: #45a049;
+            }
+
+            .header button:active {
+                background-color: #3e8e41;
+            }
 
         header div {
-            background-color: darkcyan;
+            background-color: #4CAF50;
+            color: white;
             height: 75px;
             width: 450px;
         }
@@ -93,13 +102,23 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        font-family: Inter;
     }
 
         .first_row button {
-            background-color: darkcyan;
+            background-color: #4CAF50;
+            color: white;
             height: 100%;
             width: 3000%;
+            font-family: Inter;
         }
+            .first_row button:hover {
+                background-color: #45a049;
+            }
+
+            .first_row button:active {
+                background-color: #3e8e41;
+            }
 
     .small_buttons {
         display: flex;
@@ -108,7 +127,8 @@
     }
 
         .small_buttons button {
-            background-color: darkcyan;
+            background-color: #4CAF50;
+            color: white;
             height: 120px;
             width: 120px;
         }
@@ -121,8 +141,18 @@
     }
 
         .second_row button {
-            background-color: darkcyan;
+            font-family: Inter;
+            background-color: #4CAF50;
+            color: white;
             height: 100px;
             width: 600px;
         }
+
+            .second_row button:hover {
+                background-color: #45a049;
+            }
+
+            .second_row button:active {
+                background-color: #3e8e41;
+            }
 </style>
