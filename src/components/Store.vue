@@ -24,7 +24,7 @@
 
     .body-store {
         display: flex;
-        justify-content: space-evenly;
+        align-items:center;
         flex-direction:column;
     }
 
@@ -53,6 +53,7 @@
         .body-store {
             display:flex;
             width: 100%;
+            justify-content:space-evenly;
             flex-direction:row;
         }
     }

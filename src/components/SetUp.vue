@@ -15,6 +15,15 @@
 </template>
 
 <style scoped>
+
+    @media only screen and (min-width: 768px) {
+
+        .div {
+            width: 100%;
+        }
+
+    }
+
     h1 {
         display: flex;
         justify-content: center;

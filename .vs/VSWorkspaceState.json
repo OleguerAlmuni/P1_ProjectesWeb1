@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\assets",
     "\\src\\components",
     "\\src\\router"
   ],
-  "SelectedNode": "\\src\\components\\WatchGames.vue",
+  "SelectedNode": "\\src\\components\\AvailableGames.vue",
   "PreviewInSolutionExplorer": false
 }

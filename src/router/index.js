@@ -25,7 +25,6 @@ const routes = [
     { path: '/createAccount', component: CreateAccount },
     { path: '/store', component: Store },
     { path: '/store/createAttack', component: CreateAttack },
-    { path: '/createAccount', component: CreateAccount },
     { path: '/leaderBoard', component: Leaderboard },
     { path: '/store/buyAttack', component: BuyAttack },
     { path: '/attacks', component: Attacks },

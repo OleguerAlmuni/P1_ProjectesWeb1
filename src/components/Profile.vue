@@ -53,4 +53,12 @@
         height: 150px;
         font-size: 46px;
     }
+
+    @media only screen and (min-width: 768px) {
+
+        .components {
+            width: 100%;
+        }
+
+    }
 </style>

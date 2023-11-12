@@ -62,4 +62,11 @@
         font-size: 64px;
         font-style: normal;
     }
+
+    @media only screen and (min-width: 768px) {
+        .components {
+            width: 100%;
+        }
+    }
+
 </style>
