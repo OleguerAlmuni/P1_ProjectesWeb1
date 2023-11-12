@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\assets",
     "\\src\\components",
     "\\src\\router"
   ],
-  "SelectedNode": "\\src\\components\\GameHistory.vue",
   "PreviewInSolutionExplorer": false
 }

@@ -9,7 +9,7 @@
         <div class="left-container center">
             <h2>Buy</h2>
             <Backpack></Backpack>
-            <button type="button" class="click-button">Create for: 000,000</button>
+            <button type="button" class="click-button">Buy for: 000,000</button>
         </div>
         <div class="right-container">
             <table>
