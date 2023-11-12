@@ -4,12 +4,12 @@
 </script>
 
 <template>
-    <Header title="Buy Attack"></Header>
+    <Header title="Sell Attack"></Header>
     <div class="container">
         <div class="left-container center">
-            <h2>Buy</h2>
+            <h2>Create</h2>
             <Backpack></Backpack>
-            <button type="button" class="click-button">Buy for: 000,000</button>
+            <button type="button" class="click-button">Sell for: 000,000</button>
         </div>
         <div class="right-container">
             <table>

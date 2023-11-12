@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
+import SetUp from '../components/SetUp.vue'
 import Log from '../components/Log.vue'
 import CreateAccount from '../components/CreateAccount.vue'
 import Store from '../components/Store.vue'
@@ -14,10 +15,12 @@ import GameHistory from '../components/GameHistory.vue'
 import Profile from '../components/Profile.vue'
 import Play from '../components/Play.vue'
 import AvailableGames from '../components/AvailableGames.vue'
+import SellAttack from '../components/SellAttack.vue'
 
 
 const routes = [
-    { path: '/', component: Home },
+    { path: '/', component: SetUp },
+    { path: '/home', component: Home },
     { path: '/login', component: Log },
     { path: '/createAccount', component: CreateAccount },
     { path: '/store', component: Store },
@@ -32,6 +35,7 @@ const routes = [
     { path: '/gameHistory', component: GameHistory },
     { path: '/profile', component: Profile },
     { path: '/play', component: Play },
+    { path: '/store/sellAttack', component: SellAttack },
     { path: '/availableGames', component: AvailableGames },
 ]
 

@@ -20,7 +20,9 @@
                 <h2>000,000</h2>
             </div>
             <div class="space-between">
-                <div class="click-button">BackpackIcon</div>
+                <router-link to="/attacks">
+                    <div class="click-button">BackpackIcon</div>
+                </router-link>
             </div>
             <router-link to="/">
                 <button class="click-button">Home</button>

@@ -1,23 +1,26 @@
 <script setup>
     import { ref } from 'vue'
+    import Header from '../components/Header.vue'
 </script>
 
 <template>
-        <div class="login">
+    <Header title="Create Account"></Header>
+    <div class="login">
 
-            <h2>Login in account</h2>
-            <label for="Name"></label>
-            <input type="text" id="Name" name="Name" placeholder="Email">
-            <br><br>
-            <label for="Name"></label>
-            <input type="text" id="Name" name="Name" placeholder="Password">
-            <br><br>
-            <div class="flex-component">
+        <h2>Login in account</h2>
+        <label for="Name"></label>
+        <input type="text" id="Name" name="Name" placeholder="Email">
+        <br><br>
+        <label for="Name"></label>
+        <input type="text" id="Name" name="Name" placeholder="Password">
+        <br><br>
+        <div class="flex-component">
+            <router-link to="/home">
                 <button type="button" class="click-button">LogIn</button>
-            </div>
+            </router-link>
         </div>
-        <br>
-        <button type="button" class="click-button ">Create account</button>
+    </div>
+    <br>
 </template>
 
 <style scoped>
