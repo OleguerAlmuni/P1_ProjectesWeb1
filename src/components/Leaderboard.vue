@@ -82,6 +82,7 @@
 
 <style scoped>
     table, th, td {
+        font-family: Inter;
         border: 1px solid;
         border-collapse: collapse;
     }
