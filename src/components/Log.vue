@@ -4,10 +4,10 @@
 </script>
 
 <template>
-    <Header title="Create Account"></Header>
+    <Header></Header>
+    <h1>Game Title</h1>
     <div class="login">
-
-        <h2>Login in account</h2>
+        <h2>Login in</h2>
         <label for="Name"></label>
         <input type="text" id="Name" name="Name" placeholder="Email">
         <br><br>
@@ -24,6 +24,12 @@
 </template>
 
 <style scoped>
+
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+
     .read-the-docs {
         color: #888;
     }
