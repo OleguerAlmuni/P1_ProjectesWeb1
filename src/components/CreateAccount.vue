@@ -16,7 +16,7 @@
         <br><br>
         <div class="flex-component">
             <router-link to="/home">
-                <button type="button" class="click-button">LogIn</button>
+                <button type="button" class="click-button">Log In</button>
             </router-link>
         </div>
     </div>
@@ -26,6 +26,7 @@
 <style scoped>
 
     h1 {
+        font-family: Inter;
         display: flex;
         justify-content: center;
     }
@@ -35,6 +36,7 @@
     }
 
     .createAccount {
+        font-family: Inter;
         width: 382px;
         overflow: hidden;
         margin: auto;
@@ -66,6 +68,7 @@
         }
 
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
