@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
+import SetUp from '../components/SetUp.vue'
 import Log from '../components/Log.vue'
 import CreateAccount from '../components/CreateAccount.vue'
 import Store from '../components/Store.vue'
@@ -17,7 +18,8 @@ import SellAttack from '../components/SellAttack.vue'
 
 
 const routes = [
-    { path: '/', component: Home },
+    { path: '/', component: SetUp },
+    { path: '/home', component: Home },
     { path: '/login', component: Log },
     { path: '/createAccount', component: CreateAccount },
     { path: '/store', component: Store },
