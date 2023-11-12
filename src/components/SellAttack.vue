@@ -7,7 +7,7 @@
     <Header title="Sell Attack"></Header>
     <div class="container">
         <div class="left-container center">
-            <h2>Create</h2>
+            <h2>Sell</h2>
             <Backpack></Backpack>
             <button type="button" class="click-button">Sell for: 000,000</button>
         </div>
