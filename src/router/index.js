@@ -15,7 +15,6 @@ import CreateGame from '../components/createGame.vue'
 import GameHistory from '../components/GameHistory.vue'
 import Profile from '../components/Profile.vue'
 import Play from '../components/Play.vue'
-import AvailableGames from '../components/AvailableGames.vue'
 import SellAttack from '../components/SellAttack.vue'
 
 
@@ -38,7 +37,6 @@ const routes = [
     { path: '/profile', component: Profile },
     { path: '/play', component: Play },
     { path: '/store/sellAttack', component: SellAttack },
-    { path: '/availableGames', component: AvailableGames },
 ]
 
 const router = createRouter({

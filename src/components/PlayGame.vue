@@ -55,15 +55,15 @@
 
 
     .players {
-        display:flex;
-        align-content:center;
+        display: flex;
+        align-content: center;
         justify-content: space-evenly;
     }
 
     .row {
-        display:flex;
-        flex-direction:row;
-        align-items:center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .row-reverse {
@@ -73,7 +73,6 @@
     }
 
     .column {
-        font-family: Inter;
         display: flex;
         flex-direction: column;
     }
@@ -87,8 +86,8 @@
     .container {
         display: flex;
         justify-content: center;
-        padding-top:20px;
-        padding-bottom:20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         padding-right: 50px;
         padding-left: 50px;
     }
@@ -117,8 +116,7 @@
     }
 
     .circle {
-        background-color: #4CAF50;
-        color: white;
+        background: lightblue;
         border-radius: 50%;
         width: 70px;
         height: 70px;
@@ -130,10 +128,10 @@
         color: white;
         border: none;
         cursor: pointer;
+        background: lightblue;
         border-radius: 50%;
         width: 120px;
         height: 120px;
-        font-family: Inter;
     }
 
         .click-button:hover {

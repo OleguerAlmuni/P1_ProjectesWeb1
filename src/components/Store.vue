@@ -13,7 +13,7 @@
         <router-link to="/store/buyAttack">
             <button class="click-big-button"><h1>Buy</h1></button>
         </router-link>
-        <router-link to ="/store/sellAttack">
+        <router-link to="/store/sellAttack">
             <button class="click-big-button"><h1>Sell</h1></button>
         </router-link>
     </div>
@@ -25,7 +25,7 @@
     .body-store {
         display: flex;
         justify-content: space-evenly;
-        flex-direction:column;
+        flex-direction: column;
     }
 
         .body-store h1 {
@@ -51,10 +51,9 @@
     @media only screen and (min-width: 768px) {
 
         .body-store {
-            display:flex;
+            display: flex;
             width: 100%;
-            flex-direction:row;
+            flex-direction: row;
         }
     }
-
 </style> 

@@ -103,7 +103,6 @@
     }
 
     .resultTable {
-        font-family: Inter;
         display: flex;
         justify-content: center;
     }
@@ -114,24 +113,14 @@
     }
 
     .left-components {
-        font-family: Inter;
         padding-right: 30%;
     }
 
     .circle {
-        font-family: Inter;
         display: block;
-        background-color: #4CAF50;
-        color: white;
+        background: lightblue;
         border-radius: 50%;
         width: 100px;
         height: 100px;
     }
-        .circle:hover {
-            background-color: #45a049;
-        }
-
-        .circle:active {
-            background-color: #3e8e41;
-        }
 </style>

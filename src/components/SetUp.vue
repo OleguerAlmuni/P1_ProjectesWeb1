@@ -16,7 +16,6 @@
 
 <style scoped>
     h1 {
-        font-family: Inter; 
         display: flex;
         justify-content: center;
     }
@@ -24,13 +23,11 @@
     div {
         display: flex;
         justify-content: space-around;
-        flex-direction:column;
-        align-items:center;
-        
+        flex-direction: column;
+        align-items: center;
     }
 
     button {
-        font-family: Inter;
         display: flex;
         justify-content: center;
         padding: 10px 20px;
@@ -41,5 +38,4 @@
         cursor: pointer;
         margin: 10px 10px 10px 10px;
     }
-
 </style>
