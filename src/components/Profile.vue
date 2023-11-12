@@ -26,6 +26,19 @@
 </template>
 
 <style scoped>
+
+    @media only screen and (min-width: 768px) {
+        .left-components {
+            width: 95%;
+            height: 50%;
+        }
+
+        .right-components {
+            width: 95%;
+            height: 30%;
+        }
+    }
+
     .components {
         font-family: Inter;
         display: flex;

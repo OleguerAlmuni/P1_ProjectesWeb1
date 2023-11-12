@@ -26,6 +26,7 @@
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
+        align-items: center;
     }
 
         .body-store h1 {

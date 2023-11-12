@@ -16,7 +16,7 @@
 
         <div>
             <h2>
-                Coins: 56745€
+                Coins: 56745$
             </h2>
         </div>
 
@@ -24,7 +24,7 @@
 
     <div class="first_row">
         <router-link to="/play">
-            <button>Play</button>
+            <button class="play-button">Play</button>
         </router-link>
         <div class="small_buttons">
             <router-link to="/leaderboard">
@@ -57,6 +57,11 @@
         .second_row {
             width: 95%;
             height: 30%;
+        }
+
+        .play-button {
+            width: 100%;
+            height: 50%;
         }
     }
 
@@ -101,7 +106,7 @@
     .first_row {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         font-family: Inter;
     }
 
@@ -109,8 +114,9 @@
             background-color: #4CAF50;
             color: white;
             height: 100%;
-            width: 3000%;
+            width: 1000px;
             font-family: Inter;
+            margin-left: 30px;
         }
             .first_row button:hover {
                 background-color: #45a049;
@@ -123,7 +129,7 @@
     .small_buttons {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
     }
 
         .small_buttons button {
