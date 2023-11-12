@@ -48,7 +48,16 @@
         font-family: Inter;
         font-size: 64px;
         font-style: normal;
+        background-color: #4CAF50;
+        color: white;
     }
+        .create-game-button:hover {
+            background-color: #45a049;
+        }
+
+        .create-game-button:active {
+            background-color: #3e8e41;
+        }
 
     .available-games-button {
         width: 400px;
@@ -56,7 +65,16 @@
         font-family: Inter;
         font-size: 64px;
         font-style: normal;
+        background-color: #4CAF50;
+        color: white;
     }
+        .available-games-button:hover {
+            background-color: #45a049;
+        }
+
+        .available-games-button:active {
+            background-color: #3e8e41;
+        }
 
     .game-finder-button {
         width: 400px;
@@ -64,5 +82,14 @@
         font-family: Inter;
         font-size: 64px;
         font-style: normal;
+        background-color: #4CAF50;
+        color: white;
     }
+        .game-finder-button:hover {
+            background-color: #45a049;
+        }
+
+        .game-finder-button:active {
+            background-color: #3e8e41;
+        }
 </style>
