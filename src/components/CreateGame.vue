@@ -5,14 +5,27 @@
 </script>
 
 <template>
-    <Header title="CreateAttack"></Header>
+    <Header title="Create Game"></Header>
     <br />
-    <div class="container">
-        <div class="left-container center">
-            <h2>Create</h2>
-            <button type="button" class="click-button">Create for: 000,000</button>
-        </div>
-        <div class="right-container">
+    <div class="center">
+        <div class="panel">
+            <div class="column">
+                <label for="nSquares">Squares</label>
+                <select name="nSquares" id="nSquare">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <label for="HP2">HP</label>
+                <input type="number" id="HP" name="HP2" placeholder="10-100">
+                <button class="click-button">Create Game!</button>
+            </div>
             <Table></Table>
         </div>
     </div>
@@ -21,9 +34,32 @@
 
 <style scoped>
 
-    .container {
+    .center {
         display: flex;
+        justify-content: center;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .panel {
+        width: 900px;
+        height: 400px;
+        margin: 20 20 20 450px;
+        padding: 80px;
+        background: #23463f;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row;
         justify-content: space-around;
+    }
+
+    .backpack h2 {
+        display: flex;
+        justify-content: center;
     }
 
     .left-content {
@@ -72,11 +108,4 @@
         .click-button:active {
             background-color: #3e8e41;
         }
-
-    @media only screen and (min-width: 768px) {
-
-        .container {
-            width: 100%;
-        }
-    }
 </style>
