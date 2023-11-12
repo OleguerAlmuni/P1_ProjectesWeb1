@@ -16,6 +16,7 @@
 
 <style scoped>
     h1 {
+        font-family: Inter; 
         display: flex;
         justify-content: center;
     }
@@ -29,6 +30,7 @@
     }
 
     button {
+        font-family: Inter;
         display: flex;
         justify-content: center;
         padding: 10px 20px;
