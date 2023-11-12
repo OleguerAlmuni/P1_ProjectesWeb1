@@ -24,8 +24,8 @@
                 </select>
                 <label for="HP2">HP</label>
                 <input type="number" id="HP" name="HP2" placeholder="10-100">
-                <button class="click-button">Create Game!</button>
-            </div>
+                <router-link to="/playGame"><button class="click-button">Create Game!</button></router-link>
+</div>
             <Table></Table>
         </div>
     </div>
@@ -52,9 +52,10 @@
         padding: 80px;
         background: #23463f;
         border-radius: 15px;
-        display:flex;
-        flex-direction:row;
-        justify-content:space-around;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-family: Inter;
     }
 
         .backpack h2 {

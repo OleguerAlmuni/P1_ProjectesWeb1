@@ -14,7 +14,7 @@
         </div>
         <div class="right-components">
             <nav>
-                <router-link to="/AvailableGames"><button class="available-games-button">Available Games</button></router-link>
+                <router-link to="/availableGames"><button class="available-games-button">Available Games</button></router-link>
             </nav>
             <br />
             <nav>
@@ -40,6 +40,8 @@
         padding-left: 5%;
     }
     .create-game-button {
+        background-color: #4CAF50;
+        color: white;
         width: 400px;
         height: 620px;
         font-family: Inter;
@@ -48,6 +50,8 @@
     }
 
     .available-games-button {
+        background-color: #4CAF50;
+        color: white;
         width: 400px;
         height: 300px;
         font-family: Inter;
@@ -56,12 +60,21 @@
     }
 
     .game-finder-button {
+        background-color: #4CAF50;
+        color: white;
         width: 400px;
         height: 300px;
         font-family: Inter;
         font-size: 64px;
         font-style: normal;
     }
+        .game-finder-button:hover {
+            background-color: #45a049;
+        }
+
+        .game-finder-button:active {
+            background-color: #3e8e41;
+        }
 
     @media only screen and (min-width: 768px) {
         .components {

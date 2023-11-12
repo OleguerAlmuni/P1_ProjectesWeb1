@@ -144,7 +144,8 @@
     }
 
     .circle {
-        background: lightblue;
+        background-color: #4CAF50;
+        color: white;
         border-radius: 50%;
         width: 70px;
         height: 70px;
@@ -172,10 +173,12 @@
         color: white;
         border: none;
         cursor: pointer;
-        background: lightblue;
+        background-color: #4CAF50;
+        color: white;
         border-radius: 50%;
         width: 150px;
         height: 150px;
+        font-family: Inter;
     }
 
         .click-button:hover {
@@ -192,10 +195,12 @@
         color: white;
         border: none;
         cursor: pointer;
-        background: lightblue;
+        background-color: #4CAF50;
+        color: white;
         border-radius: 50%;
         width: 90px;
         height: 90px;
+        font-family: Inter;
     }
 
         .click-button:hover {
