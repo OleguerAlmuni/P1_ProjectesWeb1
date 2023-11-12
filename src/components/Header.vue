@@ -36,6 +36,7 @@
 
 
     .head {
+        font-family: Inter;
         display: flex;
         justify-content: space-between;
     }

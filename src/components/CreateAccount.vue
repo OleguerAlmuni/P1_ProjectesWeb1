@@ -16,7 +16,7 @@
         <br><br>
         <div class="flex-component">
             <router-link to="/home">
-                <button type="button" class="click-button">Log In</button>
+                <button type="button" class="click-button">Create Account</button>
             </router-link>
         </div>
     </div>
