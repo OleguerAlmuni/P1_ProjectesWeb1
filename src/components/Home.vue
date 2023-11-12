@@ -1,288 +1,126 @@
 <script setup>
     import { ref } from 'vue'
+    import Header from '../components/Header.vue'
 </script>
 
 <template>
-    <header>
-        <router-link to="/profile">
-            <button> Profile </button>
-        </router-link>
-
-        <div>
-            <h2>
-                LV. 100
-            </h2>
+    <Header title="Game History"></Header>
+    <br />
+    <div class="components">
+        <div class="left-components">
+            <div class="profile">
+                <nav>
+                    <router-link to="/profile"><button class="circle">Profile</button></router-link>
+                </nav>
+            </div>
+            <br />
+            <div class="personalInfo">
+                <p>Rank: #000</p>
+                <p>Name: Lorem Ipsum</p>
+                <p>Level: #00</p>
+                <p>XP: #000</p>
+            </div>
+            <br />
+            <div class="statistics">
+                <p>Total Played: #000</p>
+                <p>Total Wins: #000</p>
+                <p>Wins%: 000%</p>
+            </div>
         </div>
-
-        <div>
-            <h2>
-                Coins: 56745€
-            </h2>
+        <div class="right-components">
+            <div class="resultTable">
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>VS</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                    <tr>
+                        <td>#dd/mm/yyyy</td>
+                        <td>#LoremIpsum</td>
+                        <td>#Lorem</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-
-    </header>
-
-    <div class="first_row">
-        <router-link to="/play">
-            <button>Play</button>
-        </router-link>
-        <div class="small_buttons">
-            <router-link to="/leaderboard">
-                <button>List Players</button>
-            </router-link>
-            <router-link to="/gameHistory">
-                <button>Game History</button>
-            </router-link>
-        </div>
-    </div>
-
-    <div class="second_row">
-        <router-link to="/store">
-            <button>Store</button>
-        </router-link>
-        <router-link to="/attacks">
-            <button>Attacks</button>
-        </router-link>
     </div>
 </template>
 
 <style scoped>
-
-    @media only screen and (min-width: 768px) {
-        .first_row {
-            width: 95%;
-            height: 50%;
-        }
-
-        .second_row {
-            width: 95%;
-            height: 30%;
-        }
+    table, th, td {
+        border: 1px solid;
+        border-collapse: collapse;
     }
 
-    header {
+    th, td {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .resultTable {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px;
+        justify-content: center;
     }
 
-        header button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            background: darkcyan;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-
-        header div {
-            background-color: darkcyan;
-            height: 75px;
-            width: 450px;
-        }
-
-    nav {
-        padding: 10px;
-    }
-
-    .first_row {
+    .components {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
     }
 
-        .first_row button {
-            background-color: darkcyan;
-            height: 100%;
-            width: 3000%;
-        }
-
-    .small_buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .left-components {
+        padding-right: 30%;
     }
 
-        .small_buttons button {
-            background-color: darkcyan;
-            height: 120px;
-            width: 120px;
-        }
-
-    .second_row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 20px;
+    .circle {
+        display: block;
+        background: lightblue;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
     }
-
-        .second_row button {
-            background-color: darkcyan;
-            height: 100px;
-            width: 600px;
-        }
-</style>
-<script setup>
-    import { ref } from 'vue'
-</script>
-
-<template>
-    <header>
-        <router-link to="/profile">
-            <button> Profile </button>
-        </router-link>
-
-        <div>
-            <h2>
-                LV. 100
-            </h2>
-        </div>
-
-        <div>
-            <h2>
-                Coins: 56745€
-            </h2>
-        </div>
-
-    </header>
-
-    <div class="first_row">
-        <router-link to="/play">
-            <button>Play</button>
-        </router-link>
-        <div class="small_buttons">
-            <router-link to="/leaderboard">
-                <button>List Players</button>
-            </router-link>
-            <router-link to="/gameHistory">
-                <button>Game History</button>
-            </router-link>
-        </div>
-    </div>
-
-    <div class="second_row">
-        <router-link to="/store">
-            <button>Store</button>
-        </router-link>
-        <router-link to="/attacks">
-            <button>Attacks</button>
-        </router-link>
-    </div>
-</template>
-
-<style scoped>
-
-    @media only screen and (min-width: 768px) {
-        .first_row {
-            width: 95%;
-            height: 50%;
-        }
-
-        .second_row {
-            width: 95%;
-            height: 30%;
-        }
-    }
-
-    header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px;
-        font-family: Inter;
-    }
-
-        header button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            font-family: Inter;
-        }
-
-        header div {
-            background-color: #4CAF50;
-            color: white;
-            height: 75px;
-            width: 450px;
-        }
-
-    nav {
-        padding: 10px;
-    }
-
-    .first_row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-        .first_row button {
-            background-color: #4CAF50;
-            color: white;
-            height: 100%;
-            width: 3000%;
-            font-family: Inter;
-        }
-
-            .first_row button:hover {
-                background-color: #45a049;
-            }
-
-            .first_row button:active {
-                background-color: #3e8e41;
-            }
-
-    .small_buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-family: Inter;
-    }
-
-        .small_buttons button {
-            background-color: #4CAF50;
-            color: white;
-            height: 120px;
-            width: 120px;
-        }
-
-            .small_buttons button:hover {
-                background-color: #45a049;
-            }
-
-            .small_buttons button:active {
-                background-color: #3e8e41;
-            }
-
-    .second_row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 20px;
-    }
-
-        .second_row button {
-            background-color: #4CAF50;
-            color: white;
-            height: 100px;
-            width: 600px;
-            font-family: Inter;
-        }
-
-            .second_row button:hover {
-                background-color: #45a049;
-            }
-
-            .second_row button:active {
-                background-color: #3e8e41;
-            }
 </style>
