@@ -24,7 +24,7 @@
                     <div class="click-button">BackpackIcon</div>
                 </router-link>
             </div>
-            <router-link to="/">
+            <router-link to="/home">
                 <button class="click-button">Home</button>
             </router-link>
         </div>

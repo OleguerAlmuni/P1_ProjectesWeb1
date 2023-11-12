@@ -47,6 +47,18 @@
 </template>
 
 <style scoped>
+
+    @media only screen and (min-width: 768px) {
+        .first_row {
+            width: 95%;
+            height: 50%;
+        }
+        .second_row {
+            width: 95%;
+            height: 30%;
+        }
+    }
+
     header {
         display: flex;
         flex-direction: row;
