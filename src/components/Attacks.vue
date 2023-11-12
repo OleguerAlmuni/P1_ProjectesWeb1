@@ -139,6 +139,7 @@
     }
 
     .container {
+        font-family: Inter;
         padding: 30px;
     }
 
@@ -166,12 +167,12 @@
 
 
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
-        background: lightblue;
         border-radius: 50%;
         width: 150px;
         height: 150px;
@@ -186,24 +187,24 @@
         }
 
     .click-small-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
-        background: lightblue;
         border-radius: 50%;
         width: 90px;
         height: 90px;
     }
 
-    .click-button:hover {
-        background-color: #45a049;
-    }
+        .click-small-button:hover {
+            background-color: #45a049;
+        }
 
-    .click-button:active {
-        background-color: #3e8e41;
-    }
+        .click-small-button:active {
+            background-color: #3e8e41;
+        }
 
     .horizontal-scroll {
         width: 100%; /* Ancho del contenedor */
