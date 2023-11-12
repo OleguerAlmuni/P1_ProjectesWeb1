@@ -16,6 +16,7 @@
 
 <style scoped>
     h1 {
+        font-family: Inter;
         display: flex;
         justify-content: center;
     }
@@ -28,6 +29,7 @@
     }
 
     button {
+        font-family: Inter;
         display: flex;
         justify-content: center;
         padding: 10px 20px;
@@ -38,4 +40,11 @@
         cursor: pointer;
         margin: 10px 10px 10px 10px;
     }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #3e8e41;
+        }
 </style>
