@@ -77,6 +77,26 @@
                         <router-link to="/playGame"><button class="join">JOIN</button></router-link>
                     </td>
                 </tr>
+                <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
+                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="join">JOIN</button></router-link>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
+                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="join">JOIN</button></router-link>
+                    </td>
+                </tr>
             </table>
         </div>
 

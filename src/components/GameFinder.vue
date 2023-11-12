@@ -21,52 +21,84 @@
                     <th>Date</th>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Join</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Join</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Join</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Join</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Join</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Join</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -98,6 +130,7 @@
     }
 
     table, th, td {
+        font-family: Inter;
         border: 1px solid;
         border-collapse: collapse;
     }
@@ -106,4 +139,18 @@
         text-align: center;
         padding: 15px;
     }
+
+    .watch-game-button {
+        font-family: Inter;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+        .watch-game-button:hover {
+            background-color: #45a049;
+        }
+
+        .watch-game-button:active {
+            background-color: #3e8e41;
+        }
 </style>
