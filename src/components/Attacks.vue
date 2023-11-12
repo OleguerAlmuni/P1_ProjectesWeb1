@@ -218,4 +218,15 @@
         overflow-x: auto; /* Permite el scroll horizontal cuando el contenido es más ancho que el contenedor */
     }
 
+    @media only screen and (min-width: 768px){
+
+        .column {
+            width:100%;
+        }
+
+        .center {
+            width:100%;
+        }
+    }
+
 </style>

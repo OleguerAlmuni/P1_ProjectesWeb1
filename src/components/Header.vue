@@ -83,4 +83,10 @@
             background-color: #3e8e41;
         }
 
+    @media only screen and (min-width: 768px) {
+
+        .head {
+            width: 100%;
+        }
+    }
 </style> 

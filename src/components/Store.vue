@@ -16,7 +16,7 @@
         <router-link to ="/store/sellAttack">
             <button class="click-big-button"><h1>Sell</h1></button>
         </router-link>
-</div>
+    </div>
 </template>
 
 <style scoped>
@@ -25,6 +25,7 @@
     .body-store {
         display: flex;
         justify-content: space-evenly;
+        flex-direction:column;
     }
 
         .body-store h1 {
@@ -45,6 +46,15 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        .body-store {
+            display:flex;
+            width: 100%;
+            flex-direction:row;
+        }
     }
 
 </style> 
