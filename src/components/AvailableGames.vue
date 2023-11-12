@@ -1,0 +1,96 @@
+<script setup>
+    import { ref } from 'vue'
+    import Header from '../components/Header.vue'
+</script>
+
+<template>
+    <Header title="Available Games"></Header>
+
+    <div class="AvailableGames">
+
+        <div class="Games">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>N.Squares</th>
+                    <th>HP</th>
+                    <th>State</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Join</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Join</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Join</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Join</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Join</td>
+                </tr>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Ipsum</td>
+                    <td>Lorem</td>
+                    <td>Join</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</template>
+
+<style scoped>
+    @media only screen and (min-width: 768px) {
+
+        .Games {
+            width: 99%;
+        }
+    }
+
+    .Games {
+        display: flex;
+        justify-content: center;
+    }
+
+    table, th, td {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 15px;
+    }
+</style>

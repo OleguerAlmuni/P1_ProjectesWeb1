@@ -7,6 +7,7 @@ import Store from '../components/Store.vue'
 import CreateAttack from '../components/CreateAttack.vue'
 import Leaderboard from '../components/Leaderboard.vue'
 import GameFinder from '../components/GameFinder.vue'
+import AvailableGames from '../components/AvailableGames.vue'
 import BuyAttack from '../components/BuyAttack.vue'
 import Attacks from '../components/Attacks.vue'
 import PlayGame from '../components/PlayGame.vue'
@@ -30,6 +31,7 @@ const routes = [
     { path: '/attacks', component: Attacks },
     { path: '/playGame', component: PlayGame },
     { path: '/createGame', component: CreateGame },
+    { path: '/AvailableGames', component: AvailableGames },
     { path: '/gameFinder', component: GameFinder },
     { path: '/gameHistory', component: GameHistory },
     { path: '/profile', component: Profile },
