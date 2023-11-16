@@ -25,7 +25,7 @@
     }
 
     h1 {
-        font-family: Inter; 
+        font-family: Inter;
         display: flex;
         justify-content: center;
     }
@@ -33,9 +33,8 @@
     div {
         display: flex;
         justify-content: space-around;
-        flex-direction:column;
-        align-items:center;
-        
+        flex-direction: column;
+        align-items: center;
     }
 
     button {
@@ -50,5 +49,11 @@
         cursor: pointer;
         margin: 10px 10px 10px 10px;
     }
+        button:hover {
+            background-color: #45a049;
+        }
 
+        button:active {
+            background-color: #3e8e41;
+        }
 </style>

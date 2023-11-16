@@ -36,12 +36,13 @@
 
 
     .head {
+        font-family: Inter;
         display: flex;
         justify-content: space-between;
     }
 
     .space-between {
-        display:flex;
+        display: flex;
         padding-right: 20px;
         padding-left: 20px;
     }
@@ -63,8 +64,8 @@
         flex-direction: row;
         justify-content: flex-end;
         padding-right: 30px;
-
     }
+
     .click-button {
         font-family: Inter;
         padding: 10px 20px;
@@ -89,4 +90,4 @@
             width: 100%;
         }
     }
-</style> 
+</style>

@@ -7,17 +7,17 @@
     <Header title="Sell Attack"></Header>
     <div class="container">
         <div class="left-container center">
-            <h2>Create</h2>
+            <h2>Sell</h2>
             <Backpack></Backpack>
             <button type="button" class="click-button">Sell for: 000,000</button>
         </div>
         <div class="right-container">
             <table>
                 <tr>
-                    <th>Rank</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Level</th>
-                    <th>XP</th>
+                    <th>Price</th>
                 </tr>
                 <tr>
                     <td>#000</td>
@@ -146,6 +146,5 @@
         .container {
             width: 100%;
         }
-
     }
 </style>

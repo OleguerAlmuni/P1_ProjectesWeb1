@@ -98,7 +98,6 @@
     }
 
     .Search {
-        font-family: Inter;
         display: flex;
         justify-content: center;
     }

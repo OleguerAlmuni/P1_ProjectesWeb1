@@ -6,7 +6,7 @@
 
 <template>
     <Header title="CreateAttack"></Header>
-    <br/>
+    <br />
     <div class="container">
         <div class="left-container center">
             <h2>Create</h2>

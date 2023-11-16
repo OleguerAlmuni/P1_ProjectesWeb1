@@ -10,7 +10,7 @@
         <div class="SearchBar">
             <input type="text" id="" name="" placeholder="Search">
         </div>
-        
+
         <div class="Games">
             <table>
                 <tr>
@@ -21,80 +21,88 @@
                     <th>Date</th>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
                     <td>
-                        <nav>
-                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
-                        </nav>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
                     </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
                     <td>
-                        <nav>
-                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
-                        </nav>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
                     </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
                     <td>
-                        <nav>
-                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
-                        </nav>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
                     </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
                     <td>
-                        <nav>
-                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
-                        </nav>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
                     </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
                     <td>
-                        <nav>
-                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
-                        </nav>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
                     </td>
                 </tr>
                 <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
                     <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
-                    <td>Ipsum</td>
-                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
                     <td>
-                        <nav>
-                            <router-link to="/playGame"><button class="play-game">Watch Replay</button></router-link>
-                        </nav>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
+                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#000</td>
+                    <td>#0x0</td>
+                    <td>#00</td>
+                    <td>Lorem</td>
+                    <td>#dd/mm/yyyy</td>
+                    <td>
+                        <router-link to="/playGame"><button class="watch-game-button">Watch Game</button></router-link>
                     </td>
                 </tr>
             </table>
         </div>
-        
+
     </div>
 </template>
 
@@ -118,7 +126,7 @@
 
     .Games {
         display: flex;
-        justify-content:center;
+        justify-content: center;
     }
 
     table, th, td {
@@ -130,21 +138,19 @@
     th, td {
         text-align: center;
         padding: 15px;
-
     }
 
-    .play-game {
+    .watch-game-button {
+        font-family: Inter;
         background-color: #4CAF50;
         color: white;
-        font-family: Inter;
     }
 
-        .play-game:hover {
+        .watch-game-button:hover {
             background-color: #45a049;
         }
 
-        .play-game:active {
+        .watch-game-button:active {
             background-color: #3e8e41;
         }
-
 </style>

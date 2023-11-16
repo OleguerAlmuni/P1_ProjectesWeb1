@@ -17,7 +17,7 @@
             <button class="click-button">Attack3</button>
         </div>
     </div>
-    <br/>
+    <br />
     <div class="center">
         <div class="backpack">
             <div class="horizontal-scroll">
@@ -118,14 +118,13 @@
                     <button class="click-small-button">Attack3</button>
                 </div>
             </div>
-        </div>            
+        </div>
     </div>
 </template>
 
 <style scoped>
 
     @media only screen and (min-width: 768px) {
-
     }
 
     .column {
@@ -136,16 +135,16 @@
 
     .center {
         display: flex;
-        justify-content: center;    
+        justify-content: center;
     }
 
     .container {
+        font-family: Inter;
         padding: 30px;
     }
 
     .circle {
-        background-color: #4CAF50;
-        color: white;
+        background: lightblue;
         border-radius: 50%;
         width: 70px;
         height: 70px;
@@ -168,17 +167,15 @@
 
 
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
-        background-color: #4CAF50;
-        color: white;
         border-radius: 50%;
         width: 150px;
         height: 150px;
-        font-family: Inter;
     }
 
         .click-button:hover {
@@ -190,43 +187,40 @@
         }
 
     .click-small-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;
         border: none;
         cursor: pointer;
-        background-color: #4CAF50;
-        color: white;
         border-radius: 50%;
         width: 90px;
         height: 90px;
-        font-family: Inter;
     }
 
-        .click-button:hover {
+        .click-small-button:hover {
             background-color: #45a049;
         }
 
-        .click-button:active {
+        .click-small-button:active {
             background-color: #3e8e41;
         }
 
     .horizontal-scroll {
         width: 100%; /* Ancho del contenedor */
-        display:flex;
-        flex-wrap:wrap;
+        display: flex;
+        flex-wrap: wrap;
         overflow-x: auto; /* Permite el scroll horizontal cuando el contenido es más ancho que el contenedor */
     }
 
-    @media only screen and (min-width: 768px){
+    @media only screen and (min-width: 768px) {
 
         .column {
-            width:100%;
+            width: 100%;
         }
 
         .center {
-            width:100%;
+            width: 100%;
         }
     }
-
 </style>

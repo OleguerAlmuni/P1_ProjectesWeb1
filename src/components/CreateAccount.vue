@@ -6,7 +6,7 @@
 <template>
     <Header></Header>
     <h1>Game Title</h1>
-    <div class="creaetAccount">
+    <div class="createAccount">
         <h2>Create Account</h2>
         <label for="Name"></label>
         <input type="text" id="Name" name="Name" placeholder="Email">
@@ -16,7 +16,7 @@
         <br><br>
         <div class="flex-component">
             <router-link to="/home">
-                <button type="button" class="click-button">Create account</button>
+                <button type="button" class="click-button">Create Account</button>
             </router-link>
         </div>
     </div>
@@ -35,7 +35,7 @@
         color: #888;
     }
 
-    .creaetAccount {
+    .createAccount {
         font-family: Inter;
         width: 382px;
         overflow: hidden;

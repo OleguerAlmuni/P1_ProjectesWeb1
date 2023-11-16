@@ -13,7 +13,7 @@
         <router-link to="/store/buyAttack">
             <button class="click-big-button"><h1>Buy</h1></button>
         </router-link>
-        <router-link to ="/store/sellAttack">
+        <router-link to="/store/sellAttack">
             <button class="click-big-button"><h1>Sell</h1></button>
         </router-link>
     </div>
@@ -24,8 +24,9 @@
 
     .body-store {
         display: flex;
-        align-items:center;
-        flex-direction:column;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
     }
 
         .body-store h1 {
@@ -41,21 +42,26 @@
         width: 260px;
         height: 580px;
         background-color: #4CAF50;
-        flex-shrink: 0;
         color: white;
+        flex-shrink: 0;
         border: none;
         border-radius: 5px;
         cursor: pointer;
     }
+        .click-big-button:hover {
+            background-color: #45a049;
+        }
+
+        .click-big-button:active {
+            background-color: #3e8e41;
+        }
 
     @media only screen and (min-width: 768px) {
 
         .body-store {
-            display:flex;
+            display: flex;
             width: 100%;
-            justify-content:space-evenly;
-            flex-direction:row;
+            flex-direction: row;
         }
     }
-
 </style> 

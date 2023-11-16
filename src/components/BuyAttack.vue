@@ -14,10 +14,10 @@
         <div class="right-container">
             <table>
                 <tr>
-                    <th>Rank</th>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Level</th>
-                    <th>XP</th>
+                    <th>Price</th>
                 </tr>
                 <tr>
                     <td>#000</td>
@@ -146,6 +146,5 @@
         .container {
             width: 100%;
         }
-
     }
 </style>

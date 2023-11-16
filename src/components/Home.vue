@@ -13,18 +13,18 @@
                 LV. 100
             </h2>
         </div>
-        
+
         <div>
             <h2>
-                Coins: 56745€
+                Coins: 56745$
             </h2>
         </div>
-        
+
     </header>
 
     <div class="first_row">
         <router-link to="/play">
-            <button>Play</button>
+            <button class="play-button">Play</button>
         </router-link>
         <div class="small_buttons">
             <router-link to="/leaderboard">
@@ -53,9 +53,15 @@
             width: 95%;
             height: 50%;
         }
+
         .second_row {
             width: 95%;
             height: 30%;
+        }
+
+        .play-button {
+            width: 100%;
+            height: 50%;
         }
     }
 
@@ -78,6 +84,13 @@
             height: 100px;
             font-family: Inter;
         }
+            .header button:hover {
+                background-color: #45a049;
+            }
+
+            .header button:active {
+                background-color: #3e8e41;
+            }
 
         header div {
             background-color: #4CAF50;
@@ -93,15 +106,17 @@
     .first_row {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        font-family: Inter;
     }
 
         .first_row button {
             background-color: #4CAF50;
             color: white;
             height: 100%;
-            width: 3000%;
+            width: 1000px;
             font-family: Inter;
+            margin-left: 30px;
         }
             .first_row button:hover {
                 background-color: #45a049;
@@ -114,8 +129,7 @@
     .small_buttons {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        font-family: Inter;
+        justify-content: center;
     }
 
         .small_buttons button {
@@ -124,13 +138,6 @@
             height: 120px;
             width: 120px;
         }
-            .small_buttons button:hover {
-                background-color: #45a049;
-            }
-
-            .small_buttons button:active {
-                background-color: #3e8e41;
-            }
 
     .second_row {
         display: flex;
@@ -140,12 +147,13 @@
     }
 
         .second_row button {
+            font-family: Inter;
             background-color: #4CAF50;
             color: white;
             height: 100px;
             width: 600px;
-            font-family: Inter;
         }
+
             .second_row button:hover {
                 background-color: #45a049;
             }
@@ -153,5 +161,4 @@
             .second_row button:active {
                 background-color: #3e8e41;
             }
-    
 </style>

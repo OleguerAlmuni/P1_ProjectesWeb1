@@ -93,6 +93,7 @@
 
 <style scoped>
     table, th, td {
+        font-family: Inter;
         border: 1px solid;
         border-collapse: collapse;
     }
@@ -103,18 +104,17 @@
     }
 
     .resultTable {
-        font-family: Inter;
         display: flex;
         justify-content: center;
     }
 
     .components {
+        font-family: Inter;
         display: flex;
         justify-content: center;
     }
 
     .left-components {
-        font-family: Inter;
         padding-right: 30%;
     }
 

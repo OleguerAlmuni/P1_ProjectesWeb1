@@ -25,7 +25,7 @@
                 <label for="HP2">HP</label>
                 <input type="number" id="HP" name="HP2" placeholder="10-100">
                 <router-link to="/playGame"><button class="click-button">Create Game!</button></router-link>
-</div>
+            </div>
             <Table></Table>
         </div>
     </div>
@@ -35,14 +35,15 @@
 <style scoped>
 
     .center {
+        font-family: Inter;
         display: flex;
         justify-content: center;
     }
 
     .column {
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .panel {
@@ -55,13 +56,12 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        font-family: Inter;
     }
 
-        .backpack h2 {
-            display: flex;
-            justify-content: center;
-        }
+    .backpack h2 {
+        display: flex;
+        justify-content: center;
+    }
 
     .left-content {
         padding: 20px;
@@ -94,6 +94,7 @@
     }
 
     .click-button {
+        font-family: Inter;
         padding: 10px 20px;
         background-color: #4CAF50;
         color: white;

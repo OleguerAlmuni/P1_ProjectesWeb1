@@ -11,7 +11,7 @@
                 <button class="profile">Profile Picture</button>
             </nav>
             <router-view> </router-view>
-        </div> 
+        </div>
         <div class="right-components">
             <h2>Rank: #000</h2>
             <h2>Name: Lorem Ipsum</h2>
@@ -26,7 +26,21 @@
 </template>
 
 <style scoped>
+
+    @media only screen and (min-width: 768px) {
+        .left-components {
+            width: 95%;
+            height: 50%;
+        }
+
+        .right-components {
+            width: 95%;
+            height: 30%;
+        }
+    }
+
     .components {
+        font-family: Inter;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -40,9 +54,9 @@
     }
 
     .right-components {
-        font-family: Inter;
         padding-left: 5%;
     }
+
     .profile {
         font-family: Inter;
         border-radius: 50%;
@@ -51,6 +65,13 @@
         background-color: #4CAF50;
         color: white;
     }
+        .profile:hover {
+            background-color: #45a049;
+        }
+
+        .profile:active {
+            background-color: #3e8e41;
+        }
 
     .game-history {
         font-family: Inter;
@@ -60,19 +81,11 @@
         background-color: #4CAF50;
         color: white;
     }
-    .game-history:hover {
-        background-color: #45a049;
-    }
-
-    .game-history:active {
-        background-color: #3e8e41;
-    }
-
-    @media only screen and (min-width: 768px) {
-
-        .components {
-            width: 100%;
+        .game-history:hover {
+            background-color: #45a049;
         }
 
-    }
+        .game-history:active {
+            background-color: #3e8e41;
+        }
 </style>
