@@ -4,22 +4,16 @@
 </script>
 
 <template>
-    <Header title=""></Header>
+    <Header title="HAHA"></Header>
     <br />
     <div class="components">
         <div class="left-components">
-            <nav>
-                <router-link to="/createGame"><button class="create-game-button">Create Game</button></router-link>
-            </nav>
+            <router-link to="/createGame"><button class="create-game-button">Create Game</button></router-link>
         </div>
         <div class="right-components">
-            <nav>
-                <router-link to="/availableGames"><button class="available-games-button">Available Games</button></router-link>
-            </nav>
+            <router-link to="/availableGames"><button class="available-games-button">Available Games</button></router-link>
             <br />
-            <nav>
-                <router-link to="/gameFinder"><button class="game-finder-button">Game Finder</button></router-link>
-            </nav>
+            <router-link to="/gameFinder"><button class="game-finder-button">Game Finder</button></router-link>
         </div>
     </div>
 </template>

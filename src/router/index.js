@@ -31,13 +31,12 @@ const routes = [
     { path: '/attacks', component: Attacks },
     { path: '/playGame', component: PlayGame },
     { path: '/createGame', component: CreateGame },
-    { path: '/AvailableGames', component: AvailableGames },
     { path: '/gameFinder', component: GameFinder },
     { path: '/gameHistory', component: GameHistory },
     { path: '/profile', component: Profile },
     { path: '/play', component: Play },
     { path: '/store/sellAttack', component: SellAttack },
-    { path: '/availableGames', component: AvailableGames },
+    { path: '/availableGames', component: AvailableGames }
 ]
 
 const router = createRouter({
