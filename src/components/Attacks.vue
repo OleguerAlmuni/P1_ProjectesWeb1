@@ -139,7 +139,7 @@
     }
 
     .container {
-        font-family: Inter;
+        font-family: Inter,serif;
         padding: 30px;
     }
 
@@ -154,8 +154,11 @@
         width: 900px;
         height: 400px;
         overflow: hidden;
-        margin: 20 20 20 450px;
-        padding: 80px;
+      margin-top: 20px;
+      margin-right: 20px;
+      margin-left: 450px;
+      margin-bottom: 20px;
+      padding: 80px;
         background: #23463f;
         border-radius: 15px;
     }

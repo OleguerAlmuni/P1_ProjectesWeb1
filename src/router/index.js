@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import StartScreen from "../views/StartScreen.vue";
 import Home from '../components/Home.vue'
 import SetUp from '../components/SetUp.vue'
 import Log from '../components/Log.vue'
