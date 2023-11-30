@@ -3,24 +3,57 @@
     import Header from '../components/Header.vue'
 </script>
 
+<script>
+export default {
+  data() {
+    return {
+      playerName: "",
+      password: "",
+      img: "",
+    }
+  },
+  methods: {
+    register() {
+      const createUserRequest = { player_ID: this.playerName, password: this.password, img: this.img };
+      fetch("https://balandrau.salle.url.edu/i3/players", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(createUserRequest)
+      }).then((response) => {
+        if (response.ok) {
+          this.response = "Player created!";
+          this.$router.push("/home");
+          return response;
+        }
+
+        return response.json();
+      }).then((res) => {
+        if (res.ok == undefined) {
+          this.response = res.error.message;
+        }
+      }).catch((error) => {
+        this.response = "No connection with API";
+      });
+    }
+  }
+}
+</script>
+
 <template>
     <Header></Header>
     <h1>Game Title</h1>
     <div class="createAccount">
         <h2>Create Account</h2>
         <label for="Name"></label>
-        <input type="text" id="Name" name="Name" placeholder="Email">
-        <br><br>
-        <label for="Name"></label>
-        <input type="text" id="Name" name="Name" placeholder="Password">
-        <br><br>
-        <div class="flex-component">
-            <router-link to="/home">
-                <button type="button" class="click-button">Create Account</button>
-            </router-link>
-        </div>
+        <input type="text" id="Name" name="Name" placeholder="Name" v-model="playerName">
+        <label for="Password"></label>
+        <input type="password" id="Name" name="Name" placeholder="Password" v-model="password">
+        <label for="Image"></label>
+        <input type="text" id="Image" name="Image" placeholder="Image" v-model="img">
+
+      <input type="submit" v-on:click.prevent="register()" value="CreateAccount">
+      <p>{{ response }}</p>
     </div>
-    <br>
 </template>
 
 <style scoped>
