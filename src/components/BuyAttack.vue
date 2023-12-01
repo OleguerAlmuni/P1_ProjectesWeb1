@@ -1,7 +1,23 @@
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
+<script>
+    export default {
+
+        data() {
+            return {
+                showLoginAndRegister: false,
+                response: "",
+            }
+        },
+        methods: {
+
+            async buyAttack() {
+                
+            }
+
+        },
+
+    }
 </script>
+
 
 <template>
     <Header title="Buy Attack"></Header>
@@ -9,7 +25,7 @@
         <div class="left-container center">
             <h2>Buy</h2>
             <Backpack></Backpack>
-            <button type="button" class="click-button">Buy for: 000,000</button>
+            <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy for: 000,000</button>
         </div>
         <div class="right-container">
             <table>

@@ -1,21 +1,55 @@
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-    import Table from '../components/Table.vue'
+<script>
+    export default {
+        data() {
+            return {
+                "attack_ID": "",
+                "positions": "",
+                "img": "",
+            }
+        },
+        methods: {
+            createAttack() {
+                const attack = { attack_ID: this.attack_ID, positions: this.positions, img: this.img };
+                fetch("http://balandrau.salle.url.edu/shop/attacks"), {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(attack)
+
+                }).then((response) => response.json())
+                    .then((res) => {
+                        if (res.error == undefined) {
+                            this.response = "Token: " + res.token;
+                        } else {
+                            this.response = res.error.message;
+                        }
+
+                    }).catch(error => {
+                        this.response = "Lost API connection :(";
+                    });
+            },
+
+        }
+    }
 </script>
 
 <template>
     <Header title="CreateAttack"></Header>
     <br />
-    <div class="container">
-        <div class="left-container center">
+    <section class="container">
+        <section class="left-container center">
             <h2>Create</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Subir imagen" name="submit">
+            </form>
             <button type="button" class="click-button">Create for: 000,000</button>
-        </div>
-        <div class="right-container">
+
+            <p>{{ response }}</p>
+        </section>
+        <section class="right-container">
             <Table></Table>
-        </div>
-    </div>
+        </section>
+    </section>
 </template>
 
 

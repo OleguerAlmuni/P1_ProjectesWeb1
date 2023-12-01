@@ -6,7 +6,7 @@
 <template>
     <Header title="Store"></Header>
     <br />
-    <div class="body-store">
+    <section class="body-store">
         <router-link to="/store/createAttack">
             <button class="click-big-button"><h1>Create</h1></button>
         </router-link>
@@ -16,7 +16,7 @@
         <router-link to="/store/sellAttack">
             <button class="click-big-button"><h1>Sell</h1></button>
         </router-link>
-    </div>
+    </section>
 </template>
 
 <style scoped>

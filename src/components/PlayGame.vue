@@ -8,44 +8,44 @@
     <Header title="Play Game"></Header>
     <br />
     <div class="players">
-        <div class="row">
+        <section class="row">
             <div class="icon"></div>
-            <div class="column">
+            <section class="column">
                 <h2>Player1</h2>
                 <h2>HP: #00</h2>
-            </div>
-        </div>
+            </section>
+        </section>
         <div class="row-reverse">
-            <div class="icon"></div>
-            <div class="column">
+            <section class="icon"></section>
+            <section class="column">
                 <h2>Player2</h2>
                 <h2>HP: #00</h2>
-            </div>
+            </section>
         </div>
     </div>
     <div class="container">
-        <div class="column">
-            <div class="container">
+        <section class="column">
+            <section class="container">
                 <button class="click-button">Attack1</button>
-            </div>
-            <div class="container">
+            </section>
+            <section class="container">
                 <button class="click-button">Attack2</button>
-            </div>
-            <div class="container">
+            </section>
+            <section class="container">
                 <button class="click-button">Attack3</button>
-            </div>
-        </div>
+            </section>
+        </section>
         <Table></Table>
         <div class="column">
-            <div class="container">
+            <section class="container">
                 <button class="click-button">Attack1</button>
-            </div>
-            <div class="container">
+            </section>
+            <section class="container">
                 <button class="click-button">Attack2</button>
-            </div>
-            <div class="container">
+            </section>
+            <section class="container">
                 <button class="click-button">Attack3</button>
-            </div>
+            </section>
         </div>
     </div>
 </template>
