@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import SetUp from '../components/SetUp.vue'
-import Log from '../components/Log.vue'
-import CreateAccount from '../components/CreateAccount.vue'
+import LoginView from '../views/LoginView.vue'
 import Store from '../components/Store.vue'
 import CreateAttack from '../components/CreateAttack.vue'
 import Leaderboard from '../components/Leaderboard.vue'
@@ -16,13 +15,14 @@ import GameHistory from '../components/GameHistory.vue'
 import Profile from '../components/Profile.vue'
 import Play from '../components/Play.vue'
 import SellAttack from '../components/SellAttack.vue'
+import RegisterView from "../views/RegisterView.vue";
 
 
 const routes = [
     { path: '/', component: SetUp },
     { path: '/home', component: Home },
-    { path: '/login', component: Log },
-    { path: '/createAccount', component: CreateAccount },
+    { path: '/login', component: LoginView },
+    { path: '/register', component: RegisterView },
     { path: '/store', component: Store },
     { path: '/store/createAttack', component: CreateAttack },
     { path: '/leaderBoard', component: Leaderboard },
