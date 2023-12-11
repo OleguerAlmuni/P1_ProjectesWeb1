@@ -49,7 +49,7 @@
     .panel {
         width: 900px;
         height: 400px;
-        margin: 20 20 20 450px;
+        margin: 20px;
         padding: 80px;
         background: #23463f;
         border-radius: 15px;
