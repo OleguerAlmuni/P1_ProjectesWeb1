@@ -4,8 +4,9 @@
     "\\public",
     "\\src",
     "\\src\\components",
-    "\\src\\router"
+    "\\src\\router",
+    "\\src\\views"
   ],
-  "SelectedNode": "\\src\\components\\Table.vue",
+  "SelectedNode": "\\src\\router\\index.js",
   "PreviewInSolutionExplorer": false
 }

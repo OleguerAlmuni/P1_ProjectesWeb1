@@ -3,123 +3,79 @@
     import Header from '../components/Header.vue'
 </script>
 
+
+<script>
+
+    export default {
+        data() {
+            return {
+                "attack_ID": "",
+                "positions": "",
+                "img": null,
+                "ppower": 0,
+                "equipped": false,
+                "on_sale": false,
+            }
+        },
+
+        mounted() {
+            this.showAttacks();
+        },
+        methods: {
+            showAttacks() {
+                fetch('http://balandrau.salle.url.edu/players/attacks', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ${token}',
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        const equippedAttacksContainer = document.querySelector('.equipped-attacks');
+                        const backpackContainer = document.querySelector('.backpack');
+
+                        data.forEach(attack => {
+                            const button = document.createElement('button');
+                            button.classList.add('click-small-button');
+                            button.textContent = `Attack ${attack.attack_ID}`;
+
+                            // Add event listeners or any other functionality to the buttons if needed
+                            button.addEventListener('click', () => {
+                                // Do something when the button is clicked
+                                console.log(`Attack ${attack.attack_ID} clicked`);
+                            });
+
+                            if (attack.equipped) {
+                                equippedAttacksContainer.appendChild(button); // If attack is equipped, append to equipped section
+                            } else {
+                                backpackContainer.appendChild(button); // If not equipped, append to backpack section
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            },
+        }
+    }
+</script>
+
+
 <template>
     <Header title="Attacks"></Header>
-    <br />
-    <div class="column">
-        <div class="container">
-            <button class="click-button">Attack1</button>
-        </div>
-        <div class="container">
-            <button class="click-button">Attack2</button>
-        </div>
-        <div class="container">
-            <button class="click-button">Attack3</button>
-        </div>
-    </div>
-    <br />
-    <div class="center">
-        <div class="backpack">
-            <div class="horizontal-scroll">
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-                <div class="container">
-                    <button class="click-small-button">Attack3</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header>
+        <h1>Attacks</h1>
+    </header>
+
+    <section class="equipped-attacks">
+        <h2>Equipped Attacks</h2>
+    </section>
+
+    <section class="backpack">
+        <h2>Backpack</h2>
+    </section>
+
 </template>
 
 <style scoped>

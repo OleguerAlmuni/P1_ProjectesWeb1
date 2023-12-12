@@ -1,20 +1,39 @@
+<script setup>
+    import { ref } from 'vue'
+    import Header from '../components/Header.vue'
+</script>
+
 <script>
     export default {
-
         data() {
             return {
-                showLoginAndRegister: false,
-                response: "",
-            }
+                attackData: []
+            };
+        },
+        mounted() {
+            this.showAvailableAttacks();
         },
         methods: {
+            async showAvailableAttacks() {
+                try {
+                    const response = await fetch("http://balandrau.salle.url.edu/shop/attacks", {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
 
-            async buyAttack() {
-                
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.attackData = data;
+                    } else {
+                        console.error("Failed to fetch data");
+                    }
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                }
             }
-
-        },
-
+        }
     }
 </script>
 
@@ -29,72 +48,24 @@
         </div>
         <div class="right-container">
             <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Level</th>
-                    <th>Price</th>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
-                <tr>
-                    <td>#000</td>
-                    <td>#LoremIpsum</td>
-                    <td>#00</td>
-                    <td>#000</td>
-                </tr>
+               <thead>
+                   <tr>
+                       <th>Attack ID</th>
+                       <th>Positions</th>
+                       <th>Power</th>
+                       <th>Price</th>
+                       <th>Level Needed</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr v-for="item in attackData" :key="item.attack_ID">
+                       <td>{{ item.attack_ID }}</td>
+                       <td>{{ item.positions }}</td>
+                       <td>{{ item.power }}</td>
+                       <td>{{ item.price }}</td>
+                       <td>{{ item.level_needed }}</td>
+                   </tr>
+               </tbody>
             </table>
         </div>
     </div>
