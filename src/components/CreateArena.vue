@@ -41,7 +41,7 @@
     <Header title="Create Game"></Header>
 
     <div class="row">
-      <div class="col-4">
+      <div class="col-4 col-s-12">
         <form style="display: flex; flex-direction: column">
           <input type="text" placeholder="game_ID" name="game_ID" v-model="game_ID">
           <input type="number" placeholder="0" name="size" v-model="size">
@@ -53,7 +53,7 @@
         <p>{{ response }}</p>
       </div>
 
-      <div class="col-8 grid">
+      <div class="col-8 col-s-12 grid">
 
       </div>
     </div>
