@@ -7,7 +7,8 @@
     export default {
         data() {
             return {
-                attackData: []
+                attackData: [],
+                response: ""
             };
         },
         mounted() {
