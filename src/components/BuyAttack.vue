@@ -20,6 +20,7 @@
                     const data = await fetch("http://balandrau.salle.url.edu/i3/shop/attacks", {
                         method: 'GET',
                         headers: {
+                            'Bearer': this.$root.token,
                             'Content-Type': 'application/json'
                         }
                     });

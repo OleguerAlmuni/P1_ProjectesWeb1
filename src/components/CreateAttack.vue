@@ -20,6 +20,7 @@
                 fetch("http://balandrau.salle.url.edu/i3/shop/attacks", {
                     method: 'POST',
                     headers: {
+                        'Bearer': this.$root.token,
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(attack)
@@ -67,10 +68,10 @@
 <template>
     <Header title="CreateAttack"></Header>
     <div class="row">
-        <form class="col-4 col-s-12">
+        <form class="column col-6 col-s-12">
             <h2>Create</h2>
             <label for="Attack"></label>
-            <input type="text" id="Attack" name="Attack" placeholder="Atackk" v-model="attack_ID">
+            <input type="text" id="Attack" name="Attack" placeholder="Attack" v-model="attack_ID">
             <input type="file" id="fileInput">
             <section v-if="img">
                 <img :src="img" alt="Uploaded Image">
@@ -78,16 +79,16 @@
             <button type="button" v-on:click.prevent="createAttack()" class="click-button">Create for: 000,000</button>
             <p>{{ response }}</p>
         </form>
-        <form class="col-8 col-s-12">
+        <form class="col-6 col-s-12">
             <section class="cross-form">
-                <button class="btn" @click="setPosition(0,1)"></button>
+                <button class="btn" type="button"  @click="setPosition(0,1)"></button>
                 <section class="middle">
-                    <button class="btn" @click ="setPosition(-1,0)"></button>
-                    <button class="btn" @click ="setPosition(1,0)"></button>
+                    <button class="btn" type="button" @click ="setPosition(-1,0)"></button>
+                    <button class="btn" type="button" @click ="setPosition(1,0)"></button>
                 </section>
-                <button class="btn" @click ="setPosition(0,-1)"></button>
+                <button class="btn" type="button" @click ="setPosition(0,-1)"></button>
             </section>
-            <p> {{positions }} </p>
+            <p> {{ positions }} </p>
         </form>
     </div>
 </template>
