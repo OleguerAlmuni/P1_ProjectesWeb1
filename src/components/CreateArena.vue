@@ -5,9 +5,9 @@
     components: {Header},
     data() {
       return {
-        game_ID: String,
-        size: Number,
-        HP_max: Number,
+        game_ID: "",
+        size: 2,
+        HP_max: 50,
       }
     },
     methods: {
@@ -37,15 +37,17 @@
 </script>
 
 <template>
-  <main style="display: flex; flex-direction: column">
     <Header title="Create Game"></Header>
 
     <div class="row">
-      <div class="col-4 col-s-12">
-        <form style="display: flex; flex-direction: column">
-          <input type="text" placeholder="game_ID" name="game_ID" v-model="game_ID">
-          <input type="number" placeholder="0" name="size" v-model="size">
-          <input type="number" placeholder="0" name="HP_max" v-model="HP_max">
+        <div class="col-4 col-s-12">
+        <form>
+          <label for="game_ID">Game ID</label>
+          <input type="text" id="game_ID" name="game_ID" v-model="game_ID">
+          <label for="size">Board Size</label>
+          <input type="number" id="size" name="size" min="2" max="10" v-model="size">
+          <label for="HP_max">Maximum HP</label>
+          <input type="number" id="HP_max" name="HP_max" min="50" max="200" v-model="HP_max">
 
           <input type="submit" v-on:click.prevent="createArena()" value="Create Game">
         </form>
@@ -57,10 +59,29 @@
 
       </div>
     </div>
-  </main>
 </template>
 
 <style scoped>
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  input[type=submit] {
+    margin: auto;
+    width: 50%;
+    background-color: #0bbaff;
+    border: 2px solid #242424;
+    color: white;
+    cursor: pointer;
+    padding: 16px 32px;
+  }
+
+  input[type=number] {
+
+  }
 
   .grid {
     display: grid;
