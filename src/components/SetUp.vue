@@ -5,7 +5,7 @@
 <template>
     <h1>Game Title</h1>
     <div>
-        <router-link to="/createAccount">
+        <router-link to="/register">
             <button>Sign Up</button>
         </router-link>
         <router-link to="/login">
