@@ -24,6 +24,8 @@ export default {
           .then((res) => {
             if (res.error == undefined) {
               this.response = "Token: " + res.token;
+              this.$root.player_ID = res.player_ID;
+              this.$root.token = res.token;
               this.$router.push("/home");
             } else {
               this.response = res.error.message;
@@ -103,34 +105,4 @@ export default {
             justify-content: center;
         }
 
-    .flex-component {
-        display: flex;
-        justify-content: center;
-    }
-
-        .flex-component.left {
-            justify-content: left;
-        }
-
-        .flex-component.right {
-            justify-content: right;
-        }
-
-    .click-button {
-        font-family: Inter;
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-        .click-button:hover {
-            background-color: #45a049;
-        }
-
-        .click-button:active {
-            background-color: #3e8e41;
-        }
 </style>

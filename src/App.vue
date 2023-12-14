@@ -1,5 +1,12 @@
-<script setup>
-    import SetUp from './components/SetUp.vue'
+<script>
+    export default {
+      data() {
+        return {
+          player_ID: "",
+          token: ""
+        }
+      }
+    }
 </script>
 
 <template>
