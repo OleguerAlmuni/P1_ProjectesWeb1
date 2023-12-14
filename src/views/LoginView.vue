@@ -25,7 +25,9 @@ export default {
             if (res.error == undefined) {
               this.response = "Token: " + res.token;
               this.$root.player_ID = res.player_ID;
+              localStorage.player_ID = res.player_ID;
               this.$root.token = res.token;
+              localStorage.token = res.token;
               this.$router.push("/home");
             } else {
               this.response = res.error.message;
