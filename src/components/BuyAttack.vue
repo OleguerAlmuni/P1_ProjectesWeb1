@@ -17,21 +17,26 @@
         methods: {
             async showAvailableAttacks() {
                 try {
-                    const response = await fetch("http://balandrau.salle.url.edu/shop/attacks", {
+                    const data = await fetch("http://balandrau.salle.url.edu/i3/shop/attacks", {
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json'
                         }
                     });
 
-                    if (response.ok) {
-                        const data = await response.json();
-                        this.attackData = data;
-                    } else {
-                        console.error("Failed to fetch data");
+                    if(!data.ok) {
+                        this.response = 'Network response was not ok';
                     }
+                    const data2 = await data.json(); // Parse response data as JSON
+                    if (Array.isArray(data)) {
+                        // Assuming the response is an array of attack objects
+                        this.attacksData = data2;
+                    } else {
+                        this.response = 'Invalid data format:';
+                    }
+
                 } catch (error) {
-                    console.error("Error fetching data:", error);
+                    this.response = "Error fetching data:";
                 }
             }
         }
@@ -41,13 +46,17 @@
 
 <template>
     <Header title="Buy Attack"></Header>
-    <div class="container">
-        <div class="left-container center">
-            <h2>Buy</h2>
-            <Backpack></Backpack>
-            <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy for: 000,000</button>
+    <div class="row">
+        <div  class="col-4 col-s-12">
+            <form style="display: flex; flex-direction: column">
+                <h2>Buy</h2>
+                <p>{{attackData}}</p>
+                <p>{{response}}</p>
+                <Backpack></Backpack>
+                <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy for: 000,000</button>
+            </form>
         </div>
-        <div class="right-container">
+        <div class="col-8 col-s-12">
             <table>
                <thead>
                    <tr>

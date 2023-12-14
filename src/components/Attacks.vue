@@ -23,10 +23,9 @@
         },
         methods: {
             showAttacks() {
-                fetch('http://balandrau.salle.url.edu/players/attacks', {
+                fetch('http://balandrau.salle.url.edu/i3/players/attacks', {
                     method: 'GET',
                     headers: {
-                        'Authorization': 'Bearer ${token}',
                         'Content-Type': 'application/json'
                     }
                 })
@@ -64,17 +63,19 @@
 
 <template>
     <Header title="Attacks"></Header>
-    <header>
-        <h1>Attacks</h1>
-    </header>
+    <div class="row">
+        <header>
+            <h1>Attacks</h1>
+        </header>
 
-    <section class="equipped-attacks">
-        <h2>Equipped Attacks</h2>
-    </section>
+        <section class="equipped-attacks">
+            <h2>Equipped Attacks</h2>
+        </section>
 
-    <section class="backpack">
-        <h2>Backpack</h2>
-    </section>
+        <section class="backpack">
+            <h2>Backpack</h2>
+        </section>
+    </div>
 
 </template>
 

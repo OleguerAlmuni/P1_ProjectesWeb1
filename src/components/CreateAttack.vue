@@ -8,34 +8,36 @@
     export default {
         data() {
             return {
-                "player_ID": "",
                 "attack_ID": "",
                 "positions": "",
-                "img": null,
+                "img": "",
                 "preview": null,
             }
         },
         methods: {
             createAttack() {
                 const attack = { attack_ID: this.attack_ID, positions: this.positions, img: this.img };
-                fetch("http://balandrau.salle.url.edu/shop/attacks", {
+                fetch("http://balandrau.salle.url.edu/i3/shop/attacks", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(attack)
 
-                }).then((response) => response.json())
-                    .then((res) => {
-                        if (res.error == undefined) {
-                            this.response = "Token: " + res.token;
-                        } else {
-                            this.response = res.error.message;
-                        }
+                }).then((response) => {
+                    if (response.ok) {
+                        this.response = "Attack created!";
+                        return response;
+                    }
 
-                    }).catch(error => {
-                        this.response = "Lost API connection :(";
-                    });
+                    return response.json();
+                }).then((res) => {
+                    if (res.ok == undefined) {
+                        this.response = res.error.message;
+                    }
+                }).catch((error) => {
+                    this.response = "No connection with API";
+                });
             },
 
             onFileChange(event) {
@@ -43,19 +45,15 @@
                 this.previewImage(file);
             },
             previewImage(file) {
-                // Check if the file is an image
                 if (!file || !file.type.match('image.*')) {
                     return;
                 }
-                // Use FileReader to read file data as a URL
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
-                    // Set the image URL to display the uploaded image
                     this.img = e.target.result;
                 };
 
-                // Read the file as a data URL
                 reader.readAsDataURL(file);
             },
 
@@ -68,17 +66,19 @@
 
 <template>
     <Header title="CreateAttack"></Header>
-    <div class="container">
-        <section class="left-container center">
+    <div class="row">
+        <form class="col-4 col-s-12">
             <h2>Create</h2>
-            <input type="file" @change="onFileChange">
+            <label for="Attack"></label>
+            <input type="text" id="Attack" name="Attack" placeholder="Atackk" v-model="attack_ID">
+            <input type="file" id="fileInput">
             <section v-if="img">
-              <img :src="img" alt="Uploaded Image">
+                <img :src="img" alt="Uploaded Image">
             </section>
             <button type="button" v-on:click.prevent="createAttack()" class="click-button">Create for: 000,000</button>
             <p>{{ response }}</p>
-        </section>
-        <section class="right-container">
+        </form>
+        <form class="col-8 col-s-12">
             <section class="cross-form">
                 <button class="btn" @click="setPosition(0,1)"></button>
                 <section class="middle">
@@ -88,7 +88,7 @@
                 <button class="btn" @click ="setPosition(0,-1)"></button>
             </section>
             <p> {{positions }} </p>
-        </section>
+        </form>
     </div>
 </template>
 
