@@ -7,19 +7,23 @@
       return {
         game_ID: "",
         size: 2,
-        HP_max: 50,
+        HP_max: 15,
       }
     },
     methods: {
       createArena() {
-        const createArenaRequest = { game_ID: this.game_ID, size: this.size, HP_max: this.HP_max};
+        const createArenaRequest = { game_ID: this.game_ID, size: this.size, HP_max: this.HP_max };
         fetch("https://balandrau.salle.url.edu/i3/arenas", {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Bearer' : this.$root.token,
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify(createArenaRequest)
         }).then((response) => {
           if (response.ok) {
             this.response = "Arena created!";
+            this.$router.push('/playGame');
             return response;
           }
 
@@ -47,7 +51,7 @@
           <label for="size">Board Size</label>
           <input type="number" id="size" name="size" min="2" max="10" v-model="size">
           <label for="HP_max">Maximum HP</label>
-          <input type="number" id="HP_max" name="HP_max" min="50" max="200" v-model="HP_max">
+          <input type="number" id="HP_max" name="HP_max" min="15" v-model="HP_max">
 
           <input type="submit" v-on:click.prevent="createArena()" value="Create Game">
         </form>

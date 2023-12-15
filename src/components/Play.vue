@@ -1,106 +1,106 @@
 <script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
+import { ref } from 'vue'
+import Header from '../components/Header.vue'
 </script>
 
 <template>
-    <Header title=""></Header>
-    <br />
-    <div class="components">
-        <div class="left-components">
-            <nav>
-                <router-link to="/createGame"><button class="create-game-button">Create Game</button></router-link>
-            </nav>
-        </div>
-        <div class="right-components">
-            <nav>
-                <router-link to="/AvailableGames"><button class="available-games-button">Available Games</button></router-link>
-            </nav>
-            <br />
-            <nav>
-                <router-link to="/gameFinder"><button class="game-finder-button">Game Finder</button></router-link>
-            </nav>
-        </div>
+  <Header title=""></Header>
+  <br />
+  <div class="components">
+    <div class="left-components">
+      <nav>
+        <router-link to="/createGame"><button class="create-game-button">Create Game</button></router-link>
+      </nav>
     </div>
+    <div class="right-components">
+      <nav>
+        <router-link to="/AvailableGames"><button class="available-games-button">Available Games</button></router-link>
+      </nav>
+      <br />
+      <nav>
+        <router-link to="/gameFinder"><button class="game-finder-button">Game Finder</button></router-link>
+      </nav>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-    @media only screen and (min-width: 768px) {
-        .left-components {
-            width: 95%;
-            height: 50%;
-        }
+@media only screen and (min-width: 768px) {
+  .left-components {
+    width: 95%;
+    height: 50%;
+  }
 
-        .right-components {
-            width: 95%;
-            height: 30%;
-        }
-    }
-    .components {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-    }
+  .right-components {
+    width: 95%;
+    height: 30%;
+  }
+}
+.components {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
-    .left-components {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        padding-right: 5%;
-    }
+.left-components {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-right: 5%;
+}
 
-    .right-components {
-        padding-left: 5%;
-    }
+.right-components {
+  padding-left: 5%;
+}
 
-    .create-game-button {
-        width: 400px;
-        height: 620px;
-        font-family: Inter;
-        font-size: 64px;
-        font-style: normal;
-        background-color: #4CAF50;
-        color: white;
-    }
-        .create-game-button:hover {
-            background-color: #45a049;
-        }
+.create-game-button {
+  width: 400px;
+  height: 620px;
+  font-family: Inter;
+  font-size: 64px;
+  font-style: normal;
+  background-color: #4CAF50;
+  color: white;
+}
+.create-game-button:hover {
+  background-color: #45a049;
+}
 
-        .create-game-button:active {
-            background-color: #3e8e41;
-        }
+.create-game-button:active {
+  background-color: #3e8e41;
+}
 
-    .available-games-button {
-        width: 400px;
-        height: 300px;
-        font-family: Inter;
-        font-size: 64px;
-        font-style: normal;
-        background-color: #4CAF50;
-        color: white;
-    }
-        .available-games-button:hover {
-            background-color: #45a049;
-        }
+.available-games-button {
+  width: 400px;
+  height: 300px;
+  font-family: Inter;
+  font-size: 64px;
+  font-style: normal;
+  background-color: #4CAF50;
+  color: white;
+}
+.available-games-button:hover {
+  background-color: #45a049;
+}
 
-        .available-games-button:active {
-            background-color: #3e8e41;
-        }
+.available-games-button:active {
+  background-color: #3e8e41;
+}
 
-    .game-finder-button {
-        width: 400px;
-        height: 300px;
-        font-family: Inter;
-        font-size: 64px;
-        font-style: normal;
-        background-color: #4CAF50;
-        color: white;
-    }
-        .game-finder-button:hover {
-            background-color: #45a049;
-        }
+.game-finder-button {
+  width: 400px;
+  height: 300px;
+  font-family: Inter;
+  font-size: 64px;
+  font-style: normal;
+  background-color: #4CAF50;
+  color: white;
+}
+.game-finder-button:hover {
+  background-color: #45a049;
+}
 
-        .game-finder-button:active {
-            background-color: #3e8e41;
-        }
+.game-finder-button:active {
+  background-color: #3e8e41;
+}
 </style>
