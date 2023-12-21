@@ -20,9 +20,9 @@ export default {
     }).then((response) => response.json())
         .then((res) => {
           if (res.error == undefined) {
-            for (let game in res) {
-              if (res[game].finished == false) {
-                this.arenas.push(res[game]);
+            for (let i in res) {
+              if (res[i].finished == false) {
+                this.arenas.push(res[i]);
               }
             }
             console.log("Game Info Loaded!")

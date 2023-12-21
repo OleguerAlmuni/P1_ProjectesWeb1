@@ -54,7 +54,7 @@ export default {
                     console.log(this.player1_attacks);
 
                     // Here we fetch the equipped attacks from player 2 and store them for easier access.
-                    fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[1].player_ID + "/attacks", {
+                    fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[0].player_ID + "/attacks", {
                       method: 'GET',
                       headers: {
                         'Bearer' : this.$root.token,
@@ -64,8 +64,8 @@ export default {
                         .then((res) => {
                           if (res.error == undefined) {
                             this.getEquippedAttacks(res, this.player2_attacks);
-                            console.log("Player 2 attacks loaded!");
                             console.log(this.player2_attacks);
+                            console.log("Player 2 attacks loaded!");
                           } else {
                             console.log("Load attacks 2 ERROR!");
                           }
@@ -81,7 +81,10 @@ export default {
   },
   methods: {
     getEquippedAttacks(attack_array, equipped_attacks) {
+      console.log("Equipped Attacks:");
+      console.log(attack_array);
       for (let attack in attack_array) {
+        console.log(attack);
         if (attack.equipped == true) {
           equipped_attacks.push(attack);
         }
@@ -103,12 +106,31 @@ export default {
             }
           })
     },
+    leaveGame() {
+      fetch("https://balandrau.salle.url.edu/i3/arenas/" + this.game_ID + "/play", {
+        method: 'DELETE',
+        headers: {
+          'Bearer' : this.$root.token,
+          'Content-Type' : "application/json"
+        }
+      }).then((response) => response.json())
+          .then((res) => {
+            if (res.error == undefined) {
+              console.log("You successfully left the game.")
+              this.$router.push('/home');
+            } else {
+              console.log("ERROR when leaving the game.")
+            }
+          })
+    }
   }
 }
 </script>
 
 <template>
-
+  <header>
+    <button v-on:click.prevent="leaveGame()">Leave Game</button>
+  </header>
 </template>
 
 <style scoped>
