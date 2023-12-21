@@ -12,7 +12,7 @@
             return {
                 "attack_ID": "",
                 "positions": "",
-                "img": null,
+                "img": "",
                 "ppower": 0,
                 "equipped": false,
                 "on_sale": false,
@@ -46,7 +46,14 @@
                         data.forEach(attack => {
                             const button = document.createElement('button');
                             button.classList.add('click-small-button');
-                            button.textContent = `Attack ${attack.attack_ID}`;
+                            button.textContent = `${attack.attack_ID}`;
+
+                            // Set the background image of the button
+                            console.log(attack.img);
+                            button.style.backgroundImage = attack.img; // Reemplaza con la ruta de tu imagen
+                            button.style.backgroundSize = 'cover'; // Ajusta el tamaño de la imagen al botón
+                            button.style.backgroundRepeat = 'no-repeat'; // Evita que la imagen se repita
+
                             button.click = 
                             // Add event listeners or any other functionality to the buttons if needed
                             button.addEventListener('click', () => {
@@ -76,9 +83,7 @@
 
 <template>
     <Header title="Attacks"></Header>
-    <div class="row">
-        <p>{{displayActionWindow}}</p>
-        <Attack v-if="displayActionWindow" @show-action-window="showActionWindow"></Attack>
+    <section class="row">
         <header>
             <h1>Attacks</h1>
         </header>
@@ -90,7 +95,7 @@
         <section class="backpack">
             <h2>Backpack</h2>
         </section>
-    </div>
+    </section>
 
 </template>
 
