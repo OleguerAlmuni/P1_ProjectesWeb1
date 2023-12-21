@@ -8,7 +8,8 @@
         data() {
             return {
                 attackData: [],
-                response: ""
+                response: "",
+                attack_IW: "Atac1"
             };
         },
         mounted() {
@@ -19,22 +20,38 @@
                     'Content-Type': 'application/json'
                 },
                 
-            }).then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
-                return response;
-            }).then((res) => {
-                if (res.ok == undefined) {
-                    this.response = res.error.message;
-                }
-                this.attackData = res;
-            }).catch((error) => {
-                this.response = "No conection with API";
-            });
+            }).then((response) => response.json())
+                .then((res) => {
+                    if (res.error == undefined) {
+                        this.attackData = res;
+                        console.log("GG");
+                    } else {
+                        console.log("ERROR!");
+                    }
+                })
         },
         methods: {
-            
+            buyAttack() {
+                fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack_IW + "/buy", {
+                    method: 'POST',
+                    headers: {
+                        'Bearer': this.$root.token,
+                        'Content-Type': 'application/json'
+                    },
+                }).then((response) => {
+                    if (response.ok) {
+                        this.response = "Attack bought!";
+                        return response;
+                    }
+                    return response.json();
+                }).then((res) => {
+                    if (res.ok == undefined) {
+                        this.response = res.error.message;
+                    }
+                }).catch((error) => {
+                    this.response = "No connection with API";
+                });
+            }
         }
         
     }
@@ -47,8 +64,6 @@
         <div  class="col-4 col-s-12">
             <form style="display: flex; flex-direction: column">
                 <h2>Buy</h2>
-                <p>{{attackData}}</p>
-                <p>{{response}}</p>
                 <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy for: 000,000</button>
             </form>
         </div>
