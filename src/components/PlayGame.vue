@@ -14,6 +14,11 @@ export default {
     }
   },
   mounted() {
+
+    /*
+    This first fetch is to load the player's current game, as it is the only game that
+    they can play.
+     */
     fetch("https://balandrau.salle.url.edu/i3/players/arenas/current", {
       method: 'GET',
       headers: {
@@ -31,10 +36,13 @@ export default {
             this.start = res.start;
             this.players = res.players_games;
             console.log("Game Info Loaded!")
+            console.log(this.game_ID);
           } else {
             console.log("Game Info ERROR!");
           }
         })
+
+    // Here we fetch the equipped attacks from player 1 (the user) and store them for easier access.
     fetch("https://balandrau.salle.url.edu/i3/players/attacks", {
       method: 'GET',
       headers: {
@@ -50,6 +58,8 @@ export default {
             console.log("Load attacks 1 ERROR!");
           }
         })
+
+    // Here we fetch the equipped attacks from player 2 and store them for easier access.
     fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[1].player_ID + "/attacks", {
       method: 'GET',
       headers: {
@@ -68,11 +78,9 @@ export default {
   },
   methods: {
     getEquippedAttacks(attack_array, equipped_attacks) {
-      attack_array.forEach(selectEquipped());
-
-      function selectEquipped(attack) {
+      for (let attack in attack_array) {
         if (attack.equipped == true) {
-          equipped_attacks.push(attack.attack_ID);
+          equipped_attacks.push(attack);
         }
       }
     },

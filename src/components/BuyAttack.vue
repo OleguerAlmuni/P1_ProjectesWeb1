@@ -1,65 +1,69 @@
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-</script>
-
 <script>
-    export default {
-        data() {
-            return {
-                attackData: [],
-                response: "",
-                attack_IW: "Atac1"
-            };
-        },
-        mounted() {
-            fetch("https://balandrau.salle.url.edu/i3/shop/attacks", {
-                method: 'GET',
-                headers: {
-                    'Bearer': this.$root.token,
-                    'Content-Type': 'application/json'
-                },
-                
-            }).then((response) => response.json())
-                .then((res) => {
-                    if (res.error == undefined) {
-                        this.attackData = res;
-                        console.log("GG");
-                    } else {
-                        console.log("ERROR!");
-                    }
-                })
-        },
-        methods: {
-            buyAttack() {
-                fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack_IW + "/buy", {
-                    method: 'POST',
-                    headers: {
-                        'Bearer': this.$root.token,
-                        'Content-Type': 'application/json'
-                    },
-                }).then((response) => {
-                    if (response.ok) {
-                        this.response = "Attack bought!";
-                        return response;
-                    }
-                    return response.json();
-                }).then((res) => {
-                    if (res.ok == undefined) {
-                        this.response = res.error.message;
-                    }
-                }).catch((error) => {
-                    this.response = "No connection with API";
-                });
-            }
-        }
-        
-    }
-</script>
 
+import {defineComponent} from "vue";
+import Header from "./Header.vue";
+import buyAttack from "./BuyAttack.vue";
+
+export default defineComponent({
+  computed: {
+    buyAttack() {
+      return buyAttack
+    }
+  },
+  components: {Header},
+  data() {
+    return {
+      attackData: [],
+      response: "",
+      attack_IW: "Atac1"
+    };
+  },
+  mounted() {
+    fetch("https://balandrau.salle.url.edu/i3/shop/attacks", {
+      method: 'GET',
+      headers: {
+        'Bearer': this.$root.token,
+        'Content-Type': 'application/json'
+      },
+
+    }).then((response) => response.json())
+        .then((res) => {
+          if (res.error == undefined) {
+            this.attackData = res;
+            console.log("GG");
+          } else {
+            console.log("ERROR!");
+          }
+        })
+  },
+  methods: {
+    buyAttack() {
+      fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack_IW + "/buy", {
+        method: 'POST',
+        headers: {
+          'Bearer': this.$root.token,
+          'Content-Type': 'application/json'
+        },
+      }).then((response) => {
+        if (response.ok) {
+          this.response = "Attack bought!";
+          return response;
+        }
+        return response.json();
+      }).then((res) => {
+        if (res.ok == undefined) {
+          this.response = res.error.message;
+        }
+      }).catch((error) => {
+        this.response = "No connection with API";
+      });
+    }
+  }
+})
+</script>
 
 <template>
-    <Header title="Buy Attack"></Header>
+    <Header title="Buy Attacks"></Header>
     <div class="row">
         <div  class="col-4 col-s-12">
             <form style="display: flex; flex-direction: column">
