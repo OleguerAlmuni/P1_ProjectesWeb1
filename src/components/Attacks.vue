@@ -48,19 +48,13 @@
                             button.classList.add('click-small-button');
                             button.textContent = `${attack.attack_ID}`;
 
-                            // Set the background image of the button
-                            console.log(attack.img);
-                            button.style.backgroundImage = attack.img; // Reemplaza con la ruta de tu imagen
-                            button.style.backgroundSize = 'cover'; // Ajusta el tamaño de la imagen al botón
-                            button.style.backgroundRepeat = 'no-repeat'; // Evita que la imagen se repita
-
                             button.click = 
                             // Add event listeners or any other functionality to the buttons if needed
                             button.addEventListener('click', () => {
                                 //this.$emit('show-action-window');
                                 this.$router.push({
                                     name: 'attack',
-                                    params: { attack_ID: attack.attack_ID } // Replace with your desired parameters
+                                    param: { attack_ID: attack.attack_ID } // Replace with your desired parameters
                                 });
                                 console.log("HIHIHI");
                             });

@@ -6,7 +6,7 @@
         },*/
         data() {
             return {
-                attack_ID: "Atac1",
+                attack_ID: "",
                 response: "",
                 price: 1000,
             }
@@ -87,7 +87,7 @@
 <template>
     <div class="action-window">
         <p>{{attack_ID}}</p>
-        <p>{{response}}</p>
+        <p>{{ata}}</p>
         <button @click="equipItem">Equip</button>
         <button @click="disequipItem">Disequip</button>
         <button @click="sellItem">Sell</button>
