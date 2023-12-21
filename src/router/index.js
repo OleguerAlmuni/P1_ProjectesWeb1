@@ -15,8 +15,9 @@ import GameHistory from '../components/GameHistory.vue'
 import Profile from '../components/Profile.vue'
 import Play from '../components/Play.vue'
 import SellAttack from '../components/SellAttack.vue'
-import RegisterView from "../views/RegisterView.vue";
-import CreateArena from "../components/CreateArena.vue";
+import RegisterView from "../views/RegisterView.vue"
+import CreateArena from "../components/CreateArena.vue"
+import Attack from "../components/Attack.vue"
 
 
 const routes = [
@@ -37,6 +38,7 @@ const routes = [
     { path: '/profile', component: Profile },
     { path: '/play', component: Play },
     { path: '/store/sellAttack', component: SellAttack },
+    { path: '/attacks/attack', name: 'attack', component: Attack },
 ]
 
 const router = createRouter({

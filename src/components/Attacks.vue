@@ -1,6 +1,7 @@
 <script setup>
     import { ref } from 'vue'
     import Header from '../components/Header.vue'
+    import Attack from '../components/Attack.vue'
 </script>
 
 
@@ -15,6 +16,8 @@
                 "ppower": 0,
                 "equipped": false,
                 "on_sale": false,
+
+                displayActionWindow: false,
             }
         },
 
@@ -22,8 +25,13 @@
             this.showAttacks();
         },
         methods: {
+            showActionWindow() {
+                console.log("SI");
+                this.displayActionWindow = true;
+            },
+
             showAttacks() {
-                fetch('http://balandrau.salle.url.edu/i3/players/attacks', {
+                fetch('https://balandrau.salle.url.edu/i3/players/attacks', {
                     method: 'GET',
                     headers: {
                         'Bearer': this.$root.token,
@@ -39,11 +47,15 @@
                             const button = document.createElement('button');
                             button.classList.add('click-small-button');
                             button.textContent = `Attack ${attack.attack_ID}`;
-
+                            button.click = 
                             // Add event listeners or any other functionality to the buttons if needed
                             button.addEventListener('click', () => {
-                                // Do something when the button is clicked
-                                console.log(`Attack ${attack.attack_ID} clicked`);
+                                //this.$emit('show-action-window');
+                                this.$router.push({
+                                    name: 'attack',
+                                    params: { attack_ID: attack.attack_ID } // Replace with your desired parameters
+                                });
+                                console.log("HIHIHI");
                             });
 
                             if (attack.equipped) {
@@ -65,6 +77,8 @@
 <template>
     <Header title="Attacks"></Header>
     <div class="row">
+        <p>{{displayActionWindow}}</p>
+        <Attack v-if="displayActionWindow" @show-action-window="showActionWindow"></Attack>
         <header>
             <h1>Attacks</h1>
         </header>

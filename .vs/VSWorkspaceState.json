@@ -7,6 +7,6 @@
     "\\src\\router",
     "\\src\\views"
   ],
-  "SelectedNode": "\\src\\views\\StartScreen.vue",
+  "SelectedNode": "\\src\\router\\index.js",
   "PreviewInSolutionExplorer": false
 }

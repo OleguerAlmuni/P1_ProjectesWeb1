@@ -12,35 +12,31 @@
             };
         },
         mounted() {
-            this.showAvailableAttacks();
+            fetch("https://balandrau.salle.url.edu/i3/shop/attacks", {
+                method: 'GET',
+                headers: {
+                    'Bearer': this.$root.token,
+                    'Content-Type': 'application/json'
+                },
+                
+            }).then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return response;
+            }).then((res) => {
+                if (res.ok == undefined) {
+                    this.response = res.error.message;
+                }
+                this.attackData = res;
+            }).catch((error) => {
+                this.response = "No conection with API";
+            });
         },
         methods: {
-            async showAvailableAttacks() {
-                try {
-                    const data = await fetch("http://balandrau.salle.url.edu/i3/shop/attacks", {
-                        method: 'GET',
-                        headers: {
-                            'Bearer': this.$root.token,
-                            'Content-Type': 'application/json'
-                        }
-                    });
-
-                    if(!data.ok) {
-                        this.response = 'Network response was not ok';
-                    }
-                    const data2 = await data.json(); // Parse response data as JSON
-                    if (Array.isArray(data)) {
-                        // Assuming the response is an array of attack objects
-                        this.attacksData = data2;
-                    } else {
-                        this.response = 'Invalid data format:';
-                    }
-
-                } catch (error) {
-                    this.response = "Error fetching data:";
-                }
-            }
+            
         }
+        
     }
 </script>
 
@@ -53,7 +49,6 @@
                 <h2>Buy</h2>
                 <p>{{attackData}}</p>
                 <p>{{response}}</p>
-                <Backpack></Backpack>
                 <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy for: 000,000</button>
             </form>
         </div>
