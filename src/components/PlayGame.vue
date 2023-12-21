@@ -1,144 +1,105 @@
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-    import Table from '../components/Table.vue'
+<script>
+export default {
+  data() {
+    return {
+      game_ID: "",
+      size: 0,
+      creation_date: "",
+      finished: false,
+      HP_max: 0,
+      start: true,
+      players: [],
+      player1_attacks: [],
+      player2_attacks: [],
+    }
+  },
+  mounted() {
+    fetch("https://balandrau.salle.url.edu/i3/players/arenas/current", {
+      method: 'GET',
+      headers: {
+        'Bearer' : this.$root.token,
+        'Content-Type' : "application/json"
+      }
+    }).then((response) => response.json())
+        .then((res) => {
+          if (res.error == undefined) {
+            this.game_ID = res.game_ID;
+            this.size = res.size;
+            this.creation_date = res.creation_date;
+            this.finished = res.finished;
+            this.HP_max = res.HP_max;
+            this.start = res.start;
+            this.players = res.players_games;
+            console.log("Game Info Loaded!")
+          } else {
+            console.log("Game Info ERROR!");
+          }
+        })
+    fetch("https://balandrau.salle.url.edu/i3/players/attacks", {
+      method: 'GET',
+      headers: {
+        'Bearer' : this.$root.token,
+        'Content-Type' : "application/json"
+      }
+    }).then((response) => response.json())
+        .then((res) => {
+          if (res.error == undefined) {
+            this.getEquippedAttacks(res, this.player1_attacks);
+            console.log("Player 1 attacks loaded!");
+          } else {
+            console.log("Load attacks 1 ERROR!");
+          }
+        })
+    fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[1].player_ID + "/attacks", {
+      method: 'GET',
+      headers: {
+        'Bearer' : this.$root.token,
+        'Content-Type' : "application/json"
+      }
+    }).then((response) => response.json())
+        .then((res) => {
+          if (res.error == undefined) {
+            this.getEquippedAttacks(res, this.player2_attacks);
+            console.log("Player 2 attacks loaded!");
+          } else {
+            console.log("Load attacks 2 ERROR!");
+          }
+        })
+  },
+  methods: {
+    getEquippedAttacks(attack_array, equipped_attacks) {
+      attack_array.forEach(selectEquipped());
+
+      function selectEquipped(attack) {
+        if (attack.equipped == true) {
+          equipped_attacks.push(attack.attack_ID);
+        }
+      }
+    },
+    move(direction) {
+      const movementRequest = { movement: direction };
+      fetch("https://balandrau.salle.url.edu/i3/players/arenas/move", {
+        method: 'POST',
+        headers: {
+          'Bearer' : this.$root.token,
+          'Content-Type' : "application/json"
+        },
+        body: JSON.stringify(movementRequest)
+      }).then((response) => response.json())
+          .then((res) => {
+            if (res.error == undefined) {
+              //update de la posició?
+            }
+          })
+    },
+  }
+}
 </script>
 
 <template>
-    <Header title="Play Game"></Header>
-    <br />
-    <div class="players">
-        <section class="row">
-            <div class="icon"></div>
-            <section class="column">
-                <h2>Player1</h2>
-                <h2>HP: #00</h2>
-            </section>
-        </section>
-        <div class="row-reverse">
-            <section class="icon"></section>
-            <section class="column">
-                <h2>Player2</h2>
-                <h2>HP: #00</h2>
-            </section>
-        </div>
-    </div>
-    <div class="container">
-        <section class="column">
-            <section class="container">
-                <button class="click-button">Attack1</button>
-            </section>
-            <section class="container">
-                <button class="click-button">Attack2</button>
-            </section>
-            <section class="container">
-                <button class="click-button">Attack3</button>
-            </section>
-        </section>
-        <Table></Table>
-        <div class="column">
-            <section class="container">
-                <button class="click-button">Attack1</button>
-            </section>
-            <section class="container">
-                <button class="click-button">Attack2</button>
-            </section>
-            <section class="container">
-                <button class="click-button">Attack3</button>
-            </section>
-        </div>
-    </div>
-</template>
 
+</template>
 
 <style scoped>
 
-
-    .players {
-        display: flex;
-        align-content: center;
-        justify-content: space-evenly;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .row-reverse {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-
-    .column {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .icon {
-        width: 70px;
-        height: 70px;
-        background-color: #4CAF50;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-
-    .left-content {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .right-content {
-        padding: 20px;
-    }
-
-    .spacing {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-
-    .center {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .circle {
-        background: lightblue;
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-    }
-
-    .click-button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-        background: lightblue;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-    }
-
-        .click-button:hover {
-            background-color: #45a049;
-        }
-
-        .click-button:active {
-            background-color: #3e8e41;
-        }
 </style>

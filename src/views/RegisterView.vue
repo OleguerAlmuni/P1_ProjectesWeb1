@@ -10,6 +10,7 @@ export default {
       playerName: "",
       password: "",
       img: "",
+      response: "",
     }
   },
   methods: {
@@ -22,7 +23,6 @@ export default {
       }).then((response) => {
         if (response.ok) {
           this.response = "Player created!";
-          this.$router.push("/home");
           return response;
         }
 
@@ -34,7 +34,7 @@ export default {
       }).catch((error) => {
         this.response = "No connection with API";
       });
-    }
+    },
   }
 }
 </script>
