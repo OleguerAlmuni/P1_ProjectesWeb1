@@ -28,51 +28,54 @@ export default {
     }).then((response) => response.json())
         .then((res) => {
           if (res.error == undefined) {
-            this.game_ID = res.game_ID;
-            this.size = res.size;
-            this.creation_date = res.creation_date;
-            this.finished = res.finished;
-            this.HP_max = res.HP_max;
-            this.start = res.start;
-            this.players = res.players_games;
-            console.log("Game Info Loaded!")
-            console.log(this.game_ID);
+            let game = res[0];
+            this.game_ID = game.game_ID;
+            this.size = game.size;
+            this.creation_date = game.creation_date;
+            this.finished = game.finished;
+            this.HP_max = game.HP_max;
+            this.start = game.start;
+            this.players = game.players_games;
+
+            console.log("Game Info Loaded!");
+
+            // Here we fetch the equipped attacks from player 1 (the user) and store them for easier access.
+            fetch("https://balandrau.salle.url.edu/i3/players/attacks", {
+              method: 'GET',
+              headers: {
+                'Bearer' : this.$root.token,
+                'Content-Type' : "application/json"
+              }
+            }).then((response) => response.json())
+                .then((res) => {
+                  if (res.error == undefined) {
+                    this.getEquippedAttacks(res, this.player1_attacks);
+                    console.log("Player 1 attacks loaded!");
+                    console.log(this.player1_attacks);
+
+                    // Here we fetch the equipped attacks from player 2 and store them for easier access.
+                    fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[1].player_ID + "/attacks", {
+                      method: 'GET',
+                      headers: {
+                        'Bearer' : this.$root.token,
+                        'Content-Type' : "application/json"
+                      }
+                    }).then((response) => response.json())
+                        .then((res) => {
+                          if (res.error == undefined) {
+                            this.getEquippedAttacks(res, this.player2_attacks);
+                            console.log("Player 2 attacks loaded!");
+                            console.log(this.player2_attacks);
+                          } else {
+                            console.log("Load attacks 2 ERROR!");
+                          }
+                        })
+                  } else {
+                    console.log("Load attacks 1 ERROR!");
+                  }
+                })
           } else {
             console.log("Game Info ERROR!");
-          }
-        })
-
-    // Here we fetch the equipped attacks from player 1 (the user) and store them for easier access.
-    fetch("https://balandrau.salle.url.edu/i3/players/attacks", {
-      method: 'GET',
-      headers: {
-        'Bearer' : this.$root.token,
-        'Content-Type' : "application/json"
-      }
-    }).then((response) => response.json())
-        .then((res) => {
-          if (res.error == undefined) {
-            this.getEquippedAttacks(res, this.player1_attacks);
-            console.log("Player 1 attacks loaded!");
-          } else {
-            console.log("Load attacks 1 ERROR!");
-          }
-        })
-
-    // Here we fetch the equipped attacks from player 2 and store them for easier access.
-    fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[1].player_ID + "/attacks", {
-      method: 'GET',
-      headers: {
-        'Bearer' : this.$root.token,
-        'Content-Type' : "application/json"
-      }
-    }).then((response) => response.json())
-        .then((res) => {
-          if (res.error == undefined) {
-            this.getEquippedAttacks(res, this.player2_attacks);
-            console.log("Player 2 attacks loaded!");
-          } else {
-            console.log("Load attacks 2 ERROR!");
           }
         })
   },
