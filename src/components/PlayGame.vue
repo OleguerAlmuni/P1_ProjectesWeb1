@@ -10,7 +10,6 @@ export default {
       start: true,
       players: [],
       player1_attacks: [],
-      player2_attacks: [],
     }
   },
   mounted() {
@@ -50,26 +49,6 @@ export default {
                 .then((res) => {
                   if (res.error == undefined) {
                     this.getEquippedAttacks(res, this.player1_attacks);
-                    console.log("Player 1 attacks loaded!");
-                    console.log(this.player1_attacks);
-
-                    // Here we fetch the equipped attacks from player 2 and store them for easier access.
-                    fetch("https://balandrau.salle.url.edu/i3/players/" + this.players[0].player_ID + "/attacks", {
-                      method: 'GET',
-                      headers: {
-                        'Bearer' : this.$root.token,
-                        'Content-Type' : "application/json"
-                      }
-                    }).then((response) => response.json())
-                        .then((res) => {
-                          if (res.error == undefined) {
-                            this.getEquippedAttacks(res, this.player2_attacks);
-                            console.log(this.player2_attacks);
-                            console.log("Player 2 attacks loaded!");
-                          } else {
-                            console.log("Load attacks 2 ERROR!");
-                          }
-                        })
                   } else {
                     console.log("Load attacks 1 ERROR!");
                   }
@@ -81,30 +60,36 @@ export default {
   },
   methods: {
     getEquippedAttacks(attack_array, equipped_attacks) {
-      console.log("Equipped Attacks:");
-      console.log(attack_array);
-      for (let attack in attack_array) {
+      attack_array.forEach((attack) => {
         console.log(attack);
         if (attack.equipped == true) {
           equipped_attacks.push(attack);
         }
-      }
+      })
     },
     move(direction) {
       const movementRequest = { movement: direction };
-      fetch("https://balandrau.salle.url.edu/i3/players/arenas/move", {
+      fetch("https://balandrau.salle.url.edu/i3/arenas/move", {
         method: 'POST',
         headers: {
           'Bearer' : this.$root.token,
           'Content-Type' : "application/json"
         },
         body: JSON.stringify(movementRequest)
-      }).then((response) => response.json())
-          .then((res) => {
-            if (res.error == undefined) {
-              //update de la posició?
-            }
-          })
+      }).then((response) => {
+        if (response.ok) {
+          console.log("move successful!")
+          return response;
+        }
+
+        return response.json();
+      }).then((res) => {
+        if (res.ok == undefined) {
+          console.log(res.error.message);
+        }
+      }).catch((error) => {
+        console.log("No connection with API.");
+      })
     },
     leaveGame() {
       fetch("https://balandrau.salle.url.edu/i3/arenas/" + this.game_ID + "/play", {
@@ -113,15 +98,20 @@ export default {
           'Bearer' : this.$root.token,
           'Content-Type' : "application/json"
         }
-      }).then((response) => response.json())
-          .then((res) => {
-            if (res.error == undefined) {
-              console.log("You successfully left the game.")
-              this.$router.push('/home');
-            } else {
-              console.log("ERROR when leaving the game.")
-            }
-          })
+      }).then((response) => {
+        if (response.ok) {
+          this.$router.push('/home');
+          return response;
+        }
+
+        return response.json();
+      }).then((res) => {
+        if (res.ok == undefined) {
+          console.log(res.error.message);
+        }
+      }).catch((error) => {
+        console.log("No connection with API.");
+      })
     }
   }
 }
@@ -131,6 +121,7 @@ export default {
   <header>
     <button v-on:click.prevent="leaveGame()">Leave Game</button>
   </header>
+  <button v-on:click.prevent="move('down')">Down</button>
 </template>
 
 <style scoped>
