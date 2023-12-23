@@ -98,6 +98,12 @@ export default {
         padding-left: 5%;
     }
 
+    img {
+      border-radius: 50%;
+      max-height: 500px;
+      max-width: 500px;
+    }
+
     .profile {
         font-family: Inter;
         border-radius: 50%;
