@@ -43,8 +43,8 @@
 <template>
     <Header title="Create Game"></Header>
 
-    <div class="row">
-        <div class="col-4 col-s-12">
+    <section class="content">
+      <section class="arena-form">
         <form>
           <label for="game_ID">Game ID</label>
           <input type="text" id="game_ID" name="game_ID" v-model="game_ID">
@@ -55,17 +55,47 @@
 
           <input type="submit" v-on:click.prevent="createArena()" value="Create Game">
         </form>
+      </section>
 
-        <p>{{ response }}</p>
-      </div>
+      <section class="arena-preview">
+        <table>
+          <tr v-for="row in this.size">
+            <td v-for="column in this.size"></td>
+          </tr>
+        </table>
+      </section>
+    </section>
 
-      <div class="col-8 col-s-12 grid">
-
-      </div>
-    </div>
 </template>
 
 <style scoped>
+
+  @media only screen and (min-width: 768px) {
+    .arena-form {
+      flex: 2;
+      max-width: 40%;
+    }
+
+    .arena-preview {
+      flex: 3;
+      max-width: 60%;
+      overflow-x: auto;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /*
+  CSS corresponding to the form section of the view
+   */
+
+  .arena-form {
+    flex: 100%;
+    box-sizing: border-box;
+  }
 
   form {
     display: flex;
@@ -83,16 +113,30 @@
     padding: 16px 32px;
   }
 
-  input[type=number] {
+  /*
+  CSS corresponding to the arena preview section of the view
+   */
 
+  .arena-preview {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex: 100%;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+  .arena-preview table {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  table {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid;
   }
 
 </style>

@@ -20,9 +20,9 @@ export default {
     }).then((response) => response.json())
         .then((res) => {
           if (res.error == undefined) {
-            for (let game in res) {
-              if (res[game].finished == false) {
-                this.arenas.push(res[game]);
+            for (let i in res) {
+              if (res[i].finished == false) {
+                this.arenas.push(res[i]);
               }
             }
             console.log("Game Info Loaded!")
@@ -40,15 +40,20 @@ export default {
           'Bearer' : this.$root.token,
           'Content-Type': 'application/json'
         }
-      }).then((response) => response.json())
-          .then((res) => {
-            if (res.error == undefined) {
-              console.log("Entering Arena!");
-              this.$router.push('/playGame');
-            } else {
-              console.log("ERROR while entering arena.");
-            }
-          })
+      }).then((response) => {
+        if (response.ok) {
+          this.$router.push('/playGame');
+          return response;
+        }
+
+        return response.json();
+      }).then((res) => {
+        if (res.ok == undefined) {
+          console.log(res.error.message);
+        }
+      }).catch((error) => {
+        console.log("No connection with API.");
+      })
     }
   }
 }
@@ -92,7 +97,6 @@ export default {
 <style scoped>
 
     table, th, td {
-        font-family: Inter;
         border: 1px solid;
         border-collapse: collapse;
     }
