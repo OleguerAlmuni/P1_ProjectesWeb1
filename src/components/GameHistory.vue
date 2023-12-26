@@ -73,6 +73,7 @@ export default {
       return response.json();
     }).then((res) => {
       if (res.error == undefined) {
+        console.log("Information downloaded successfully.");
         //console.log("prova");
         this.player_games = res;
         //console.log(res);
