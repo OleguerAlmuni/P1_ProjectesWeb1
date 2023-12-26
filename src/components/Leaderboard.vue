@@ -48,7 +48,7 @@ export default {
 
   updated() {
     this.players.sort((a, b) => b.games_won - a.games_won);
-    console.log(this.players);
+    //console.log(this.players);
   }
 }
 </script>

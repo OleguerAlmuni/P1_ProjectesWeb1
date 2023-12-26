@@ -6,7 +6,7 @@
         },*/
         data() {
             return {
-                attack_ID: "Atac1",
+                attack_ID: "",
                 response: "",
                 price: 1000,
             }
