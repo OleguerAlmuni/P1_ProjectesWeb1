@@ -20,7 +20,7 @@ export default {
     this.playerName = this.$root.player_ID;
   },
   mounted() {
-    console.log("https://balandrau.salle.url.edu/i3/players/" + this.playerName);
+    //console.log("https://balandrau.salle.url.edu/i3/players/" + this.playerName);
     fetch("https://balandrau.salle.url.edu/i3/players/" + this.playerName, {
       method: 'GET',
       headers: {
@@ -29,13 +29,13 @@ export default {
       }
     }).then((response) => {
       if (response.ok) {
-        this.response = "Information downloaded successfully.";
+        this.response = "Your profile looks great!";
       }
       return response.json();
     }).then((res) => {
-      console.log(res);
+      //console.log(res);
       this.image = res.img;
-      console.log(this.image);
+      //console.log(this.image);
       this.xp = res.xp;
       this.level = res.level;
       this.coins = res.coins;
@@ -96,6 +96,12 @@ export default {
 
     .right-components {
         padding-left: 5%;
+    }
+
+    img {
+      border-radius: 50%;
+      max-height: 500px;
+      max-width: 500px;
     }
 
     .profile {

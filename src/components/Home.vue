@@ -2,21 +2,63 @@
     import { ref } from 'vue'
 </script>
 
+<script>
+export default {
+  data() {
+    return {
+      playerName: "",
+      image: "",
+      xp: 0,
+      level: 0,
+      coins: 0,
+      response: "",
+    }
+  },
+  beforeMount() {
+    this.playerName = this.$root.player_ID;
+  },
+  mounted() {
+    //console.log("https://balandrau.salle.url.edu/i3/players/" + this.playerName);
+    fetch("https://balandrau.salle.url.edu/i3/players/" + this.playerName, {
+      method: 'GET',
+      headers: {
+        'Bearer': this.$root.token,
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => {
+      if (response.ok) {
+        this.response = "Information downloaded successfully.";
+      }
+      return response.json();
+    }).then((res) => {
+      console.log("Information downloaded successfully.");
+      //console.log(res);
+      this.image = res.img;
+      //console.log(this.image);
+      this.xp = res.xp;
+      this.level = res.level;
+      this.coins = res.coins;
+    }).catch((error) => {
+      this.response = "No connection with API";
+    });
+  },
+}
+</script>
 <template>
     <header>
         <router-link to="/profile">
-            <button> Profile </button>
+            <img :src="image" alt="Profile_Image">
         </router-link>
 
         <div>
             <h2>
-                LV. 100
+                LV. {{ level }}
             </h2>
         </div>
 
         <div>
             <h2>
-                Coins: 56745$
+                Coins: {{ coins }}
             </h2>
         </div>
 
@@ -63,6 +105,12 @@
             width: 100%;
             height: 50%;
         }
+    }
+
+    img {
+      border-radius: 50%;
+      max-height: 100px;
+      max-width: 100px;
     }
 
     header {
