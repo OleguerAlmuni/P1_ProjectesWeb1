@@ -5,60 +5,71 @@ import Header from "./Header.vue";
 import buyAttack from "./BuyAttack.vue";
 
 export default defineComponent({
-  computed: {
-    buyAttack() {
-      return buyAttack
-    }
-  },
-  components: {Header},
-  data() {
-    return {
-      attackData: [],
-      response: "",
-      attack_IW: "Atac1"
-    };
-  },
-  mounted() {
-    fetch("https://balandrau.salle.url.edu/i3/shop/attacks", {
-      method: 'GET',
-      headers: {
-        'Bearer': this.$root.token,
-        'Content-Type': 'application/json'
-      },
 
-    }).then((response) => response.json())
-        .then((res) => {
-          if (res.error == undefined) {
-            this.attackData = res;
-            console.log("GG");
-          } else {
-            console.log("ERROR!");
-          }
-        })
-  },
-  methods: {
-    buyAttack() {
-      fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack_IW + "/buy", {
-        method: 'POST',
-        headers: {
-          'Bearer': this.$root.token,
-          'Content-Type': 'application/json'
+    computed: {
+        buyAttack() {
+            return buyAttack
+        }
+    },
+
+    components: { Header },
+
+    data() {
+        return {
+            attackData: [],
+            attack_IW: "",
+            response: "",
+        };
+    },
+
+    mounted() {
+
+        fetch("https://balandrau.salle.url.edu/i3/shop/attacks", {
+            method: 'GET',
+            headers: {
+                'Bearer': this.$root.token,
+                'Content-Type': 'application/json'
+            },
+
+            }).then((response) => response.json())
+                .then((res) => {
+                      if (res.error == undefined) {
+                        this.attackData = res;
+
+                      } else {
+                        console.log("ERROR!");
+                      }
+                })
+    },
+
+    methods: {
+
+        attackWanted(attack) {
+            this.attack_IW = attack;
         },
-      }).then((response) => {
-        if (response.ok) {
-          this.response = "Attack bought!";
-          return response;
+
+        buyAttack() {
+            fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack_IW + "/buy", {
+                method: 'POST',
+                headers: {
+                  'Bearer': this.$root.token,
+                  'Content-Type': 'application/json'
+                },
+            }).then((response) => {
+                if (response.ok) {
+                  this.response = "Attack bought!";
+                  return response;
+                }
+                return response.json();
+            }).then((res) => {
+                if (res.ok == undefined) {
+                  this.response = res.error.message;
+                }
+            }).catch((error) => {
+                this.response = "No connection with API";
+            });
         }
-        return response.json();
-      }).then((res) => {
-        if (res.ok == undefined) {
-          this.response = res.error.message;
-        }
-      }).catch((error) => {
-        this.response = "No connection with API";
-      });
     }
-  }
 })
 </script>
 
@@ -68,7 +79,7 @@ export default defineComponent({
         <div  class="col-4 col-s-12">
             <form style="display: flex; flex-direction: column">
                 <h2>Buy</h2>
-                <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy for: 000,000</button>
+                <button type="button" v-on:click.prevent="buyAttack()" class="click-button">Buy {{attack_IW}}</button>
             </form>
         </div>
         <div class="col-8 col-s-12">
@@ -83,12 +94,13 @@ export default defineComponent({
                    </tr>
                </thead>
                <tbody>
-                   <tr v-for="item in attackData" :key="item.attack_ID">
-                       <td>{{ item.attack_ID }}</td>
-                       <td>{{ item.positions }}</td>
-                       <td>{{ item.power }}</td>
-                       <td>{{ item.price }}</td>
-                       <td>{{ item.level_needed }}</td>
+                   <tr v-for="attack in attackData" :key="attack.attack_ID">
+                       <td>{{ attack.attack_ID }}</td>
+                       <td>{{ attack.positions }}</td>
+                       <td>{{ attack.power }}</td>
+                       <td>{{ attack.price }}</td>
+                       <td>{{ attack.level_needed }}</td>
+                       <td><button v-on:click.prevent="attackWanted(attack.attack_ID)"></button></td>
                    </tr>
                </tbody>
             </table>

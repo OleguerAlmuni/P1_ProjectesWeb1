@@ -10,14 +10,8 @@
     export default {
         data() {
             return {
-                "attack_ID": "",
-                "positions": "",
-                "img": "",
-                "ppower": 0,
-                "equipped": false,
-                "on_sale": false,
-
-                displayActionWindow: false,
+                "equipedAttacks": [],
+                "attacks": [],
             }
         },
 
@@ -25,9 +19,17 @@
             this.showAttacks();
         },
         methods: {
-            showActionWindow() {
+
+            goToAttack(attack_ID, equiped) {
                 console.log("SI");
-                this.displayActionWindow = true;
+                this.$router.push({
+                    path: "attacks/attack",
+                    query: {
+                        attack: attack_ID,
+                        itsEquiped: equiped,
+                        equipedAttacks: JSON.stringify(this.equipedAttacks),
+                    }
+                })
             },
 
             showAttacks() {
@@ -37,37 +39,18 @@
                         'Bearer': this.$root.token,
                         'Content-Type': 'application/json'
                     }
-                })
-                    .then(response => response.json())
+                }).then(response => response.json())
                     .then(data => {
-                        const equippedAttacksContainer = document.querySelector('.equipped-attacks');
-                        const backpackContainer = document.querySelector('.backpack');
-
                         data.forEach(attack => {
-                            const button = document.createElement('button');
-                            button.classList.add('click-small-button');
-                            button.textContent = `${attack.attack_ID}`;
-
-                            button.click = 
-                            // Add event listeners or any other functionality to the buttons if needed
-                            button.addEventListener('click', () => {
-                                //this.$emit('show-action-window');
-                                this.$router.push({
-                                    name: 'attack',
-                                    param: { attack_ID: attack.attack_ID } // Replace with your desired parameters
-                                });
-                                console.log("HIHIHI");
-                            });
-
                             if (attack.equipped) {
-                                equippedAttacksContainer.appendChild(button); // If attack is equipped, append to equipped section
+                                this.equipedAttacks.push(attack);
                             } else {
-                                backpackContainer.appendChild(button); // If not equipped, append to backpack section
+                                this.attacks.push(attack)
                             }
                         });
                     })
                     .catch(error => {
-                        console.error('Error fetching data:', error);
+                        console.log("2");
                     });
             },
         }
@@ -81,13 +64,20 @@
         <header>
             <h1>Attacks</h1>
         </header>
-
+        <p>{{equipedAttacks}}</p>
+        <p>{{attacks}}</p>
         <section class="equipped-attacks">
             <h2>Equipped Attacks</h2>
+            <section v-for="attack in equipedAttacks" :key="attack.attack_ID">
+                <button v-if="!attack.on_sale" class="click-small-button" v-on:click.prevent="goToAttack(attack.attack_ID, true)"><h1>{{attack.attack_ID}}</h1></button>
+            </section>
         </section>
 
         <section class="backpack">
             <h2>Backpack</h2>
+            <section v-for="attack in attacks" :key="attack.attack_ID">
+                <button v-if="!attack.on_sale" class="click-small-button" v-on:click.prevent="goToAttack(attack.attack_ID, false)"><h1>{{attack.attack_ID}}</h1></button>
+            </section>
         </section>
     </section>
 
@@ -96,6 +86,11 @@
 <style scoped>
 
     @media only screen and (min-width: 768px) {
+    }
+
+    .element-to-move-front {
+        z-index: 1; /* set higher z-index value */
+        position: relative; /* position must be set for z-index to work */
     }
 
     .column {
