@@ -1,5 +1,5 @@
 <script>
-  import Header from "./Header.vue";
+  import Header from "../components/Header.vue";
 
   export default {
     components: {Header},
@@ -43,14 +43,14 @@
 <template>
     <Header title="Create Game"></Header>
 
-    <section class="content">
+    <main>
       <section class="arena-form">
         <form>
-          <label for="game_ID">Game ID</label>
+          <label for="game_ID">GAME ID</label>
           <input type="text" id="game_ID" name="game_ID" v-model="game_ID">
-          <label for="size">Board Size</label>
+          <label for="size">BOARD SIZE</label>
           <input type="number" id="size" name="size" min="2" max="10" v-model="size">
-          <label for="HP_max">Maximum HP</label>
+          <label for="HP_max">MAXIMUM HP</label>
           <input type="number" id="HP_max" name="HP_max" min="15" v-model="HP_max">
 
           <input type="submit" v-on:click.prevent="createArena()" value="Create Game">
@@ -64,7 +64,7 @@
           </tr>
         </table>
       </section>
-    </section>
+    </main>
 
 </template>
 
@@ -83,9 +83,15 @@
     }
   }
 
-  .content {
+  main {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 8px;
   }
 
   /*
@@ -93,6 +99,9 @@
    */
 
   .arena-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 100%;
     box-sizing: border-box;
   }
@@ -104,8 +113,7 @@
   }
 
   input[type=submit] {
-    margin: auto;
-    width: 50%;
+    margin-top: 10px;
     background-color: #0bbaff;
     border: 2px solid #242424;
     color: white;
@@ -121,6 +129,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 10px;
     flex: 100%;
   }
 
@@ -136,7 +145,7 @@
   }
 
   td {
-    border: 1px solid;
+    border: 1px solid black;
   }
 
 </style>

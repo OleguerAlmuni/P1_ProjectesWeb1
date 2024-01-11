@@ -1,11 +1,7 @@
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-</script>
-
 <script>
-
+  import Header from "../components/Header.vue";
     export default {
+      components: {Header},
         data() {
             return {
                 "attack_ID": "",
@@ -41,24 +37,6 @@
                     this.response = "No connection with API";
                 });
             },
-
-            onFileChange(event) {
-                const file = event.target.files[0];
-                this.previewImage(file);
-            },
-            previewImage(file) {
-                if (!file || !file.type.match('image.*')) {
-                    return;
-                }
-                const reader = new FileReader();
-
-                reader.onload = (e) => {
-                    this.img = e.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            },
-
             setPosition(x, y) {
                 this.positions = "(" + x + "," + y + ")";
             }
@@ -94,6 +72,10 @@
 
 <style scoped>
 
+  @media only screen and (min-width: 768px) {
+
+  }
+
 
     .cross-form {
         display: flex;
@@ -119,43 +101,6 @@
         cursor: pointer;
     }
 
-
-    .container {
-        font-family: Inter;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .left-content {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .right-content {
-        padding: 20px;
-    }
-
-    .spacing {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-
-    .center {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .circle {
-        background: lightblue;
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-    }
-
     .click-button {
         font-family: Inter;
         padding: 10px 20px;
@@ -173,11 +118,4 @@
         .click-button:active {
             background-color: #3e8e41;
         }
-
-    @media only screen and (min-width: 768px) {
-
-        .container {
-            width: 100%;
-        }
-    }
 </style>

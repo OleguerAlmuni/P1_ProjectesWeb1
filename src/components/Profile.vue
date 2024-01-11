@@ -1,49 +1,69 @@
-
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-</script>
-
 <script>
-export default {
-  data() {
-    return {
-      playerName: "",
-      image: "",
-      xp: 0,
-      level: 0,
-      coins: 0,
-      response: "",
+  import Header from '../components/Header.vue'
+  export default {
+    components: {Header},
+    data() {
+      return {
+        playerName: "",
+        image: "",
+        xp: 0,
+        level: 0,
+        coins: 0,
+        response: "",
+      }
+    },
+    beforeMount() {
+      this.playerName = this.$root.player_ID;
+    },
+    mounted() {
+      fetch("https://balandrau.salle.url.edu/i3/players/" + this.playerName, {
+        method: 'GET',
+        headers: {
+          'Bearer': this.$root.token,
+          'Content-Type': 'application/json'
+        }
+      }).then((response) => {
+        if (response.ok) {
+          this.response = "Your profile looks great!";
+        }
+        return response.json();
+      }).then((res) => {
+        this.image = res.img;
+        this.xp = res.xp;
+        this.level = res.level;
+        this.coins = res.coins;
+      }).catch((error) => {
+        this.response = "No connection with API";
+      });
+    },
+    methods: {
+      deleteProfile() {
+        fetch("https://balandrau.salle.url.edu/i3/players", {
+          method: 'DELETE',
+          headers: {
+            'Bearer' : this.$root.token,
+            'Content-Type': 'application/json'
+          }
+        }).then((response) => {
+          if (response.ok) {
+            localStorage.removeItem('player_ID');
+            localStorage.removeItem('img');
+            localStorage.removeItem('token');
+            this.$router.push('/');
+            return response;
+          }
+
+          return response.json();
+        }).then((res) => {
+          if (res.ok == undefined) {
+            this.response = res.error.message;
+          }
+        }).catch((error) => {
+          this.response = "No conection with API";
+        });
+      }
     }
-  },
-  beforeMount() {
-    this.playerName = this.$root.player_ID;
-  },
-  mounted() {
-    //console.log("https://balandrau.salle.url.edu/i3/players/" + this.playerName);
-    fetch("https://balandrau.salle.url.edu/i3/players/" + this.playerName, {
-      method: 'GET',
-      headers: {
-        'Bearer': this.$root.token,
-        'Content-Type': 'application/json'
-      }
-    }).then((response) => {
-      if (response.ok) {
-        this.response = "Your profile looks great!";
-      }
-      return response.json();
-    }).then((res) => {
-      //console.log(res);
-      this.image = res.img;
-      //console.log(this.image);
-      this.xp = res.xp;
-      this.level = res.level;
-      this.coins = res.coins;
-    }).catch((error) => {
-      this.response = "No connection with API";
-    });
-  },
-}
+  }
 </script>
 
 <template>
@@ -63,6 +83,7 @@ export default {
             </nav>
         </div>
     </div>
+  <button v-on:click.prevent="deleteProfile()">Delete Profile</button>
   <p>{{ response }}</p>
 </template>
 
