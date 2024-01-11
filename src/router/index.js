@@ -1,27 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import StartScreen from "../views/StartScreen.vue";
-import Home from '../components/Home.vue'
-import SetUp from '../components/SetUp.vue'
+import Home from '../views/Home.vue'
 import LoginView from '../views/LoginView.vue'
-import Store from '../components/Store.vue'
+import Store from '../views/Store.vue'
 import CreateAttack from '../components/CreateAttack.vue'
-import Leaderboard from '../components/Leaderboard.vue'
+import Leaderboard from '../views/Leaderboard.vue'
 import GameFinder from '../components/GameFinder.vue'
-import AvailableGames from '../components/AvailableGames.vue'
+import AvailableGames from '../views/AvailableGames.vue'
 import BuyAttack from '../components/BuyAttack.vue'
 import Attacks from '../components/Attacks.vue'
 import PlayGame from '../components/PlayGame.vue'
-import GameHistory from '../components/GameHistory.vue'
+import GameHistory from '../views/GameHistory.vue'
 import Profile from '../components/Profile.vue'
-import Play from '../components/Play.vue'
-import SellAttack from '../components/SellAttack.vue'
+import Play from '../views/Play.vue'
 import RegisterView from "../views/RegisterView.vue"
-import CreateArena from "../components/CreateArena.vue"
+import CreateArena from "../views/CreateArena.vue"
 import Attack from "../components/Attack.vue"
 
 
 const routes = [
-    { path: '/', component: SetUp },
+    { path: '/', component: StartScreen },
     { path: '/home', component: Home },
     { path: '/login', component: LoginView },
     { path: '/register', component: RegisterView },
@@ -37,7 +35,6 @@ const routes = [
     { path: '/gameHistory', component: GameHistory },
     { path: '/profile', component: Profile },
     { path: '/play', component: Play },
-    { path: '/store/sellAttack', component: SellAttack },
     { path: '/attacks/attack', name: 'attack', component: Attack },
 ]
 

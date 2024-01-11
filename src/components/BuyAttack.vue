@@ -111,41 +111,9 @@ export default defineComponent({
 
 <style scoped>
 
-    .container {
-        font-family: Inter;
-        display: flex;
-        justify-content: space-around;
-    }
+  @media only screen and (min-width: 768px) {
 
-    .left-content {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .right-content {
-        padding: 20px;
-    }
-
-    .spacing {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-
-    .center {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .circle {
-        background: lightblue;
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-    }
+  }
 
     .click-button {
         font-family: Inter;
@@ -164,11 +132,4 @@ export default defineComponent({
         .click-button:active {
             background-color: #3e8e41;
         }
-
-    @media only screen and (min-width: 768px) {
-
-        .container {
-            width: 100%;
-        }
-    }
 </style>

@@ -1,109 +1,116 @@
-<script setup>
-    import { ref } from 'vue'
-    import Header from '../components/Header.vue'
-</script>
-
 <script>
-export default {
-  data() {
-    return {
-      playerName: "",
-      password: "",
-      response: "",
-    }
-  },
-  methods: {
-    login() {
-      const user = { player_ID: this.playerName, password: this.password };
-      fetch("https://balandrau.salle.url.edu/i3/players/join", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user)
-
-      }).then((response) => response.json())
-          .then((res) => {
-            if (res.error == undefined) {
-              this.response = "Token: " + res.token;
-              this.$root.player_ID = res.player_ID;
-              localStorage.player_ID = res.player_ID;
-              this.$root.token = res.token;
-              localStorage.token = res.token;
-              this.$router.push("/home");
-            } else {
-              this.response = res.error.message;
-            }
-
-          }).catch(error => {
-            this.response = "Lost API connection :(";
-          });
+  export default {
+    data() {
+      return {
+        playerName: "",
+        password: "",
+        response: "",
+      }
     },
+    methods: {
+      login() {
+        const user = { player_ID: this.playerName, password: this.password };
+        fetch("https://balandrau.salle.url.edu/i3/players/join", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(user)
+
+        }).then((response) => response.json())
+            .then((res) => {
+              if (res.error == undefined) {
+                this.response = "Token: " + res.token;
+                this.$root.player_ID = res.player_ID;
+                localStorage.player_ID = res.player_ID;
+                this.$root.img = res.img;
+                localStorage.img = res.img;
+                this.$root.token = res.token;
+                localStorage.token = res.token;
+                this.$router.push("/home");
+              } else {
+                this.response = res.error.message;
+              }
+
+            }).catch(error => {
+              this.response = "Lost API connection :(";
+            });
+      },
+    }
   }
-}
 </script>
 
 <template>
-  <Header></Header>
-  <h1>Game Title</h1>
-  <main class="login">
+  <header>
+    <button @click="$router.back()" class="back-button">Back</button>
     <h2>Login</h2>
-    <form class="components">
-      <label for="Name"></label>
-      <input type="text" id="Name" name="Name" placeholder="Email" v-model="playerName">
-      <label for="Name"></label>
-      <input type="password" id="Password" name="Password" placeholder="Password" v-model="password">
-      <input type="submit" v-on:click.prevent="login()" value="Login">
-      <p>{{ response }}</p>
-    </form>
-  </main>
-  <br>
+    <button class="invisible-button"></button>
+  </header>
+
+  <form>
+    <label for="Name">Username</label>
+    <input type="text" id="Name" name="Name" placeholder="Email" v-model="playerName">
+
+    <label for="Password">Password</label>
+    <input type="password" id="Password" name="Password" placeholder="Password" v-model="password">
+
+    <input type="submit" v-on:click.prevent="login()" value="Login" class="submit">
+
+    <p>{{ response }}</p>
+  </form>
 </template>
 
 <style scoped>
 
-    h1 {
-        font-family: Inter;
-        display: flex;
-        justify-content: center;
+  @media only screen and (min-width: 768px) {
+    form {
+      max-width: 30%;
     }
+  }
 
-    .components{
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      width: 200px;
-    }
-    .components text{
-      width: 200px;
-    }
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
 
-    .components password {
-      width: 200px;
-    }
+  .back-button {
+    width: 100px;
+    height: 50px;
+    margin-right: auto;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+  }
 
-    .read-the-docs {
-        color: #888;
-    }
+  .invisible-button {
+    pointer-events: none;
+    visibility: hidden;
+    margin-left: auto;
+    width: 100px;
+  }
 
-    .login {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: Inter;
-      width: 382px;
-      overflow: hidden;
-      margin: auto;
-      margin: 20 0 0 450px;
-      padding: 80px;
-      background: #23463f;
-      border-radius: 15px;
-    }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 8px;
+  }
 
-        .login h2 {
-            text-align: center;
-        }
+  input {
+    margin-bottom: 5px;
+  }
 
-        .login button {
-            justify-content: center;
-        }
+  .submit {
+    margin-top: 20px;
+  }
 
 </style>
