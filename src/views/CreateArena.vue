@@ -41,7 +41,7 @@
 </script>
 
 <template>
-    <Header title="Create Game"></Header>
+    <Header></Header>
 
     <main>
       <section class="arena-form">

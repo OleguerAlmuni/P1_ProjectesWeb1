@@ -45,35 +45,71 @@
 </script>
 
 <template>
-    <Header title="CreateAttack"></Header>
-    <div class="row">
-        <form class="column col-6 col-s-12">
-            <h2>Create</h2>
-            <label for="Attack"></label>
-            <input type="text" id="Attack" name="Attack" placeholder="Attack" v-model="attack_ID">
-            <label for="Image"></label>
-            <input type="text" id="Image" name="Image" placeholder="Image" v-model="img">
-            <button type="button" v-on:click.prevent="createAttack()" class="click-button">Create for: 000,000</button>
-            <p>{{ response }}</p>
-        </form>
-        <form class="col-6 col-s-12">
-            <section class="cross-form">
-                <button class="btn" type="button"  @click="setPosition(1,0)"></button>
-                <section class="middle">
-                    <button class="btn" type="button" @click ="setPosition(0,-1)"></button>
-                    <button class="btn" type="button" @click ="setPosition(0,1)"></button>
-                </section>
-                
-            </section>
-        </form>
-    </div>
+  <Header></Header>
+
+  <main>
+    <form>
+      <label for="Attack"></label>
+      <input type="text" id="Attack" name="Attack" placeholder="Attack" v-model="attack_ID">
+      <label for="Image"></label>
+      <input type="text" id="Image" name="Image" placeholder="Image" v-model="img">
+      <input type="submit" v-on:click.prevent="createAttack()" value="Create Attack">
+    </form>
+
+    <section class="attack-positions">
+      <section class="cross-form">
+        <button class="btn" type="button"  @click="setPosition(1,0)"></button>
+
+        <section class="middle">
+          <button class="btn" type="button" @click ="setPosition(0,-1)"></button>
+          <div class="btn"></div>
+          <button class="btn" type="button" @click ="setPosition(0,1)"></button>
+        </section>
+      </section>
+    </section>
+  </main>
 </template>
 
 
 <style scoped>
 
   @media only screen and (min-width: 768px) {
+    form {
+      flex: 2;
+      max-width: 40%;
+    }
 
+    .attack-positions {
+      flex: 3;
+      max-width: 60%;
+    }
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 8px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 100%;
+  }
+
+  input {
+    margin-top: 10px;
+  }
+
+  .attack-positions {
+    flex: 100%;
   }
 
 
@@ -101,21 +137,4 @@
         cursor: pointer;
     }
 
-    .click-button {
-        font-family: Inter;
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-        .click-button:hover {
-            background-color: #45a049;
-        }
-
-        .click-button:active {
-            background-color: #3e8e41;
-        }
 </style>

@@ -90,8 +90,8 @@
     align-items: center;
     height: 120px;
     color: black;
-    background-color: white;
-    border: 5px solid black;
+    background-color: #fffeb3;
+    border: 5px solid #ffe28a;
     border-radius: 8px;
   }
 
@@ -126,10 +126,10 @@
     height: 250px;
     padding: 10px;
     margin-bottom: 10px;
-    color: black;
-    background-color: white;
-    border: 5px solid black;
-    border-radius: 8px;
+    color: white;
+    border: 2px solid black;
+    background-color: #9ed670;
+    box-shadow: 0 9px #d64d4d;
   }
 
   .small-button {
@@ -158,6 +158,14 @@
     background-color: white;
     border: 5px solid black;
     border-radius: 8px;
+  }
+
+  button:hover {background-color: #6e954e}
+
+  button:active {
+    background-color: #6e954e;
+    box-shadow: 0 5px #953535;
+    transform: translateY(4px);
   }
 
 </style>
