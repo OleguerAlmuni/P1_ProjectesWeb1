@@ -243,10 +243,14 @@ export default {
   table {
     width: 50%;
     aspect-ratio: 1 / 1;
+    table-layout: fixed;
     border-collapse: collapse;
+    color: black;
   }
 
   td {
+    width: 50px;
+    height: 50px;
     border: 1px solid black;
   }
 
