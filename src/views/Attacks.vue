@@ -19,8 +19,6 @@
           path: "attacks/attack",
           query: {
             attack: attack_ID,
-            itsEquiped: equiped,
-            equipedAttacks: JSON.stringify(this.equipedAttacks),
           }
         })
       },

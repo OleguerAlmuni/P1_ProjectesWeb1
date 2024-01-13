@@ -5,11 +5,9 @@
     data() {
       return {
         attack_ID: this.$route.query.attack,
-        equipedAttacks: JSON.parse(this.$route.query.equipedAttacks),
         response: "",
         price: 0,
         showPanel: false,
-        itsEquiped: this.$route.query.itsEquiped === 'true',
         attack_SW: "",
       }
     },
@@ -128,18 +126,8 @@
   <Header></Header>
 
     <main>
-      <section v-if="showPanel && !itsEquiped">
-        <h1>Select 1 to switch the attack with it</h1>
-        <section v-for="attack in equipedAttacks">
-          <button v-on:click="switchWith(attack.attack_ID)">
-            <h1>{{attack.attack_ID}}</h1>
-          </button>
-        </section>
-      </section>
-
-      <button v-if="showPanel && !itsEquiped" @click="switchAttack">Equip and Unequip {{attack_SW}}</button>
-      <button v-if="!showPanel && !itsEquiped" @click="equipItem">Equip</button>
-      <button v-if="itsEquiped" @click="disequipItem">Unequip</button>
+      <button @click="equipItem">Equip</button>
+      <button @click="disequipItem">Unequip</button>
       <label for="price">Enter a number between 0 and 10000</label>
       <input type="number" id="price" name="price" min="0" max="10000" v-model="price">
       <input type="submit" v-on:click.prevent="sellItem()" value="Sell">
