@@ -7,15 +7,9 @@
 
     <button @click="$router.back()">Back</button>
 
-    <router-link to="/home">
-      <button>Home</button>
-    </router-link>
+    <button @click="$router.push('/home')">Home</button>
 
-    <router-link to="/attacks" class="button-prueba">
-      <button>Backpack</button>
-    </router-link>
-
-    <div></div>
+    <button @click="$router.push('/attacks')" class="backpack-button">Backpack</button>
 
     <router-link to="/profile">
       <img :src="this.$root.img" alt="">
@@ -26,19 +20,23 @@
 
 <style scoped>
 
+  @media only screen and (min-width: 768px) {
+
+  }
+
   .header {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    background-color: white;
-    color: black;
-    border: 5px solid black;
+    color: white;
+    background-color: #ebdeb6;
+    border: 5px solid #dec986;
     border-radius: 8px;
   }
 
   button {
-    width: 100px;
+    width: 15%;
     height: 50px;
-    margin-top: 5px;
     margin-left: 5px;
     margin-bottom: 5px;
     color: black;
@@ -47,12 +45,11 @@
     border-radius: 8px;
   }
 
-  .button-prueba {
+  .backpack-button {
     margin-right: auto;
   }
 
   img {
-    justify-self: flex-end;
     margin-top: 4px;
     margin-right: 5px;
     border: 2px solid black;

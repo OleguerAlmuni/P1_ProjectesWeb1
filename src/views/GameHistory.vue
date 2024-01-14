@@ -163,13 +163,14 @@ export default {
     align-items: center;
     padding: 15px;
     margin-right: auto;
-    background-color: white;
+    background-color: #99ccff;
     border: 5px solid black;
     border-radius: 8px;
   }
 
   table {
     margin-right: 5px;
+    background-color: #99ccff;
   }
 
   table, th, td {
@@ -180,6 +181,11 @@ export default {
   th, td {
     text-align: center;
     padding: 15px;
+  }
+
+  thead {
+    background-color: #77aaff;
+    color: black;
   }
   
 </style>

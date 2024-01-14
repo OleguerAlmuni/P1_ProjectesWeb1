@@ -14,7 +14,6 @@
     },
     methods: {
       goToAttack(attack_ID, equiped) {
-        console.log("SI");
         this.$router.push({
           path: "attacks/attack",
           query: {
@@ -54,7 +53,7 @@
 <template>
   <Header></Header>
 
-  <main>
+  <main class="backpack-view">
     <section class="equipped-attacks">
       <h2>Equipped Attacks</h2>
       <section v-for="attack in equipedAttacks" :key="attack.attack_ID">
@@ -85,16 +84,16 @@
     .equipped-attacks {
       flex: 2;
       max-width: 20%;
-      margin-right: 10px;
+      margin-right: auto;
     }
 
     .all-attacks {
       flex: 3;
-      max-width: 80%;
+      max-width: 79%;
     }
   }
 
-  main {
+  .backpack-view {
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
@@ -120,6 +119,7 @@
 
   .all-attacks {
     width: 100%;
+    flex: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

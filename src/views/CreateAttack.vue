@@ -49,6 +49,7 @@
 
   <main>
     <form>
+      <h2>Attack Info</h2>
       <label for="Attack"></label>
       <input type="text" id="Attack" name="Attack" placeholder="Attack" v-model="attack_ID">
       <label for="Image"></label>
@@ -57,13 +58,14 @@
     </form>
 
     <section class="attack-positions">
+      <h2>Attack Positions</h2>
       <section class="cross-form">
-        <button class="btn" type="button"  @click="setPosition(1,0)"></button>
+        <button class="btn" type="button"  @click="setPosition(1,0)">(0, 1)</button>
 
         <section class="middle">
-          <button class="btn" type="button" @click ="setPosition(0,-1)"></button>
-          <div class="btn"></div>
-          <button class="btn" type="button" @click ="setPosition(0,1)"></button>
+          <button class="btn" type="button" @click ="setPosition(0,-1)">(-1, 0)</button>
+          <img :src="this.$root.img" alt="">
+          <button class="btn" type="button" @click ="setPosition(0,1)">(1, 0)</button>
         </section>
       </section>
     </section>
@@ -91,7 +93,7 @@
     margin-top: 10px;
     padding: 15px;
     color: black;
-    background-color: white;
+    background-color: #99ccff;
     border: 5px solid black;
     border-radius: 8px;
   }
@@ -102,6 +104,8 @@
     justify-content: center;
     align-items: center;
     flex: 100%;
+    border: none;
+    background-color: #99ccff;
   }
 
   input {
@@ -110,6 +114,9 @@
 
   .attack-positions {
     flex: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 
@@ -126,15 +133,23 @@
         justify-content: space-evenly;
     }
 
-    .btn {
-        width: 100px; /* Adjust the width as needed */
-        height: 100px; /* Set the height to match the width for square buttons */
-        margin: 5px;
-        border: none;
-        background-color: #3498db;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
+    .middle img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid black;
+    }
+
+    .cross-form button  {
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      border: 2px solid black;
+      border-radius: unset;
+      background-color: #3498db;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
     }
 
 </style>

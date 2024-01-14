@@ -175,36 +175,39 @@ export default {
     <button v-on:click.prevent="leaveGame()">Leave Game</button>
   </header>
 
-  <section class="content">
-    <section class="arena">
-      <table>
-        <tr v-for="row in this.size">
-          <template v-for="column in this.size">
-            <td v-if="row == this.players[0].y_game && column == this.players[0].x_game">
-              {{ this.players[0].player_ID }}
-            </td>
-            <td v-else-if="row == this.players[1].y_game && column == this.players[1].x_game">
-              {{ this.players[1].player_ID }}
-            </td>
-            <td v-else></td>
-          </template>
-        </tr>
-      </table>
-    </section>
+  <main>
+    <table>
+      <tr v-for="row in this.size">
+        <template v-for="column in this.size">
+          <td v-if="row == this.players[0].y_game && column == this.players[0].x_game">
+            {{ this.players[0].player_ID }}
+          </td>
+          <td v-else-if="row == this.players[1].y_game && column == this.players[1].x_game">
+            {{ this.players[1].player_ID }}
+          </td>
+          <td v-else></td>
+        </template>
+      </tr>
+    </table>
 
-    <section class="attacks">
-      <template v-for="(attack, index) in this.attacks">
-        <button v-on:click.prevent="playerAttack(index)">{{ attack.attack_ID }}</button>
-      </template>
-    </section>
+    <section class="controls">
+      <section class="attacks">
+        <template v-for="(attack, index) in this.attacks">
+          <button v-on:click.prevent="playerAttack(index)">{{ attack.attack_ID }}</button>
+        </template>
+      </section>
 
-    <section class="movement">
-      <button v-on:click.prevent="move('up')">Up</button>
-      <button v-on:click.prevent="move('right')">Right</button>
-      <button v-on:click.prevent="move('left')">Left</button>
-      <button v-on:click.prevent="move('down')">Down</button>
+      <section class="movement">
+        <button v-on:click.prevent="move('up')">Up</button>
+
+        <div>
+          <button v-on:click.prevent="move('left')">Left</button>
+          <button v-on:click.prevent="move('down')">Down</button>
+          <button v-on:click.prevent="move('right')">Right</button>
+        </div>
+      </section>
     </section>
-  </section>
+  </main>
 
 
 </template>
@@ -212,36 +215,74 @@ export default {
 <style scoped>
 
   @media only screen and (min-width: 768px) {
-    .arena {
-      flex: auto;
-      max-width: 50%;
+    table {
+      max-width: 30%;
     }
 
     .attacks {
-      flex: auto;
-      max-width: 20%;
+      flex: 2;
+      max-width: 50%;
     }
 
     .movement {
-      flex: auto;
-      max-width: 30%;
+      flex: 3;
+      max-width: 50%;
     }
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls {
+    width: 100%;
+    height: 125px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #ebdeb6;
+    border: 5px solid #dec986;
+    border-radius: 8px;
   }
 
   .attacks {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex: 100%;
+    box-sizing: border-box;
+  }
+
+  .attacks button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
 
   .movement {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    flex: 100%;
+    box-sizing: border-box;
+  }
+
+  .movement div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+  }
+
+  .movement button {
+    width: 70px;
+    height: 40px;
   }
 
   table {
-    width: 50%;
+    width: 100%;
     aspect-ratio: 1 / 1;
     table-layout: fixed;
     border-collapse: collapse;
@@ -251,7 +292,26 @@ export default {
   td {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
+    border: 2px solid black;
+  }
+
+  button {
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+  }
+
+  tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even){
+    background-color: #77aaff;
+  }
+
+  button:hover {background-color: #77aaff}
+
+  button:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
   }
 
 </style>

@@ -51,37 +51,47 @@
   </header>
 
   <main>
-    <router-link to="/play">
-      <button class="play-button">Play</button>
-    </router-link>
+    <button class="play-button" @click="this.$router.push('/play')">Play</button>
 
-    <router-link to="/leaderboard">
-      <button class="small-button">Leaderboard</button>
-    </router-link>
+    <div class="smaller-buttons">
+      <button class="small-button leaderboard" @click="this.$router.push('/leaderboard')">Leaderboard</button>
 
-    <router-link to="/gameHistory">
-      <button class="small-button">Game History</button>
-    </router-link>
+      <button class="small-button game-history" @click="this.$router.push('/gameHistory')">Game History</button>
+    </div>
 
-    <router-link to="/store">
-      <button class="medium-button">Store</button>
-    </router-link>
+    <div class="medium-buttons">
+      <button class="medium-button store" @click="this.$router.push('/store')">Store</button>
 
-    <router-link to="/attacks">
-      <button class="medium-button">Attacks</button>
-    </router-link>
+      <button class="medium-button attacks" @click="this.$router.push('/attacks')">Attacks</button>
+    </div>
   </main>
 </template>
 
 <style scoped>
 
   @media only screen and (min-width: 768px) {
-    .small-button {
-      max-width: 49%;
+    .play-button {
+      max-width: 98%;
     }
 
-    .medium-button {
-      max-width: 49%;
+    .leaderboard {
+      flex: 2;
+      max-width: 50%;
+    }
+
+    .game-history {
+      flex: 2;
+      max-width: 50%;
+    }
+
+    .store {
+      flex: 2;
+      max-width: 50%;
+    }
+
+    .attacks {
+      flex: 2;
+      max-width: 50%;
     }
   }
 
@@ -90,8 +100,8 @@
     align-items: center;
     height: 120px;
     color: black;
-    background-color: #fffeb3;
-    border: 5px solid #ffe28a;
+    background-color: #ebdeb6;
+    border: 5px solid #dec986;
     border-radius: 8px;
   }
 
@@ -119,17 +129,26 @@
 
   main {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .play-button {
     width: 100%;
     height: 250px;
     padding: 10px;
-    margin-bottom: 10px;
     color: white;
     border: 2px solid black;
-    background-color: #9ed670;
-    box-shadow: 0 9px #d64d4d;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+  }
+
+  .smaller-buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
   }
 
   .small-button {
@@ -140,31 +159,38 @@
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    color: black;
-    background-color: white;
-    border: 5px solid black;
-    border-radius: 8px;
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+  }
+
+  .medium-buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
   }
 
   .medium-button {
     box-sizing: border-box;
     width: 100%;
-    height: 100px;
+    height: 75px;
     padding: 10px;
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    color: black;
-    background-color: white;
-    border: 5px solid black;
-    border-radius: 8px;
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
   }
 
-  button:hover {background-color: #6e954e}
+  button:hover {background-color: #77aaff}
 
   button:active {
-    background-color: #6e954e;
-    box-shadow: 0 5px #953535;
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
     transform: translateY(4px);
   }
 

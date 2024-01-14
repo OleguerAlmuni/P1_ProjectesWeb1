@@ -5,17 +5,18 @@ import LoginView from '../views/LoginView.vue'
 import Store from '../views/Store.vue'
 import CreateAttack from '../views/CreateAttack.vue'
 import Leaderboard from '../views/Leaderboard.vue'
-import GameFinder from '../components/GameFinder.vue'
+import GameFinder from '../views/GameFinder.vue'
 import AvailableGames from '../views/AvailableGames.vue'
 import BuyAttack from '../views/BuyAttack.vue'
-import Attacks from '../components/Attacks.vue'
-import PlayGame from '../components/PlayGame.vue'
+import Attacks from '../views/Attacks.vue'
+import PlayGame from '../views/PlayGame.vue'
 import GameHistory from '../views/GameHistory.vue'
-import Profile from '../components/Profile.vue'
+import Logs from '../views/Logs.vue'
+import Profile from '../views/Profile.vue'
 import Play from '../views/Play.vue'
 import RegisterView from "../views/RegisterView.vue"
 import CreateArena from "../views/CreateArena.vue"
-import Attack from "../components/Attack.vue"
+import Attack from "../views/Attack.vue"
 
 
 const routes = [
@@ -36,6 +37,7 @@ const routes = [
     { path: '/profile', component: Profile },
     { path: '/play', component: Play },
     { path: '/attacks/attack', name: 'attack', component: Attack },
+    { path: '/logs', component: Logs},
 ]
 
 const router = createRouter({

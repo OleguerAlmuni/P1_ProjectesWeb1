@@ -28,10 +28,6 @@
         this.$router.push("/attacks")
       },
 
-      switchWith(attack) {
-        this.attack_SW = attack;
-      },
-
       equipItem() {
         fetch("https://balandrau.salle.url.edu/i3/players/attacks/"+ this.attack_ID, {
           method: 'POST',
@@ -53,7 +49,8 @@
           this.response = "No connection with API";
         });
       },
-      disequipItem() {
+
+      unequipAttack() {
         fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack_ID, {
           method: 'DELETE',
           headers: {
@@ -99,8 +96,8 @@
         });
       },
 
-      switchAttack() {
-        fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack_ID + "/" + this.attack_SW, {
+      switchAttack(attack) {
+        fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack_ID + "/" + attack.attack_ID, {
           method: 'PATCH',
           headers: {
             'Bearer': this.$root.token,
@@ -127,25 +124,103 @@
 <template>
   <Header></Header>
 
-    <main>
-      <section v-if="showPanel && !itsEquiped">
-        <h1>Select 1 to switch the attack with it</h1>
-        <section v-for="attack in equipedAttacks">
-          <button v-on:click="switchWith(attack.attack_ID)">
+  <main class="attack-view">
+    <h1>{{ attack_ID }}</h1>
+
+    <section v-if="showPanel && !itsEquiped" class="switch-section">
+      <h3>Which attack do you want to swap?</h3>
+
+      <section class="current-attacks">
+        <div v-for="attack in equipedAttacks">
+          <button v-on:click="switchAttack(attack)">
             <h1>{{attack.attack_ID}}</h1>
           </button>
-        </section>
+        </div>
       </section>
 
-      <button v-if="showPanel && !itsEquiped" @click="switchAttack">Equip and Unequip {{attack_SW}}</button>
-      <button v-if="!showPanel && !itsEquiped" @click="equipItem">Equip</button>
-      <button v-if="itsEquiped" @click="disequipItem">Unequip</button>
-      <label for="price">Enter a number between 0 and 10000</label>
+    </section>
+
+    <button v-if="!showPanel && !itsEquiped" @click="equipItem" class="equip-button">Equip</button>
+    <button v-if="itsEquiped" @click="unequipAttack" class="equip-button">Unequip</button>
+
+    <form>
+      <h3>Sell Attack</h3>
+      <label for="price">Enter a number between 0 and 10000:</label>
       <input type="number" id="price" name="price" min="0" max="10000" v-model="price">
       <input type="submit" v-on:click.prevent="sellItem()" value="Sell">
-    </main>
+    </form>
+
+  </main>
 </template>
 
 <style>
+  @media only screen and (min-width: 768px) {
+    .attack-view {
+      max-width: 40%;
+    }
+
+    .equip-button {
+      max-width: 60%;
+    }
+  }
+
+  .attack-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 8px;
+  }
+
+  .switch-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 8px;
+  }
+
+  .current-attacks {
+    display: flex;
+    flex-direction: row;
+  }
+
+  div button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .equip-button {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+    color: black;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 8px;
+  }
+
+  input {
+    width: 100%;
+    margin-top: 10px;
+  }
 
 </style>
