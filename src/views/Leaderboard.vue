@@ -22,6 +22,7 @@
         }
         return response.json();
       }).then((res) => {
+        //Obtiene las estadísticas de todos los jugadores a través de la API.
         res.forEach((player) => {
           fetch("https://balandrau.salle.url.edu/i3/players/" + player.player_ID + "/statistics", {
             method: 'GET',
@@ -77,6 +78,7 @@
             <td>{{ playerX.games_won }}</td>
           </template>
 
+          <!--busca en la lista de jugadores aquellos que contienen en su nombre los caracteres introducidos por el usuario-->
           <template v-else-if="playerX.player_ID.includes(search)">
             <td>#{{index + 1}}</td>
             <td>{{ playerX.player_ID }}</td>

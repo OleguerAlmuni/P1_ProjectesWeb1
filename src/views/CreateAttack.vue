@@ -59,6 +59,7 @@
 
     <section class="attack-positions">
       <h2>Attack Positions</h2>
+      <!--Al pulsar estos botones se selecciona la posición donde se dirijirá el ataque-->
       <section class="cross-form">
         <button class="btn" type="button"  @click="setPosition(1,0)">(0, 1)</button>
 

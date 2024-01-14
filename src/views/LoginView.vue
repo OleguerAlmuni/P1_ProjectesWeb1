@@ -18,6 +18,7 @@
         }).then((response) => response.json())
             .then((res) => {
               if (res.error == undefined) {
+                //Guarda la información relevante en el localstorage para no tener que hacer inicios de sesión repetidamente.
                 this.response = "Token: " + res.token;
                 this.$root.player_ID = res.player_ID;
                 localStorage.player_ID = res.player_ID;

@@ -13,6 +13,9 @@
       this.showAttacks();
     },
     methods: {
+      /*
+      Redirije a la página específica de un ataque.
+       */
       goToAttack(attack, equiped) {
         this.$router.push({
           path: "attacks/attack",
@@ -24,6 +27,9 @@
         })
       },
 
+      /*
+      Pide la información de los ataques del usuario a la API
+       */
       showAttacks() {
         fetch('https://balandrau.salle.url.edu/i3/players/attacks', {
           method: 'GET',

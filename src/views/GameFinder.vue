@@ -53,6 +53,9 @@
         })
       },
 
+      /*
+      Accede a la página con la información de una partida finalizada.
+       */
       viewLogs(arena) {
         console.log(arena);
         this.$router.push({
@@ -92,6 +95,7 @@
 
       <tbody>
       <tr v-for="arena in this.arenas">
+        <!--Dependiendo de qué haya seleccionado el usuario se mostrará una lista de partidas u otra-->
         <template v-if="finishedFilter && arena.finished">
           <td>{{arena.game_ID}}</td>
           <td>{{arena.size}}</td>

@@ -61,6 +61,7 @@ export default {
         })
   },
   mounted() {
+    //Vuelve a pedir la información de los jugadores cada 5s para poder ver el progreso de la partida.
       this.timer = setInterval(() => {
         fetch("https://balandrau.salle.url.edu/i3/players/arenas/current", {
           method: 'GET',
@@ -212,6 +213,7 @@ export default {
         <table>
           <tr v-for="row in this.size">
             <template v-for="column in this.size">
+              <!--si el valor de x e y coincide con el de un jugador, se muestra su ID-->
               <td v-if="row == this.players[0].y_game + 1 && column == this.players[0].x_game + 1">
                 {{ this.players[0].player_ID }}
               </td>

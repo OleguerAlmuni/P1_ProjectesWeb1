@@ -30,6 +30,9 @@ export default {
     },
 
     methods: {
+      /*
+      Pide a la API que gestione la compra del ataque cuyo ID recibe la función.
+       */
        buyAttack(attack_ID) {
             fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + attack_ID + "/buy", {
                 method: 'POST',

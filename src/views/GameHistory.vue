@@ -80,6 +80,11 @@ export default {
       this.response = "No connection with API";
     });
   },
+
+  /*
+  Los métodos sirven para obtener la información sobre los rivales de las partidas
+  finalizadas y quien fué el vencedor.
+   */
   methods: {
     getRival(p_games) {
       for (let i = 0; i < p_games.length; i++) {

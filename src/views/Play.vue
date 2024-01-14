@@ -31,6 +31,7 @@
 <template>
   <Header></Header>
 
+  <!--Si el usuario está en una partida no finalizada aparece este link para que pueda acceder diractamente.-->
   <nav v-if="currentGame">
       <button @click="this.$router.push('/playGame')">Current Game</button>
   </nav>

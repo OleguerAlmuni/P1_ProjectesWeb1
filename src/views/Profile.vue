@@ -37,6 +37,7 @@
       });
     },
     methods: {
+      //El método borra el perfil incluyendo sus atributos en el localstorage, por si quiere crear otra cuenta.
       deleteProfile() {
         fetch("https://balandrau.salle.url.edu/i3/players", {
           method: 'DELETE',

@@ -14,6 +14,9 @@
       }
     },
 
+    /*
+    Consulta la cantidad de atques equipados para mostrar una pantalla u otra.
+     */
     mounted() {
       if (this.equipedAttacks.length == 3) {
         this.showPanel = true;
@@ -24,10 +27,16 @@
     },
 
     methods: {
+      /*
+      Tras realizar cualquier operación, devuelve al usuario a la pantalla anterior.
+       */
       goBack() {
         this.$router.push("/attacks")
       },
 
+      /*
+      Pide a la API que equipe el ataque.
+       */
       equipItem() {
         fetch("https://balandrau.salle.url.edu/i3/players/attacks/"+ this.attack.attack_ID, {
           method: 'POST',
@@ -50,6 +59,9 @@
         });
       },
 
+      /*
+      Pide a la API que deje de equipar el ataque.
+       */
       unequipAttack() {
         fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack.attack_ID, {
           method: 'DELETE',
@@ -72,6 +84,9 @@
         });
       },
 
+      /*
+      Consulta el atributo con el precio y le pide a la API que publique el ataque para su venta.
+       */
       sellItem() {
         const sell = { price: this.price};
         fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack.attack_ID + "/sell", {
@@ -96,6 +111,9 @@
         });
       },
 
+      /*
+      Recibe el ataque a substituir y le pide a la API que haga el intercambio.
+       */
       switchAttack(attack2) {
         fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack.attack_ID + "/" + attack2.attack_ID, {
           method: 'PATCH',

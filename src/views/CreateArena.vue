@@ -58,6 +58,7 @@
       </section>
 
       <section class="arena-preview">
+        <!--Con v-model, el tamaño de la tabla aumenta cuando lo hace la variable size-->
         <table>
           <tr v-for="row in this.size">
             <td v-for="column in this.size"></td>
