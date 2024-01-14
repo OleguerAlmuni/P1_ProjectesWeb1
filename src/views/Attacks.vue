@@ -13,11 +13,13 @@
       this.showAttacks();
     },
     methods: {
-      goToAttack(attack_ID, equiped) {
+      goToAttack(attack, equiped) {
         this.$router.push({
           path: "attacks/attack",
           query: {
-            attack: attack_ID,
+              attack: JSON.stringify(attack),
+              itsEquiped: equiped,
+              equipedAttacks: JSON.stringify(this.equipedAttacks),
           }
         })
       },
@@ -55,7 +57,7 @@
     <section class="equipped-attacks">
       <h2>Equipped Attacks</h2>
       <section v-for="attack in equipedAttacks" :key="attack.attack_ID">
-        <button v-if="!attack.on_sale" v-on:click.prevent="goToAttack(attack.attack_ID, true)">
+        <button v-if="!attack.on_sale" v-on:click.prevent="goToAttack(attack, true)">
           <h1>{{attack.attack_ID}}</h1>
         </button>
       </section>
@@ -66,7 +68,7 @@
 
       <div>
         <section v-for="attack in attacks" :key="attack.attack_ID">
-          <button v-if="!attack.on_sale" v-on:click.prevent="goToAttack(attack.attack_ID, false)">
+          <button v-if="!attack.on_sale" v-on:click.prevent="goToAttack(attack, false)">
             <h1>{{attack.attack_ID}}</h1>
           </button>
         </section>

@@ -4,7 +4,7 @@
     components: {Header},
     data() {
       return {
-        attack_ID: this.$route.query.attack,
+        attack: JSON.parse(this.$route.query.attack),
         equipedAttacks: JSON.parse(this.$route.query.equipedAttacks),
         response: "",
         price: 0,
@@ -29,7 +29,7 @@
       },
 
       equipItem() {
-        fetch("https://balandrau.salle.url.edu/i3/players/attacks/"+ this.attack_ID, {
+        fetch("https://balandrau.salle.url.edu/i3/players/attacks/"+ this.attack.attack_ID, {
           method: 'POST',
           headers: {
             'Bearer': this.$root.token,
@@ -51,7 +51,7 @@
       },
 
       unequipAttack() {
-        fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack_ID, {
+        fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack.attack_ID, {
           method: 'DELETE',
           headers: {
             'Bearer': this.$root.token,
@@ -74,7 +74,7 @@
 
       sellItem() {
         const sell = { price: this.price};
-        fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack_ID + "/sell", {
+        fetch("https://balandrau.salle.url.edu/i3/shop/attacks/" + this.attack.attack_ID + "/sell", {
           method: 'POST',
           headers: {
             'Bearer': this.$root.token,
@@ -96,8 +96,8 @@
         });
       },
 
-      switchAttack(attack) {
-        fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack_ID + "/" + attack.attack_ID, {
+      switchAttack(attack2) {
+        fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack.attack_ID + "/" + attack2.attack_ID, {
           method: 'PATCH',
           headers: {
             'Bearer': this.$root.token,
@@ -125,15 +125,15 @@
   <Header></Header>
 
   <main class="attack-view">
-    <h1>{{ attack_ID }}</h1>
+    <h1>{{ attack.attack_ID }}</h1>
 
     <section v-if="showPanel && !itsEquiped" class="switch-section">
       <h3>Which attack do you want to swap?</h3>
 
       <section class="current-attacks">
-        <div v-for="attack in equipedAttacks">
-          <button v-on:click="switchAttack(attack)">
-            <h1>{{attack.attack_ID}}</h1>
+        <div v-for="attack2 in equipedAttacks">
+          <button v-on:click="switchAttack(attack2)">
+            <h1>{{attack2.attack_ID}}</h1>
           </button>
         </div>
       </section>
