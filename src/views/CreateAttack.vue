@@ -63,9 +63,9 @@
         <button class="btn" type="button"  @click="setPosition(1,0)">(0, 1)</button>
 
         <section class="middle">
-          <button class="btn" type="button" @click ="setPosition(0,-1)">(-1, 0)</button>
+          <button class="btn" type="button" @click ="setPosition(0,1)">(-1, 0)</button>
           <img :src="this.$root.img" alt="">
-          <button class="btn" type="button" @click ="setPosition(0,1)">(1, 0)</button>
+          <button class="btn" type="button" @click ="setPosition(0,-1)">(1, 0)</button>
         </section>
       </section>
     </section>

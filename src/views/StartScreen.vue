@@ -53,7 +53,7 @@
     align-items: center;
     width: 100%;
     height: 300px;
-    background-color: white;
+    background-color: #99ccff;
     border: 10px solid black;
     border-radius: 8px;
   }

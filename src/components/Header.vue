@@ -39,10 +39,10 @@
     height: 50px;
     margin-left: 5px;
     margin-bottom: 5px;
-    color: black;
-    background-color: white;
+    color: white;
     border: 2px solid black;
-    border-radius: 8px;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
   }
 
   .backpack-button {
@@ -56,6 +56,14 @@
     border-radius: 50%;
     max-height: 90px;
     max-width: 90px;
+  }
+
+  button:hover {background-color: #77aaff}
+
+  button:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
   }
 
 </style>

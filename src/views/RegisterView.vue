@@ -99,7 +99,7 @@
     margin-left: auto;
     margin-right: auto;
     color: black;
-    background-color: white;
+    background-color: #99ccff;
     border: 5px solid black;
     border-radius: 8px;
   }

@@ -104,12 +104,12 @@ export default {
 
     <main>
       <section class="profile">
-        <p>Name: {{ playerName }}</p>
-        <p>Level: #{{ level }}</p>
-        <p>XP: #{{ xp }}</p>
-        <p>Total Played: #{{ games_played }}</p>
-        <p>Total Wins: #{{ games_won }}</p>
-        <p>Wins%: {{ games_won/games_played * 100 }}%</p>
+        <h1>{{ playerName }}</h1>
+        <h3>Level: #{{ level }}</h3>
+        <h3>XP: #{{ xp }}</h3>
+        <h3>Total Played: #{{ games_played }}</h3>
+        <h3>Total Wins: #{{ games_won }}</h3>
+        <h3>Wins%: {{ games_won/games_played * 100 }}%</h3>
       </section>
 
       <table>
@@ -154,6 +154,10 @@ export default {
   main {
     margin-top: 10px;
     color: black;
+    background-color: #99ccff;
+    border: 5px solid black;
+    border-radius: 8px;
+    overflow-x: auto;
   }
 
   .profile {
@@ -163,14 +167,14 @@ export default {
     align-items: center;
     padding: 15px;
     margin-right: auto;
+    color: black;
     background-color: #99ccff;
-    border: 5px solid black;
-    border-radius: 8px;
   }
 
   table {
-    margin-right: 5px;
+    margin-right: 10px;
     background-color: #99ccff;
+    margin-left: 10px;
   }
 
   table, th, td {

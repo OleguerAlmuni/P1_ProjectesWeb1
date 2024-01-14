@@ -11,6 +11,7 @@ export default {
       players: [],
       attacks: [],
       timer: null,
+      res: "",
     }
   },
   beforeMount() {
@@ -70,7 +71,6 @@ export default {
         }).then((response) => response.json())
             .then((res) => {
               if (res.error == undefined) {
-                console.log(res);
                 let game = res[0];
                 this.game_ID = game.game_ID;
                 this.size = game.size;
@@ -79,10 +79,6 @@ export default {
                 this.HP_max = game.HP_max;
                 this.start = game.start;
                 this.players = game.players_games;
-
-                console.log(this.finished);
-              } else {
-                console.log("Game Info ERROR!");
               }
             })
       }, 5000)
@@ -252,6 +248,11 @@ export default {
           </div>
         </section>
       </section>
+    </template>
+
+    <template v-else>
+      <h1>The Game has finished!</h1>
+      <button @click="this.$router.push('/home')">Home</button>
     </template>
 
   </main>
