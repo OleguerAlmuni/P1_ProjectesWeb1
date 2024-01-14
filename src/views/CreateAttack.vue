@@ -146,10 +146,29 @@
       margin: 5px;
       border: 2px solid black;
       border-radius: unset;
-      background-color: #3498db;
+      background-color: #77aaff;
       color: white;
       font-size: 16px;
       cursor: pointer;
     }
+
+  input[type=submit] {
+    margin-top: 10px;
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 16px 32px;
+  }
+
+  input[type=submit]:hover {background-color: #77aaff}
+
+  input[type=submit]:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
+  }
 
 </style>

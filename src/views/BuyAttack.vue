@@ -101,6 +101,7 @@ export default {
 
   table {
     width: 100%;
+    background-color: #99ccff;
   }
 
   table, th, td {
@@ -112,6 +113,11 @@ export default {
   th, td {
     text-align: center;
     padding: 5px;
+  }
+
+  thead {
+    background-color: #77aaff;
+    color: black;
   }
 
 </style>

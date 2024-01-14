@@ -173,9 +173,46 @@
     margin-right: auto;
     padding: 15px;
     color: black;
-    background-color: white;
+    background-color: #99ccff;
     border: 5px solid black;
     border-radius: 8px;
+  }
+
+  .equip-button {
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+    width: 100px;
+    height: 100px;
+  }
+
+  .equip-button button:hover {
+    background-color: #77aaff
+  }
+
+  .equip-button button:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
+  }
+
+  .current-attacks button {
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .current-attacks button:hover {background-color: #77aaff}
+
+  .current-attack button:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
   }
 
   .switch-section {

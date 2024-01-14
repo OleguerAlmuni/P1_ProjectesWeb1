@@ -230,6 +230,11 @@ export default {
     }
   }
 
+  header button {
+    width: 100px;
+    height: 30px;
+  }
+
   main {
     display: flex;
     flex-direction: column;
@@ -293,6 +298,7 @@ export default {
     width: 50px;
     height: 50px;
     border: 2px solid black;
+    text-align: center;
   }
 
   button {
