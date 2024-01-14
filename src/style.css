@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-color: #6fcb9f;
+    background-color: #5588ff;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -29,4 +29,8 @@ button {
     outline: none;
     border: 2px solid black;
     border-radius: 15px;
+}
+
+table {
+    overflow-x: auto;
 }

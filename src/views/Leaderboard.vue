@@ -5,6 +5,7 @@
     data() {
       return {
         players : [],
+        search: "",
         response: ""
       }
     },
@@ -53,7 +54,7 @@
   <Header></Header>
 
   <main>
-    <input type="Search" id="Search" name="Search" value="Search">
+    <input type="Search" id="Search" name="Search" placeholder="Search" v-model="search">
 
     <table>
       <thead>
@@ -68,11 +69,21 @@
 
       <tbody>
         <tr v-for="(playerX, index) in players">
-          <td>#{{index + 1}}</td>
-          <td>{{ playerX.player_ID }}</td>
-          <td>{{ playerX.level }}</td>
-          <td>{{ playerX.xp }}</td>
-          <td>{{ playerX.games_won }}</td>
+          <template v-if="search == ''">
+            <td>#{{index + 1}}</td>
+            <td>{{ playerX.player_ID }}</td>
+            <td>{{ playerX.level }}</td>
+            <td>{{ playerX.xp }}</td>
+            <td>{{ playerX.games_won }}</td>
+          </template>
+
+          <template v-else-if="playerX.player_ID.includes(search)">
+            <td>#{{index + 1}}</td>
+            <td>{{ playerX.player_ID }}</td>
+            <td>{{ playerX.level }}</td>
+            <td>{{ playerX.xp }}</td>
+            <td>{{ playerX.games_won }}</td>
+          </template>
         </tr>
       </tbody>
     </table>
@@ -103,6 +114,12 @@
 
     table {
       margin-top: 10px;
+      background-color: #99ccff;
+    }
+
+    thead {
+      background-color: #77aaff;
+      color: black;
     }
 
     table, th, td {

@@ -79,7 +79,6 @@
     .arena-preview {
       flex: 3;
       max-width: 60%;
-      overflow-x: auto;
     }
   }
 
@@ -89,8 +88,8 @@
     margin-top: 10px;
     padding: 15px;
     color: black;
-    background-color: white;
-    border: 5px solid black;
+    background-color: #ebdeb6;
+    border: 5px solid #dec986;
     border-radius: 8px;
   }
 
@@ -110,15 +109,31 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: white;
+    background-color: #99ccff;
+    border: 5px solid black;
+  }
+  input {
+    margin-bottom: 10px;
   }
 
   input[type=submit] {
     margin-top: 10px;
-    background-color: #0bbaff;
-    border: 2px solid #242424;
     color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+    border-radius: 15px;
     cursor: pointer;
     padding: 16px 32px;
+  }
+
+  input[type=submit]:hover {background-color: #77aaff}
+
+  input[type=submit]:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
   }
 
   /*
@@ -142,10 +157,15 @@
     width: 50%;
     aspect-ratio: 1 / 1;
     border-collapse: collapse;
+    background-color: #99ccff;
   }
 
   td {
-    border: 1px solid black;
+    border: 2px solid black;
+  }
+
+  tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even){
+    background-color: #77aaff;
   }
 
 </style>

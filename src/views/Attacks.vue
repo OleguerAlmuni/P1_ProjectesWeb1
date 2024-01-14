@@ -14,7 +14,6 @@
     },
     methods: {
       goToAttack(attack_ID, equiped) {
-        console.log("SI");
         this.$router.push({
           path: "attacks/attack",
           query: {
@@ -52,7 +51,7 @@
 <template>
   <Header></Header>
 
-  <main>
+  <main class="backpack-view">
     <section class="equipped-attacks">
       <h2>Equipped Attacks</h2>
       <section v-for="attack in equipedAttacks" :key="attack.attack_ID">
@@ -83,22 +82,22 @@
     .equipped-attacks {
       flex: 2;
       max-width: 20%;
-      margin-right: 10px;
+      margin-right: auto;
     }
 
     .all-attacks {
       flex: 3;
-      max-width: 80%;
+      max-width: 79%;
     }
   }
 
-  main {
+  .backpack-view {
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
     padding: 15px;
     color: black;
-    background-color: white;
+    background-color: #99ccff;
     border: 5px solid black;
     border-radius: 8px;
   }
@@ -111,19 +110,20 @@
     flex: 100%;
     margin-top: 10px;
     color: black;
-    background-color: white;
+    background-color: #ebdeb6;
     border: 5px solid black;
     border-radius: 8px;
   }
 
   .all-attacks {
     width: 100%;
+    flex: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
     color: black;
-    background-color: white;
+    background-color: #ebdeb6;
     border: 5px solid black;
     border-radius: 8px;
   }
@@ -139,10 +139,23 @@
   }
 
   button {
-    width: 90px;
-    height: 90px;
+    margin-bottom: 20px;
+    color: white;
+    border: 2px solid black;
+    background-color: #99ccff;
+    box-shadow: 0 9px #abb2b9;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
   }
+
+  button:hover {background-color: #77aaff}
+
+  button:active {
+    background-color: #77aaff;
+    box-shadow: 0 5px #808b96;
+    transform: translateY(4px);
+  }
+
 
 </style>
