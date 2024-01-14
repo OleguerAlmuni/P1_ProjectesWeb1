@@ -61,6 +61,7 @@ export default {
   table {
     margin-left: auto;
     margin-right: auto;
+    background-color: #99ccff;
   }
 
   table, th, td {
@@ -73,4 +74,10 @@ export default {
     text-align: center;
     padding: 15px;
   }
+
+  thead {
+    background-color: #77aaff;
+    color: black;
+  }
+
 </style>

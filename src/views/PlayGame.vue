@@ -30,7 +30,7 @@ export default {
           if (res.error == undefined) {
             let game = res[0];
             this.game_ID = game.game_ID;
-            this.size = game.size;
+            this.size = game.size - 1;
             this.creation_date = game.creation_date;
             this.finished = game.finished;
             this.HP_max = game.HP_max;
@@ -70,6 +70,7 @@ export default {
         }).then((response) => response.json())
             .then((res) => {
               if (res.error == undefined) {
+                console.log(res);
                 let game = res[0];
                 this.game_ID = game.game_ID;
                 this.size = game.size;
@@ -79,13 +80,19 @@ export default {
                 this.start = game.start;
                 this.players = game.players_games;
 
-                console.log("Game Info Loaded!");
+                console.log(this.finished);
               } else {
                 console.log("Game Info ERROR!");
               }
             })
       }, 5000)
   },
+
+  beforeUnmount() {
+    clearInterval(this.timer);
+    this.attacks = null;
+  },
+
   methods: {
     getEquippedAttacks(attack_array, equipped_attacks) {
       attack_array.forEach((attack) => {
@@ -107,6 +114,23 @@ export default {
       }).then((response) => {
         if (response.ok) {
           console.log("move successful!")
+
+          const directionRequest = { direction: direction };
+          fetch("https://balandrau.salle.url.edu/i3/arenas/direction", {
+            method: 'POST',
+            headers: {
+              'Bearer' : this.$root.token,
+              'Content-Type' : "application/json"
+            },
+            body: JSON.stringify(directionRequest)
+          }).then((response) => {
+            if (response.ok) {
+              console.log("changed direction")
+            }
+
+            return response;
+          })
+
           return response;
         }
 
@@ -176,37 +200,60 @@ export default {
   </header>
 
   <main>
-    <table>
-      <tr v-for="row in this.size">
-        <template v-for="column in this.size">
-          <td v-if="row == this.players[0].y_game && column == this.players[0].x_game">
-            {{ this.players[0].player_ID }}
-          </td>
-          <td v-else-if="row == this.players[1].y_game && column == this.players[1].x_game">
-            {{ this.players[1].player_ID }}
-          </td>
-          <td v-else></td>
-        </template>
-      </tr>
-    </table>
 
-    <section class="controls">
-      <section class="attacks">
-        <template v-for="(attack, index) in this.attacks">
-          <button v-on:click.prevent="playerAttack(index)">{{ attack.attack_ID }}</button>
-        </template>
-      </section>
+    <template v-if="!this.start">
+      <h1>Wait until another player joins the arena</h1>
+    </template>
 
-      <section class="movement">
-        <button v-on:click.prevent="move('up')">Up</button>
-
-        <div>
-          <button v-on:click.prevent="move('left')">Left</button>
-          <button v-on:click.prevent="move('down')">Down</button>
-          <button v-on:click.prevent="move('right')">Right</button>
+    <template v-else-if="this.start && !this.finished">
+      <section class="arena">
+        <div class="player-status">
+          <h2>{{players[1].player_ID}}</h2>
+          <h3>{{players[1].hp}}/{{HP_max}} HP</h3>
         </div>
+
+
+        <table>
+          <tr v-for="row in this.size">
+            <template v-for="column in this.size">
+              <td v-if="row == this.players[0].y_game + 1 && column == this.players[0].x_game + 1">
+                {{ this.players[0].player_ID }}
+              </td>
+              <td v-else-if="row == this.players[1].y_game + 1 && column == this.players[1].x_game + 1">
+                {{ this.players[1].player_ID }}
+              </td>
+              <td v-else></td>
+            </template>
+          </tr>
+        </table>
+
+        <div class="player-status">
+          <h2>{{players[0].player_ID}}</h2>
+          <h3>{{players[0].hp}}/{{HP_max}} HP</h3>
+        </div>
+
       </section>
-    </section>
+
+
+      <section class="controls">
+        <section class="attacks">
+          <template v-for="(attack, index) in this.attacks">
+            <button v-on:click.prevent="playerAttack(index)">{{ attack.attack_ID }}</button>
+          </template>
+        </section>
+
+        <section class="movement">
+          <button v-on:click.prevent="move('up')">Up</button>
+
+          <div>
+            <button v-on:click.prevent="move('left')">Left</button>
+            <button v-on:click.prevent="move('down')">Down</button>
+            <button v-on:click.prevent="move('right')">Right</button>
+          </div>
+        </section>
+      </section>
+    </template>
+
   </main>
 
 
@@ -241,9 +288,23 @@ export default {
     align-items: center;
   }
 
+  .arena {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .player-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .controls {
     width: 100%;
-    height: 125px;
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;

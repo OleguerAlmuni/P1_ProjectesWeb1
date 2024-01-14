@@ -1,17 +1,37 @@
 <script>
-
-  import {defineComponent} from "vue";
   import Header from "../components/Header.vue";
 
-  export default defineComponent({
-    components: {Header}
-  })
+  export default {
+    components: {Header},
+    data() {
+      return {
+        currentGame: false
+      }
+    },
+
+    mounted() {
+      fetch("https://balandrau.salle.url.edu/i3/players/arenas/current", {
+        method: 'GET',
+        headers: {
+          'Bearer' : this.$root.token,
+          'Content-Type' : "application/json"
+        }
+      }).then((response) => response.json())
+          .then((res) => {
+            if (res[0].game_ID == undefined) {
+              this.currentGame = false;
+            } else {
+              this.currentGame = true;
+            }
+          })
+    }
+  }
 </script>
 
 <template>
   <Header></Header>
 
-  <nav>
+  <nav v-if="currentGame">
       <button @click="this.$router.push('/playGame')">Current Game</button>
   </nav>
 

@@ -126,6 +126,8 @@
 
   <main class="attack-view">
     <h1>{{ attack.attack_ID }}</h1>
+    <h3> Power: {{attack.power}}</h3>
+    <h3> Positions: {{attack.positions}}</h3>
 
     <section v-if="showPanel && !itsEquiped" class="switch-section">
       <h3>Which attack do you want to swap?</h3>

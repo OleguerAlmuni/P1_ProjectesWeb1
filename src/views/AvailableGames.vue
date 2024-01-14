@@ -21,7 +21,7 @@
           .then((res) => {
             if (res.error == undefined) {
               for (let i in res) {
-                if (res[i].finished == false) {
+                if (res[i].start == false) {
                   this.arenas.push(res[i]);
                 }
               }
@@ -69,7 +69,6 @@
           <th>ID</th>
           <th>N.Squares</th>
           <th>HP</th>
-          <th>State</th>
           <th>Date</th>
         </tr>
       </thead>
@@ -79,7 +78,6 @@
           <td>{{arena.game_ID}}</td>
           <td>{{arena.size}}</td>
           <td>{{arena.HP_max}}</td>
-          <td>{{arena.finished}}</td>
           <td>{{arena.creation_date}}</td>
           <td>
             <button v-on:click.prevent="enterArena(arena.game_ID)">JOIN</button>
