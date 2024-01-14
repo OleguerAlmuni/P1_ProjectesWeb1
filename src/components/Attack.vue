@@ -7,17 +7,6 @@
         attack_ID: this.$route.query.attack,
         response: "",
         price: 0,
-        showPanel: false,
-        attack_SW: "",
-      }
-    },
-
-    mounted() {
-      if (this.equipedAttacks.length == 3) {
-        this.showPanel = true;
-      }
-      else {
-        this.showPanel = false;
       }
     },
 
@@ -50,7 +39,8 @@
         }).catch((error) => {
           this.response = "No connection with API";
         });
-      },
+        },
+
       disequipItem() {
         fetch("https://balandrau.salle.url.edu/i3/players/attacks/" + this.attack_ID, {
           method: 'DELETE',
