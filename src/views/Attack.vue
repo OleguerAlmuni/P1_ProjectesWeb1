@@ -9,7 +9,7 @@
         response: "",
         price: 0,
         showPanel: false,
-        itsEquiped: this.$route.query.itsEquiped === 'true',
+        itsEquiped: this.$route.query.itsEquiped == 'true',
         attack_SW: "",
       }
     },
